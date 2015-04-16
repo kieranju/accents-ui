@@ -48,7 +48,7 @@
             padding-left: 15px;
         }
         &:last-child {
-            box-shadow: 1px 0 3px darken(@tab-background-color, 2%);
+            box-shadow: 1px 0 2px darken(@tab-background-color, 2%);
         }
 
         // hides icons if they're displayed
@@ -121,6 +121,17 @@
         &.modified .close-icon {
             &:before {
                 display: none;
+            }
+        }
+        & + .tab {
+            &:before {
+                content: '';
+                background: rgba(0,0,0,0.2);
+                height: @tab-height;
+                width: 1px;
+                position: absolute;
+                bottom: -5px;
+                left: 0;
             }
         }
         &:after {
