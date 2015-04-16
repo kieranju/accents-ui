@@ -1,16 +1,22 @@
 @import "ui-variables";
 
 .tree-view {
-  font-size: @font-size;
-  background: @tree-view-background-color;
+    padding: 10px 0 0 10px;
+    font-size: @font-size;
+    background: @tree-view-background-color;
 
-  .selected:before {
-    background: lighten(@tree-view-background-color, 3%);
-  }
+    .entry:before {
+        background: transparent;
+    }
+
+    .selected .name {
+        color: @text-color-highlight;
+        font-weight: 500;
+    }
 }
 
 .tree-view-resizer {
-  .tree-view-resize-handle {
-    width: 8px;
-  }
+    .tree-view-resize-handle {
+        width: 8px;
+    }
 }
