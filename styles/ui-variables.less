@@ -25,7 +25,7 @@
 @background-color-highlight: fade(@text-color-highlight, 7%);
 @background-color-selected: @highlight-color;
 
-@app-background-color: #333333;
+@app-background-color: #333;
 
 @base-background-color: @app-background-color;
 @base-border-color: transparent;
@@ -34,24 +34,25 @@
 @pane-item-border-color: @base-border-color;
 
 @input-background-color: #222222;
-@input-border-color: darken(@input-background-color, 1%);
+@input-border-color: darken(@input-background-color, 2%);
+@input-box-highlight: rgba(255,255,255,0.03);
 
 @tool-panel-background-color: @base-background-color;
 @tool-panel-border-color: @base-border-color;
 
-@inset-panel-background-color: @base-background-color;
-@inset-panel-border-color: @base-border-color;
+@inset-panel-background-color: @input-background-color;
+@inset-panel-border-color: @input-border-color;
 
 @panel-heading-background-color: @base-background-color;
-@panel-heading-border-color: @base-border-color;
+@panel-heading-border-color: @input-border-color;
 
 @overlay-background-color: @base-background-color;
 @overlay-border-color: @base-border-color;
 
-@button-background-color: @base-background-color;
-@button-background-color-hover: lighten(@button-background-color, 2%);
+@button-background-color: @input-background-color;
+@button-background-color-hover: lighten(@button-background-color, 1%);
 @button-background-color-selected: @highlight-color;
-@button-border-color: @base-border-color;
+@button-border-color: @input-border-color;
 
 @tab-bar-background-color: @base-background-color;
 @tab-bar-border-color: @base-border-color;
@@ -60,10 +61,10 @@
 @tab-border-color: @base-border-color;
 
 @tree-view-background-color: @tool-panel-background-color;
-@tree-view-border-color: @tool-panel-border-color;
+@tree-view-border-color: @base-border-color;
 
-@scrollbar-background-color: transparent; // Needs to be opaque -> atom/atom/issues/4578 // I don't notice any problems with this
-@scrollbar-color: @tool-panel-background-color;
+@scrollbar-background-color: transparent;
+@scrollbar-color: lighten(@tool-panel-background-color, 6%);
 
 @ui-site-color-1: @background-color-success; // green
 @ui-site-color-2: @background-color-info; // blue
@@ -76,6 +77,7 @@
 
 @font-size: 12px;
 @input-font-size: 14px;
+@dropdown-font-size: 14px;
 
 @disclosure-arrow-size: @font-size;
 
