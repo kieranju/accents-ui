@@ -1,0 +1,38 @@
+@import "ui-variables";
+
+// Settings specific styling
+.settings-view {
+
+    h1,
+    .section-heading,
+    .sub-section-heading {
+        font-weight: 400 !important;
+        font-size: 15px !important;
+    }
+
+    .btn.btn-info,
+    .btn.btn-primary {
+        background: @highlight-color;
+
+        &:hover {
+            background: lighten(@highlight-color, 3%) !important;
+        }
+    }
+
+    .package-card,
+    .thumbnail {
+        background: lighten(@app-background-color, 3%) !important;
+        transition: 0.1s background;
+
+        &:hover {
+            background: lighten(@app-background-color, 4%);
+        }
+        .author {
+            color: darken(@text-color, 25%) !important;
+        }
+    }
+
+    .checkbox {
+        // input (checkbox) // before, after
+    }
+}
