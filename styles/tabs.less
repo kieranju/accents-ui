@@ -1,5 +1,5 @@
 @import "ui-variables";
-@modified-icon-width: 6px;
+@modified-icon-dim: 6px;
 @tab-indicator-size: 5px;
 @vertical-center: @tab-height - @tab-indicator-size;
 
@@ -14,8 +14,6 @@
         opacity: 1.0;
     }
 }
-
-// make animation for modified intro
 
 .tab-bar {
     height: @tab-height;
@@ -71,11 +69,11 @@
             }
         }
         &.modified:not(:hover) .close-icon {
-            top: @tab-height / 2 - @modified-icon-width / 2 - 1px;
+            top: @tab-height / 2 - @modified-icon-dim / 2 - 1px;
             right: 15px;
-            width: @modified-icon-width;
-            height: @modified-icon-width;
-            border-radius: @modified-icon-width;
+            width: @modified-icon-dim;
+            height: @modified-icon-dim;
+            border-radius: @modified-icon-dim;
             background: @highlight-color;
             border: 0;
             -webkit-animation-name: pulse;
@@ -93,11 +91,11 @@
             }
         }
         &.modified .close-icon {
-            top: @tab-height / 2 - @modified-icon-width / 2 - 1px;
+            top: @tab-height / 2 - @modified-icon-dim / 2 - 1px;
             right: 15px;
-            width: @modified-icon-width;
-            height: @modified-icon-width;
-            border-radius: @modified-icon-width;
+            width: @modified-icon-dim;
+            height: @modified-icon-dim;
+            border-radius: @modified-icon-dim;
             background: @highlight-color;
             border: 0;
             color: @text-color-highlight;
