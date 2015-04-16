@@ -1,8 +1,9 @@
 @import "ui-variables";
 
 .tooltip {
-  @tip-background-color: #fff;
-  @tip-text-color: #333;
+  @tip-background-color: @app-background-color;
+  @tip-subtle-background-color: darken(@tip-background-color, 10%);
+  @tip-text-color: @text-color;
   white-space: nowrap;
 
   .keystroke {
@@ -21,30 +22,33 @@
     color: @tip-text-color;
     white-space: nowrap;
     max-width: none;
+    box-shadow: inset 0px 1px 0 lighten(@tip-background-color, 5%),
+                0px 0px 1px 0px fadeout(@tip-subtle-background-color, 50%),
+                0px 1px 7px 0px @tip-subtle-background-color;
   }
 
   &.top .tooltip-arrow {
-    border-top-color: @tip-background-color;
+    border-top-color: transparent;
   }
   &.top-left .tooltip-arrow {
-    border-top-color: @tip-background-color;
+    border-top-color: transparent;
   }
   &.top-right .tooltip-arrow {
-    border-top-color: @tip-background-color;
+    border-top-color: transparent;
   }
   &.right .tooltip-arrow {
-    border-right-color: @tip-background-color;
+    border-right-color: transparent;
   }
   &.left .tooltip-arrow {
-    border-left-color: @tip-background-color;
+    border-left-color: transparent;
   }
   &.bottom .tooltip-arrow {
-    border-bottom-color: @tip-background-color;
+    border-bottom-color: transparent;
   }
   &.bottom-left .tooltip-arrow {
-    border-bottom-color: @tip-background-color;
+    border-bottom-color: transparent;
   }
   &.bottom-right .tooltip-arrow {
-    border-bottom-color: @tip-background-color;
+    border-bottom-color: transparent;
   }
 }
