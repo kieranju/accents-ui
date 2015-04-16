@@ -1,14 +1,16 @@
+@import "ui-highlights";
+
 // Colors
 
 @text-color: #aaa;
-@text-color-subtle: #555;
+@text-color-subtle: #5d5d5d;
 @text-color-highlight: #fff;
 @text-color-selected: @text-color-highlight;
 
 @text-color-info: #5293d8;
 @text-color-success: #2BDA77;
-@text-color-warning: #ff982d;
-@text-color-error: #c00;
+@text-color-warning: #fd8440;
+@text-color-error: #c92525;
 
 @text-color-ignored: @text-color-subtle;
 @text-color-added: @text-color-success;
@@ -16,66 +18,66 @@
 @text-color-modified: @text-color-warning;
 @text-color-removed: @text-color-error;
 
-@background-color-info: #0098ff;
-@background-color-success: #17ca65;
-@background-color-warning: #ffaa2c;
-@background-color-error: #c00;
-@background-color-highlight: rgba(255, 255, 255, 0.07);
-@background-color-selected: #4182C4;
+@background-color-info: fadeout(@text-color-info, 15%);
+@background-color-success: fadeout(@text-color-success, 15%);
+@background-color-warning: fadeout(@text-color-warning, 15%);
+@background-color-error: fadeout(@text-color-error, 15%);
+@background-color-highlight: fade(@text-color-highlight, 7%);
+@background-color-selected: @highlight-color;
 
-@app-background-color: #333;
+@app-background-color: #333333;
 
-@base-background-color: lighten(@tool-panel-background-color, 5%);
-@base-border-color: rgba(0, 0, 0, 0.5);
+@base-background-color: #282828;
+@base-border-color: transparent;
 
 @pane-item-background-color: @base-background-color;
-@pane-item-border-color: rgba(0, 0, 0, 0.5);
+@pane-item-border-color: @base-border-color;
 
-@input-background-color: #212224;
-@input-border-color: @base-border-color;
+@input-background-color: #242424;
+@input-border-color: darken(@input-background-color, 1%);
 
-@tool-panel-background-color: #1d1f21;
+@tool-panel-background-color: @base-background-color;
 @tool-panel-border-color: @base-border-color;
 
-@inset-panel-background-color: #161719;
+@inset-panel-background-color: @base-background-color;
 @inset-panel-border-color: @base-border-color;
 
-@panel-heading-background-color: #43484d;
-@panel-heading-border-color: fadein(@base-border-color, 10%);
+@panel-heading-background-color: @base-background-color;
+@panel-heading-border-color: @base-border-color;
 
-@overlay-background-color: #202123;
-@overlay-border-color: @background-color-highlight;
+@overlay-background-color: @base-background-color;
+@overlay-border-color: @base-border-color;
 
-@button-background-color: #43484d;
-@button-background-color-hover: lighten(@button-background-color, 5%);
-@button-background-color-selected: #5c6064;
+@button-background-color: @base-background-color;
+@button-background-color-hover: lighten(@button-background-color, 2%);
+@button-background-color-selected: @highlight-color;
 @button-border-color: @base-border-color;
 
-@tab-bar-background-color: #222;
-@tab-bar-border-color: darken(@tab-background-color-active, 10%);
-@tab-background-color: #333;
-@tab-background-color-active: #222;
-@tab-border-color: #484848;
+@tab-bar-background-color: @base-background-color;
+@tab-bar-border-color: @base-border-color;
+@tab-background-color: @base-background-color;
+@tab-background-color-active: lighten(@tab-background-color, 2%);
+@tab-border-color: @base-border-color;
 
-@tree-view-background-color: #303030;
+@tree-view-background-color: @tool-panel-background-color;
 @tree-view-border-color: @tool-panel-border-color;
 
-@scrollbar-background-color: #222425; // Needs to be opaque -> atom/atom/issues/4578
-@scrollbar-color: rgba(92, 92, 92, 0.5);
+@scrollbar-background-color: transparent; // Needs to be opaque -> atom/atom/issues/4578 // I don't notice any problems with this
+@scrollbar-color: @tool-panel-background-color;
 
 @ui-site-color-1: @background-color-success; // green
 @ui-site-color-2: @background-color-info; // blue
 @ui-site-color-3: @background-color-warning; // orange
-@ui-site-color-4: #db2ff4; // purple
-@ui-site-color-5: #f5e11d; // yellow
+@ui-site-color-4: #ae48e2; // purple
+@ui-site-color-5: #f7c85b; // yellow
 
 
 // Sizes
 
-@font-size: 11px;
+@font-size: 12px;
 @input-font-size: 14px;
 
-@disclosure-arrow-size: 12px;
+@disclosure-arrow-size: @font-size;
 
 @component-padding: 10px;
 @component-icon-padding: 5px;
@@ -83,7 +85,7 @@
 @component-line-height: 25px;
 @component-border-radius: 2px;
 
-@tab-height: 26px;
+@tab-height: 40px;
 
 
 // Other
