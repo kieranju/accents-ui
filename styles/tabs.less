@@ -15,12 +15,15 @@
     }
 }
 
-.tab-bar {
-    height: @tab-height;
-    background: @tab-bar-background-color;
-    padding: 0;
-    box-sizing: border-box;
+.tab-bar
+{
     overflow: hidden;
+    box-sizing: border-box;
+    height: @tab-height;
+    padding: 0;
+    border: 0;
+    background: @tab-bar-background-color;
+    box-shadow: none;
 
     .tab {
         position: relative;
