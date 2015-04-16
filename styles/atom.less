@@ -1,26 +1,25 @@
 @import "ui-variables";
 
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 atom-workspace {
-  background-color: @app-background-color;
+    background-color: @app-background-color;
 }
 
 .scrollbars-visible-always {
-  /deep/ ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-
-  /deep/ ::-webkit-scrollbar-track,
-  /deep/ ::-webkit-scrollbar-corner {
-    background: @scrollbar-background-color;
-  }
-
-  /deep/ ::-webkit-scrollbar-thumb {
-    background: @scrollbar-color;
-    border-radius: 0px;
-  }
+	
+    /deep/::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    /deep/::-webkit-scrollbar-track,
+    /deep/::-webkit-scrollbar-corner {
+        background: @scrollbar-background-color;
+    }
+    /deep/::-webkit-scrollbar-thumb {
+        background: @scrollbar-color;
+        border-radius: 0;
+    }
 }
