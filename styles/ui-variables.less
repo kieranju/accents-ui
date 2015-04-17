@@ -25,29 +25,27 @@
 @background-color-highlight: fade(@text-color-highlight, 7%);
 @background-color-selected: @highlight-color-bg;
 
-@app-background-color: #222;
+@app-background-color: #242424;
 
 @base-background-color: #333;
 @base-border-color: transparent;
-
-@pane-item-background-color: @base-background-color;
-@pane-item-border-color: @base-border-color;
 
 @input-background-color: @app-background-color;
 @input-border-color: darken(@input-background-color, 2%);
 @input-box-highlight: rgba(255,255,255,0.03);
 
-@tool-panel-background-color: @app-background-color;
-@tool-panel-border-color: @base-border-color;
-
-@inset-panel-background-color: @input-background-color;
+@inset-panel-background-color: @app-background-color;
 @inset-panel-border-color: @input-border-color;
 
 @panel-heading-background-color: @base-background-color;
 @panel-heading-border-color: @input-border-color;
 
+@tree-view-background-color: #1e1e1e;
+
+@tool-panel-background-color: @app-background-color;
+@tool-panel-border-color: @input-border-color;
+
 @overlay-background-color: @base-background-color;
-@overlay-border-color: @base-border-color;
 
 @button-background-color: @input-background-color;
 @button-background-color-hover: lighten(@button-background-color, 1%);
@@ -55,16 +53,11 @@
 @button-border-color: @input-border-color;
 
 @tab-bar-background-color: @app-background-color;
-@tab-bar-border-color: @base-border-color;
 @tab-background-color: @base-background-color;
 @tab-background-color-active: lighten(@tab-background-color, 4%);
-@tab-border-color: @base-border-color;
-
-@tree-view-background-color: #1e1e1e;
-@tree-view-border-color: @base-border-color;
 
 @scrollbar-background-color: transparent;
-@scrollbar-color: lighten(@tool-panel-background-color, 6%);
+@scrollbar-color: lighten(@base-background-color, 6%);
 
 @ui-site-color-1: @background-color-success; // green
 @ui-site-color-2: @background-color-info; // blue
