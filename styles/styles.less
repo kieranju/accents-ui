@@ -66,7 +66,6 @@ atom-text-editor {
 
 // Settings specific styling
 .settings-view {
-
     .section-heading, .sub-section-heading, h1 {
         font-weight: 400 !important;
         font-size: 15px !important;
@@ -85,11 +84,8 @@ atom-text-editor {
     }
     .package-card,
     .thumbnail {
-        background: lighten(@app-background-color, 3%) !important;
-        transition: 0.1s background;
-        &:hover {
-            background: lighten(@app-background-color, 4%);
-        }
+        background: lighten(@base-background-color, 4%) !important;
+        box-shadow: 0px 1px 3px @app-background-color;
         .author {
             color: darken(@text-color, 25%) !important;
         }
