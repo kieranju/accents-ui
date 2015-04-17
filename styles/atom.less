@@ -9,7 +9,7 @@ atom-workspace {
 }
 
 .scrollbars-visible-always {
-	
+
     /deep/::-webkit-scrollbar {
         width: 6px;
         height: 6px;
@@ -21,5 +21,8 @@ atom-workspace {
     /deep/::-webkit-scrollbar-thumb {
         background: @scrollbar-color;
         border-radius: 0;
+        &:hover {
+            background: @highlight-color-subtle;
+        }
     }
 }
