@@ -25,19 +25,19 @@
 @background-color-highlight: fade(@text-color-highlight, 7%);
 @background-color-selected: @highlight-color-bg;
 
-@app-background-color: #333;
+@app-background-color: #222;
 
-@base-background-color: @app-background-color;
+@base-background-color: #333;
 @base-border-color: transparent;
 
 @pane-item-background-color: @base-background-color;
 @pane-item-border-color: @base-border-color;
 
-@input-background-color: #222;
+@input-background-color: @app-background-color;
 @input-border-color: darken(@input-background-color, 2%);
 @input-box-highlight: rgba(255,255,255,0.03);
 
-@tool-panel-background-color: @base-background-color;
+@tool-panel-background-color: @app-background-color;
 @tool-panel-border-color: @base-border-color;
 
 @inset-panel-background-color: @input-background-color;
@@ -54,7 +54,7 @@
 @button-background-color-selected: @highlight-color-bg;
 @button-border-color: @input-border-color;
 
-@tab-bar-background-color: #222;
+@tab-bar-background-color: @app-background-color;
 @tab-bar-border-color: @base-border-color;
 @tab-background-color: @base-background-color;
 @tab-background-color-active: lighten(@tab-background-color, 4%);
