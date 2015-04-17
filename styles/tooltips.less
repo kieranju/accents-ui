@@ -1,9 +1,9 @@
 @import "ui-variables";
 
 .tooltip {
-    @tip-background-color: @app-background-color;
+    @tip-background-color: lighten(@base-background-color, 3%);
     @tip-subtle-background-color: darken(@tip-background-color, 10%);
-    @tip-text-color: @text-color;
+    @tip-text-color: lighten(@text-color, 15%);
     white-space: nowrap;
 
     .keystroke {
