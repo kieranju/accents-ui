@@ -1,35 +1,91 @@
 @import "ui-variables";
 
+// Editor tweaks (works in conjunction with syntax themes)
+// This only tweaks the background, gutter, and selection colours
+atom-text-editor {
+    background: #222;
+
+    /deep/ .indent-guide {
+        color: rgba(255,255,255,0.035);
+    }
+    /deep/ .selection .region {
+        background: #2e2e2e !important;
+    }
+    /deep/ .gutter {
+        background: transparent;
+        border: 0;
+
+        .line-numbers {
+            color: #656565;
+
+            .cursor-line {
+                color: #909090;
+                background: transparent;
+            }
+        }
+    }
+
+    // Autocomplete & ternjs, for legibility
+    atom-overlay {
+        .autocomplete-suggestion-list {
+            border: 0 !important;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.3) !important;
+        }
+        .select-list .list-group {
+            .icon-letter {
+                top: 0;
+            }
+            .selected {
+                .word, .snippet-completion,
+                .left-label, .right-label
+                {
+                    color: white !important;
+                }
+                .icon-container > i {
+                    background: rgba(255, 255, 255, 0.1);
+                }
+                .icon-letter {
+                    color: white !important;
+                }
+            }
+        }
+    }
+
+    // Minimap styling
+    // https://atom.io/packages/minimap
+    &::shadow {
+        atom-text-editor-minimap::shadow {
+            .minimap-visible-area {
+                background: fadeout(@highlight-color-subtle, 15%);
+            }
+        }
+    }
+}
+
 // Settings specific styling
 .settings-view {
-
     h1,
     .section-heading,
     .sub-section-heading {
         font-weight: 400 !important;
         font-size: 15px !important;
     }
-
     .btn.btn-info,
     .btn.btn-primary {
         background: @highlight-color-bg;
-
         &:hover {
             background: lighten(@highlight-color-bg, 3%) !important;
         }
     }
-
     .alert-info {
         background: @highlight-color-bg;
         color: @text-color-highlight;
-        border: 0px
+        border: 0;
     }
-
     .package-card,
     .thumbnail {
         background: lighten(@app-background-color, 3%) !important;
         transition: 0.1s background;
-
         &:hover {
             background: lighten(@app-background-color, 4%);
         }
@@ -37,7 +93,6 @@
             color: darken(@text-color, 25%) !important;
         }
     }
-
     .checkbox {
         input {
             &:active {
