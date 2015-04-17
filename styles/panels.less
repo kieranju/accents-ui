@@ -12,7 +12,10 @@ atom-panel,
 .tool-panel {
     .text(normal);
     position: relative;
-    background-color: @tool-panel-background-color !important;
+}
+
+.tool-panel {
+    box-shadow: 0px -1px 1px @tool-panel-border-color, inset 0px 1px 3px @input-box-highlight;
 }
 
 .inset-panel {
