@@ -18,12 +18,12 @@
 @text-color-modified: @text-color-warning;
 @text-color-removed: @text-color-error;
 
-@background-color-info: fadeout(@text-color-info, 15%);
-@background-color-success: fadeout(@text-color-success, 15%);
-@background-color-warning: fadeout(@text-color-warning, 15%);
-@background-color-error: fadeout(@text-color-error, 15%);
+@background-color-info: #4b82b2;
+@background-color-success: @text-color-success;
+@background-color-warning: @text-color-warning;
+@background-color-error: @text-color-error;
 @background-color-highlight: fade(@text-color-highlight, 7%);
-@background-color-selected: @highlight-color;
+@background-color-selected: @highlight-color-bg;
 
 @app-background-color: #333;
 
@@ -51,7 +51,7 @@
 
 @button-background-color: @input-background-color;
 @button-background-color-hover: lighten(@button-background-color, 1%);
-@button-background-color-selected: @highlight-color;
+@button-background-color-selected: @highlight-color-bg;
 @button-border-color: @input-border-color;
 
 @tab-bar-background-color: @base-background-color;
