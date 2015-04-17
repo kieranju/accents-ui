@@ -12,11 +12,17 @@
 
     .btn.btn-info,
     .btn.btn-primary {
-        background: @highlight-color;
+        background: @highlight-color-bg;
 
         &:hover {
-            background: lighten(@highlight-color, 3%) !important;
+            background: lighten(@highlight-color-bg, 3%) !important;
         }
+    }
+
+    .alert-info {
+        background: @highlight-color-bg;
+        color: @text-color-highlight;
+        border: 0px
     }
 
     .package-card,
@@ -33,6 +39,13 @@
     }
 
     .checkbox {
-        // input (checkbox) // before, after
+        input {
+            &:active {
+                background: @highlight-color-subtle !important;
+            }
+            &:checked {
+                background: @highlight-color-bg !important;
+            }
+        }
     }
 }
