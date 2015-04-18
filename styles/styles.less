@@ -74,6 +74,66 @@ atom-text-editor {
     background: transparent !important;
 }
 
+// Git Control, as if it couldn't get sexier
+// https://atom.io/packages/git-control
+atom-pane-container atom-pane .git-control {
+
+}
+
+// It got sexier. Automatigit.
+// https://atom.io/packages/atomatigit
+.atomatigit, .atomatigit.focused {
+    background: @tree-view-background-color !important;
+    border: 0 !important;
+    box-shadow: -1px 0px 0px 0px fadeout(@input-box-highlight, 0.5%), inset 1px 0px 3px darken(@tree-view-background-color, 1%);
+
+    .resize-handle {
+        width: 4px;
+        cursor: e-resize;
+    }
+    .tab-bar {
+        background: transparent !important;
+
+        .tab {
+            text-align: left;
+            min-width: 70px;
+            max-width: 33.3%;
+        }
+    }
+    .current-branch-view {
+        background: @tree-view-background-color;
+        box-shadow: inset 1px 0px 3px darken(@tree-view-background-color, 1%);
+        padding-top: 1.3em;
+        padding-bottom: 1.5em;
+
+        .name {
+            color: @text-color;
+            font-weight: 400 !important;
+            font-size: @input-font-size + 4px;
+            text-transform: uppercase;
+        }
+        &:hover {
+            background: @tree-view-background-color;
+        }
+    }
+    .lists {
+        h2 {
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: @font-size + 1px;
+        }
+    }
+    .file-list-view .file {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+.atomatigit-error .error-message {
+    background-color: transparent !important;
+    color: @text-color !important;
+    text-shadow: 0px 1px 1px @app-background-color !important;
+}
+
 // Settings specific styling
 .settings-view {
     .section-heading, .sub-section-heading, h1 {
