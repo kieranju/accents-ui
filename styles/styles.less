@@ -13,8 +13,8 @@ atom-text-editor {
     }
     /deep/ .gutter {
         background: transparent;
-        border-left: 1px solid fadein(@input-box-highlight, 1%);
-        border-right: 0;
+        // border-left: 1px solid fadein(@input-box-highlight, 1%);
+        border: 0;
 
         .line-numbers {
             .line-number {
@@ -28,6 +28,9 @@ atom-text-editor {
             }
         }
     }
+    atom-pane-container.top {
+    }
+
 
     // Autocomplete & Ternjs, for legibility
     // https://atom.io/packages/autocomplete-plus
