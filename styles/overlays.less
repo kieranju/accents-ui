@@ -2,7 +2,7 @@
 
 @-webkit-keyframes hinge {
     from {
-        transform: perspective(1000px) rotate3d(1, 0, 0, 5deg) translateY(-15px);
+        transform: perspective(1000px) rotate3d(1, 0, 0, 6deg) translateY(-15px);
         opacity: 0;
     }
     to {
@@ -14,12 +14,12 @@
 atom-panel.modal, .overlay {
   color: @text-color;
   background-color: @overlay-background-color;
-  padding: @component-padding;
-  box-shadow: 0 0 0 5px rgba(25, 25, 25, 0.75), inset 0px 0px 1px 0px fadein(@input-box-highlight, 6%);
-  border-radius: @component-border-radius !important;
+  padding: 15px;
+  box-shadow: inset 0px 1px 1px 0px fadein(@input-box-highlight, 10%), 0 0 0 1px rgba(25, 25, 25, 0.75), 0px 2px 16px rgba(0,0,0,0.5), inset 0px 0px 1px 0px fadein(@input-box-highlight, 6%);
+  border-radius: 5px !important;
 
   atom-text-editor[mini] {
-    margin-bottom: @component-padding;
+      margin-bottom: @component-padding;
   }
 
   &.from-top {
