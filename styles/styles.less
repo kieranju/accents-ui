@@ -29,7 +29,9 @@ atom-text-editor {
         }
     }
 
-    // Autocomplete & ternjs, for legibility
+    // Autocomplete & Ternjs, for legibility
+    // https://atom.io/packages/autocomplete-plus
+    // https://github.com/tststs/atom-ternjs
     atom-overlay {
         .autocomplete-suggestion-list {
             border: 0 !important;
@@ -64,6 +66,12 @@ atom-text-editor {
             }
         }
     }
+}
+
+// Zen Mode, for a better Zen experience
+// https://atom.io/packages/Zen
+[data-zen="true"] atom-pane-container atom-pane .item-views {
+    background: transparent !important;
 }
 
 // Settings specific styling
