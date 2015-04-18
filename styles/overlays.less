@@ -15,8 +15,8 @@ atom-panel.modal, .overlay {
   color: @text-color;
   background-color: @overlay-background-color;
   padding: @component-padding;
-  box-shadow: 0 0 0 5px rgba(25, 25, 25, 0.75);
-  border-radius: @component-border-radius;
+  box-shadow: 0 0 0 5px rgba(25, 25, 25, 0.75), inset 0px 0px 1px 0px fadein(@input-box-highlight, 6%);
+  border-radius: @component-border-radius !important;
 
   atom-text-editor[mini] {
     margin-bottom: @component-padding;
