@@ -26,13 +26,15 @@
 @background-color-selected: @highlight-color-bg;
 
 @app-background-color: #242424;
+@app-accent-color: lighten(@app-background-color, 5%);
 
 @base-background-color: #333;
 @base-border-color: transparent;
+@base-accent-color: lighten(@base-background-color, 5%);
 
 @input-background-color: @app-background-color;
 @input-border-color: darken(@input-background-color, 2%);
-@input-box-highlight: rgba(255,255,255,0.03);
+@input-accent-color: rgba(255,255,255,0.05);
 
 @inset-panel-background-color: @app-background-color;
 @inset-panel-border-color: @input-border-color;
@@ -44,8 +46,6 @@
 
 @tool-panel-background-color: @app-background-color;
 @tool-panel-border-color: @input-border-color;
-
-@overlay-background-color: @base-background-color;
 
 @button-background-color: @input-background-color;
 @button-background-color-hover: lighten(@button-background-color, 1%);

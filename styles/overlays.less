@@ -13,9 +13,9 @@
 
 atom-panel.modal, .overlay {
   color: @text-color;
-  background-color: @overlay-background-color;
+  background-color: @base-background-color;
   padding: 15px;
-  box-shadow: inset 0px 1px 1px 0px fadein(@input-box-highlight, 10%), 0 0 0 1px rgba(25, 25, 25, 0.75), 0px 2px 16px rgba(0,0,0,0.5), inset 0px 0px 1px 0px fadein(@input-box-highlight, 6%);
+  box-shadow: inset 0px 1px 1px 0px @base-accent-color, 0 0 0 1px rgba(25, 25, 25, 0.75), 0px 2px 16px rgba(0,0,0,0.5), inset 0px 0px 1px 0px fadein(@input-accent-color, 6%);
   border-radius: 5px !important;
 
   atom-text-editor[mini] {
@@ -35,7 +35,7 @@ atom-panel.modal, .overlay {
       padding: @component-padding;
       border-radius: @component-border-radius;
 
-      border-bottom: 1px solid darken(@overlay-background-color, 2%);
+      border-bottom: 1px solid darken(@base-background-color, 2%);
 
       &.two-lines { padding: @component-padding / 2 @component-padding; }
 
