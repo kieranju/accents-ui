@@ -28,9 +28,6 @@ atom-text-editor {
             }
         }
     }
-    atom-pane-container.top {
-    }
-
 
     // Autocomplete & Ternjs, for legibility
     // https://atom.io/packages/autocomplete-plus
@@ -42,7 +39,7 @@ atom-text-editor {
         }
         .select-list .list-group {
             .icon-letter {
-                top: 0;
+                top: 0 !important;
             }
             .selected {
                 .word, .snippet-completion,
@@ -51,7 +48,7 @@ atom-text-editor {
                     color: white !important;
                 }
                 .icon-container > i {
-                    background: rgba(255, 255, 255, 0.1);
+                    background: rgba(255, 255, 255, 0.1) !important;
                 }
                 .icon-letter {
                     color: white !important;
@@ -63,9 +60,9 @@ atom-text-editor {
     // Minimap styling
     // https://atom.io/packages/minimap
     &::shadow {
-        atom-text-editor-minimap::shadow {
-            .minimap-visible-area {
-                background: fadeout(@highlight-color-subtle, 15%);
+        atom-text-editor-minimap {
+            /deep/ .minimap-visible-area {
+                background: fadeout(@highlight-color-subtle, 15%) !important;
             }
         }
     }
