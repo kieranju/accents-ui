@@ -2,10 +2,16 @@
   "name": "highlights-dark-ui",
   "theme": "ui",
   "version": "0.0.9",
-  "description": "A dark UI theme to your tastes",
+  "description": "A dark UI theme to your tastes.",
   "license": "MIT",
   "repository": "https://github.com/kieranju/highlights-dark-ui",
   "engines": {
     "atom": ">0.40.0"
-  }
+  },
+  "keywords": [
+      "highlight",
+      "dark",
+      "ui",
+      "configurable"
+  ]
 }
