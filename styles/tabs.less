@@ -27,7 +27,7 @@
         color: @text-color;
         padding-left: 15px;
         background: @tab-background-color;
-        border-bottom: @tab-indicator-size solid @highlight-color-subtle;
+        border-bottom: @tab-indicator-size solid @accent-color-subtle;
         transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 
         &:not(:last-child):after {
@@ -64,7 +64,7 @@
             width: @modified-icon-dim;
             height: @modified-icon-dim;
             border-radius: @modified-icon-dim;
-            background: @highlight-color;
+            background: @accent-color;
             border: none;
             -webkit-animation-name: pulse;
             -webkit-animation-duration: 4s;
@@ -86,7 +86,7 @@
             width: @modified-icon-dim;
             height: @modified-icon-dim;
             border-radius: @modified-icon-dim;
-            background: @highlight-color;
+            background: @accent-color;
             border: none;
 
             &:before {
@@ -98,7 +98,7 @@
         z-index: 10;
         color: @text-color-highlight;
         background-color: @tab-background-color-active;
-        border-color: @highlight-color;
+        border-color: @accent-color;
         box-shadow: 0 0 7px darken(@tab-background-color, 4%);
 
         .close-icon {
@@ -131,7 +131,7 @@
     .placeholder {
         pointer-events: none;
         height: @tab-height + 15px;
-        background: @highlight-color;
+        background: @accent-color;
 
         &:after {
             background: @app-background-color;
@@ -140,7 +140,7 @@
             bottom: 0px;
             left: -1px;
             margin-top: 7px;
-            box-shadow: 0px 0px 0px 2px @highlight-color;
+            box-shadow: 0px 0px 0px 2px @accent-color;
         }
     }
 }
