@@ -2,7 +2,9 @@ module.exports =
 
 setAccent = (accent) ->
     fs = require 'fs'
-    fs.writeFileSync 'styles/ui-accent.less', "@accent-color: #{accent.toHexString()};\n"
+    path = require 'path'
+    writePath = path.join __dirname, '..', 'styles/ui-accent.less'
+    fs.writeFileSync writePath, "@accent-color: #{accent.toHexString()};\n"
 
 setAccent(atom.config.get('accents-ui.accentColor'))
 
