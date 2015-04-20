@@ -33,25 +33,56 @@ atom-text-editor {
     // https://atom.io/packages/autocomplete-plus
     // https://github.com/tststs/atom-ternjs
     atom-overlay {
-        .autocomplete-suggestion-list {
-            border: 0 !important;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.3) !important;
-        }
-        .select-list .list-group {
-            .icon-letter {
-                top: 0 !important;
+        atom-ternjs-type {
+            // temp styles, because it's
+            // weird and broken when text wraps
+            // at the end of your viewport
+            padding: 0;
+            border: none;
+            border-radius: 0;
+
+            span {
+                padding: 0;
             }
-            .selected {
-                .word, .snippet-completion,
-                .left-label, .right-label
-                {
-                    color: white !important;
-                }
-                .icon-container > i {
-                    background: rgba(255, 255, 255, 0.1) !important;
-                }
+            & > span {
+                background: @base-background-color;
+                box-shadow: 0 1px 5px rgba(0,0,0,0.3), inset 0px 1px @base-accent-color !important;
+                padding: 3px 7px;
+                border-radius: @component-border-radius;
+            }
+        }
+        autocomplete-suggestion-list {
+            border: none;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.3) !important;
+
+            .suggestion-list-scroller {
+                overflow-x: hidden !important;
+
                 .icon-letter {
-                    color: white !important;
+                    top: 0 !important;
+                }
+                .selected {
+                    .word, .snippet-completion,
+                    .left-label, .right-label {
+                        color: white !important;
+                    }
+                    .icon-container > i {
+                        background: rgba(255, 255, 255, 0.1) !important;
+                    }
+                    .icon-letter {
+                        color: white !important;
+                    }
+                }
+            }
+            .suggestion-description {
+                background: transparent !important;
+                color: darken(@text-color, 10%) !important;
+                border-top: 1px solid darken(@base-background-color, 4%);
+                box-shadow: inset 0px 1px darken(@base-accent-color, 2%);
+
+                .suggestion-description-content,
+                .suggestion-description-more-link {
+                    font-size: @font-size !important;
                 }
             }
         }
