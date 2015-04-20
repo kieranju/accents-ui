@@ -1,4 +1,9 @@
-@import "ui-highlights";
+@import "ui-highlight";
+
+// Highlights
+
+@highlight-color-subtle: darken(desaturate(@highlight-color, 20%), 20%);
+@highlight-color-bg: darken(desaturate(@highlight-color, 10%), 10%);
 
 // Colors
 
@@ -65,7 +70,6 @@
 @ui-site-color-4: #ae48e2; // purple
 @ui-site-color-5: #f7c85b; // yellow
 
-
 // Sizes
 
 @font-size: 12px;
@@ -81,7 +85,6 @@
 @component-border-radius: 2px;
 
 @tab-height: 50px;
-
 
 // Other
 

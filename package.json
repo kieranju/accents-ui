@@ -1,5 +1,6 @@
 {
   "name": "highlights-dark-ui",
+  "main": "lib/highlights-dark-ui",
   "theme": "ui",
   "version": "0.0.9",
   "description": "A dark UI theme to your tastes.",
