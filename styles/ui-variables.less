@@ -1,9 +1,9 @@
 @import "ui-highlight";
 
-// Highlights
+// Accents
 
-@highlight-color-subtle: darken(desaturate(@highlight-color, 20%), 20%);
-@highlight-color-bg: darken(desaturate(@highlight-color, 10%), 10%);
+@accent-color-subtle: darken(desaturate(@accent-color, 20%), 20%);
+@accent-color-bg: darken(desaturate(@accent-color, 10%), 10%);
 
 // Colors
 
@@ -28,7 +28,7 @@
 @background-color-warning: @text-color-warning;
 @background-color-error: @text-color-error;
 @background-color-highlight: fade(@text-color-highlight, 7%);
-@background-color-selected: @highlight-color-bg;
+@background-color-selected: @accent-color-bg;
 
 @app-background-color: #242424;
 @app-accent-color: lighten(@app-background-color, 5%);
@@ -54,7 +54,7 @@
 
 @button-background-color: @input-background-color;
 @button-background-color-hover: lighten(@button-background-color, 1%);
-@button-background-color-selected: @highlight-color-bg;
+@button-background-color-selected: @accent-color-bg;
 @button-border-color: @input-border-color;
 
 @tab-bar-background-color: @app-background-color;

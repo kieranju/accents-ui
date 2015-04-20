@@ -93,7 +93,7 @@ atom-text-editor {
     &::shadow {
         atom-text-editor-minimap {
             /deep/ .minimap-visible-area {
-                background: fadeout(@highlight-color-subtle, 15%) !important;
+                background: fadeout(@accent-color-subtle, 15%) !important;
             }
         }
     }
@@ -110,7 +110,7 @@ atom-text-editor {
 atom-pane-container atom-pane .git-control {
     .menu {
         background: @app-background-color;
-        border-bottom: 5px solid @highlight-color-subtle;
+        border-bottom: 5px solid @accent-color-subtle;
     }
     .sidebar {
         background: #383838;
@@ -207,13 +207,13 @@ atom-pane-container atom-pane .git-control {
     }
     .btn.btn-info,
     .btn.btn-primary {
-        background: @highlight-color-bg;
+        background: @accent-color-bg;
         &:hover {
-            background: lighten(@highlight-color-bg, 3%) !important;
+            background: lighten(@accent-color-bg, 3%) !important;
         }
     }
     .alert-info {
-        background: @highlight-color-bg;
+        background: @accent-color-bg;
         color: @text-color-highlight;
         border: none;
     }
@@ -228,10 +228,10 @@ atom-pane-container atom-pane .git-control {
     .checkbox {
         input {
             &:active {
-                background: @highlight-color-bg !important;
+                background: @accent-color-bg !important;
             }
             &:checked {
-                background: @highlight-color !important;
+                background: @accent-color !important;
             }
         }
     }
