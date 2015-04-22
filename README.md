@@ -12,12 +12,8 @@ Some colours that work great:
 
 *Note: Accent colour changes won't take effect until you reload atom `[View] -> [Reload]`*
 
----
-
 ![showcase-01](https://raw.githubusercontent.com/kieranju/accents-ui/gh-pages/img/showcase-01.jpg)
 ![showcase-02](https://raw.githubusercontent.com/kieranju/accents-ui/gh-pages/img/showcase-02.jpg)
-
----
 
 ```
 Feel free to submit issues, or request style changes/additions on github!
