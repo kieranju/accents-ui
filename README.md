@@ -14,8 +14,8 @@ Some colours that work great:
 
 ---
 
-![showcase-01](https://github.com/kieranju/accents-ui/blob/gh-pages/img/showcase-01.jpg)
-![showcase-01](https://github.com/kieranju/accents-ui/blob/gh-pages/img/showcase-02.jpg)
+![showcase-01](https://raw.githubusercontent.com/kieranju/accents-ui/gh-pages/img/showcase-01.jpg)
+![showcase-02](https://raw.githubusercontent.com/kieranju/accents-ui/gh-pages/img/showcase-02.jpg)
 
 ---
 
