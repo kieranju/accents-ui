@@ -2,11 +2,11 @@
 
 @-webkit-keyframes hinge {
     from {
-        transform: perspective(1000px) rotate3d(1, 0, 0, 6deg) translateY(-15px);
+        transform: translateY(-3px);
         opacity: 0;
     }
     to {
-        transform: perspective(1000px) rotate3d(1, 0, 0, 0deg) translateY(0px);
+        transform: translateY(0px);
         opacity: 1;
     }
 }
@@ -23,7 +23,7 @@ atom-panel.modal, .overlay {
   }
 
   &.from-top {
-      -webkit-animation: hinge 0.25s cubic-bezier(0.6, 0.08, 0.25, 1);
+      -webkit-animation: hinge 0.2s cubic-bezier(0.45, 0, 0.35, 1);
       top: 65px;
   }
 
