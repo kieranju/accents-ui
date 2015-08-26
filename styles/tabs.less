@@ -43,13 +43,18 @@
             padding-left: 15px;
         }
 
-        .close-icon:before {
-                transition: color 0.6s;
-                content: '\2715'; // 'x' multiplication symbol
-                font-size: 7px;
-                position: relative;
-                bottom: 2px;
-                color: transparent;
+        .close-icon {
+            top: 0px;
+
+            &:before {
+                    transition: color 0.6s;
+                    content: '\00D7'; // Unicode Character 'MULTIPLICATION SIGN'
+                    font-size: 9px;
+                    font-family: Verdana, sans-serif;
+                    position: relative;
+                    bottom: 1px;
+                    color: transparent;
+            }
         }
         &.modified:not(:hover) .close-icon {
             top: @tab-height / 2 - @modified-icon-dim / 2 - 1px;
