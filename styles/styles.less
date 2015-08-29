@@ -1,33 +1,9 @@
+// A shoddy implementation of adding or removing styles based on configuration
+// If this theme grows to support more features, I'll adjust how this works
+@import "ui-syntax-include";
 @import "ui-variables";
 
-// Editor tweaks (works in conjunction with syntax themes)
-// This only tweaks the background, gutter, and selection colours
 atom-text-editor {
-    background: @app-background-color;
-
-    /deep/ .indent-guide {
-        color: rgba(255,255,255,0.035);
-    }
-    /deep/ .selection .region {
-        background: #2e2e2e !important;
-    }
-    /deep/ .gutter {
-        background: transparent;
-        // border-left: 1px solid fadein(@input-accent-color, 1%);
-        border: none;
-
-        .line-numbers {
-            .line-number {
-                background: transparent !important;
-                color: #656565 !important;
-            }
-            .cursor-line-no-selection,
-            .cursor-line {
-                transition: color .3s !important;
-                color: #909090 !important;
-            }
-        }
-    }
 
     // Autocomplete & Ternjs, for legibility
     // https://atom.io/packages/autocomplete-plus
