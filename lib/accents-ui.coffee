@@ -2,9 +2,13 @@ module.exports =
 
   config:
     accentColor:
-      description: 'Set a color that will influence accents in the theme'
-      type: 'color'
-      default: '#d2372b'
+        description: 'Set a color that will influence accents in the theme'
+        type: 'color'
+        default: '#d2372b'
+    hexColor:
+        description: 'Set an accent color by hex value (cannot be shorthand, use #rrggbb)'
+        type: 'string'
+        default: '#d2372b'
     useSyntax:
         description: 'Override the gutter, background, and selection colours'
         type: 'boolean'
