@@ -2,7 +2,7 @@
   "name": "accents-ui",
   "main": "lib/accents-ui",
   "theme": "ui",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "description": "A subtle dark UI theme with colour accents.",
   "license": "MIT",
   "repository": "https://github.com/kieranju/accents-ui",
