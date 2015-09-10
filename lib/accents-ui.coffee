@@ -9,6 +9,10 @@ module.exports =
         description: 'Override the gutter, background, and selection colours'
         type: 'boolean'
         default: 'true'
+    debugMode:
+        description: 'Log certain details to the console'
+        type: 'boolean'
+        default: 'false'
 
   activate: (state) ->
     atom.themes.onDidChangeActiveThemes ->
