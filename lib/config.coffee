@@ -28,6 +28,13 @@ setAccent = (accent) ->
     writePath = path.join __dirname, '..', 'styles/ui-accent.less'
     fs.writeFileSync writePath, "@accent-color: #{rgbToHex(accent.red, accent.green, accent.blue)};\n"
 
+# int size, writes global fontsize to file
+setFontsize = (size) ->
+    fs = require 'fs'
+    path = require 'path'
+    writePath = path.join __dirname, '..', 'styles/ui-fontsize.less'
+    fs.writeFileSync writePath, "@font-size: #{size}px;\n"
+
 # bool trigger, specifies whether or not to override syntax
 setSyntax = (trigger) ->
     fs = require 'fs'
@@ -41,6 +48,7 @@ getOption = (option) ->
     switch option
         when 'accentColor' then atom.config.get('accents-ui.accentColor')
         when 'hexColor' then atom.config.get('accents-ui.hexColor')
+        when 'fontSize' then atom.config.get('accents-ui.fontSize')
         when 'useSyntax' then atom.config.get('accents-ui.useSyntax')
         when 'debugMode' then atom.config.get('accents-ui.debugMode')
 
@@ -51,7 +59,9 @@ toConsole = (key, val, returnVal) ->
 
 # runs functions to generate files with LESS variables
 setAccent(getOption('accentColor'))
+setFontsize(getOption('fontSize'))
 setSyntax(getOption('useSyntax'))
+
 
 # basic atom configuration handling
 atom.config.onDidChange 'accents-ui.accentColor', ->
@@ -72,6 +82,9 @@ atom.config.onDidChange 'accents-ui.hexColor', ->
         color.green = rgb.g
         color.blue = rgb.b
         atom.config.set('accents-ui.accentColor', color)
+
+atom.config.onDidChange 'accents-ui.fontSize', ->
+    setSyntax(toConsole('font size', getOption('fontSize'), true))
 
 atom.config.onDidChange 'accents-ui.useSyntax', ->
     setSyntax(toConsole('override syntax', getOption('useSyntax'), true))
