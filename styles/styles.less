@@ -177,6 +177,27 @@ atom-pane-container atom-pane .git-control {
 
 // Settings specific styling
 .settings-view {
+    .config-menu {
+        min-width: 175px;
+        border-right: none;
+        background: none;
+
+        .panels-menu li {
+
+            .icon {
+                border-top-right-radius: 1px;
+                border-bottom-right-radius: 1px;
+            }
+
+            &:not(:last-of-type)::after {
+                content: '';
+                position: absolute;
+                right: 0; bottom: 0; left: 0;
+                height: 1px;
+                background: linear-gradient(to right, @tree-view-background-color 0%, fade(@tree-view-background-color, 0%) 90%);
+            }
+        }
+    }
     .section-heading, .sub-section-heading, h1 {
         font-weight: 400 !important;
         font-size: 15px !important;
