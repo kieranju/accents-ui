@@ -6,12 +6,19 @@
     background: @color;
     transition: background 0.2s, color 0.2s;
     &:focus {
+        outline: 0;
         color: @text-color;
         background: @hover-color;
     }
     &:hover {
         color: @text-color-highlight;
         background: @hover-color;
+    }
+    &:active:focus,
+    &:active {
+        outline: 0;
+        color: darken(@text-color-highlight, 10%);
+        background: darken(@hover-color, 10%);
     }
     &.selected {
         color: @text-color-highlight;
