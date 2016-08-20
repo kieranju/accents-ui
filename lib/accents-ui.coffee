@@ -23,4 +23,4 @@ module.exports =
 
     activate: (state) ->
         atom.themes.onDidChangeActiveThemes ->
-        Config.apply()
+            Config.apply()

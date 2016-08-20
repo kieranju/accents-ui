@@ -1,27 +1,92 @@
-fs = require "fs"
-path = require "path"
+app = "accents-ui"
 
 module.exports =
-
-# converts rgb to hex
-rgbToHex = (r, g, b) ->
-    "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
-
 # converts hex to rgb
 hexToRgb = (hex) ->
-    result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
-    if result
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-    else
-        null
+    rgbPattern = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+    if rgbPattern
+        return {
+            r: parseInt(rgbPattern[1], 16),
+            g: parseInt(rgbPattern[2], 16),
+            b: parseInt(rgbPattern[3], 16),
+        }
+
+# converts rgb to hex
+rgbToHex = (color) ->
+    "#" + ((1 << 24) + (color.red << 16) + (color.green << 8) + color.blue).toString(16).slice(1)
 
 # matches hex pattern
 checkHex = (hex) ->
-    reg = /^#([\da-fA-F]{2})([\da-fA-F]{2})([\da-fA-F]{2})$/
-    str = hex
-    true if str.match reg
+    hexPattern = /^#([\da-fA-F]{2})([\da-fA-F]{2})([\da-fA-F]{2})$/
+    true if hex.match hexPattern
+
+# desaturate color
+desaturate = (color, percentage) ->
+    intensity = 0.3 * color.red + 0.59 * color.green + 0.11 * color.blue
+    percentage /= 100
+
+    color.red = Math.floor(intensity * percentage + color.red * (1 - percentage))
+    color.green = Math.floor(intensity * percentage + color.green * (1 - percentage))
+    color.blue = Math.floor(intensity * percentage + color.blue * (1 - percentage))
+
+    return color
+
+# set root style
+setRoot = (property, value) ->
+    document.documentElement.style.setProperty(property, value)
+
+# shortens atom.config.get & atom.config.set methods
+getOption = (option) ->
+    atom.config.get("#{app}.#{option}")
+
+setOption = (option, value) ->
+    atom.config.set("#{app}.#{option}", value)
+
+
+# sets accent colours
+setAccent = (accent) ->
+    accentBase = rgbToHex(accent)
+    accentSubtle = rgbToHex(desaturate(accent, 20))
+
+    setRoot("--accent-color", accentBase)
+    setRoot("--accent-color-subtle", accentSubtle)
+
+
+# accentColor changed
+atom.config.onDidChange "#{app}.accentColor", ->
+    accent = getOption("accentColor")
+    setOption("hexColor", rgbToHex(accent))
+    setAccent(accent)
+
+# hexColor changed
+atom.config.onDidChange "#{app}.hexColor", ->
+    hex = getOption("hexColor")
+    if checkHex(hex)
+        accent = getOption("accentColor")
+        rgb = hexToRgb(hex)
+
+        accent.red = rgb.r
+        accent.green = rgb.g
+        accent.blue = rgb.b
+        setOption("accentColor", color)
+
+setAccent(getOption("accentColor"))
+
+# fontSize changed
+# atom.config.onDidChange "#{app}.fontSize", ->
+    # setFontsize(getOption("fontSize"))
+
+# useSyntax changed
+# atom.config.onDidChange "#{app}.useSyntax", ->
+    # setSyntax(getOption("useSyntax"))
+
+
+
+
+
+
+
+
 
 # refresh: ->
 #     self = @
@@ -48,42 +113,3 @@ checkHex = (hex) ->
 #     writePath = path.join __dirname, "..", "styles/ui-syntax-include.less"
 #     content = if trigger then "@import "ui-syntax";\n" else "\n"
 #     fs.writeFileSync writePath, content
-
-# string accent, writes hex colour to file
-setAccent = (accent) ->
-    document.documentElement.style.setProperty("--test", rgbToHex(accent.red, accent.green, accent.blue))
-
-# shortens atom.config.get methods
-getOption = (option) ->
-    atom.config.get("accents-ui.#{option}")
-
-# runs functions to generate files with LESS variables
-setAccent(getOption("accentColor"))
-# setFontsize(getOption("fontSize"))
-# setSyntax(getOption("useSyntax"))
-
-
-# basic atom configuration handling
-atom.config.onDidChange "accents-ui.accentColor", ->
-    color = getOption("accentColor")
-    setAccent(color)
-    atom.config.set("accents-ui.hexColor", rgbToHex(color.red, color.green, color.blue))
-
-atom.config.onDidChange "accents-ui.hexColor", ->
-    hex = getOption("hexColor")
-    isHex = checkHex(hex)
-
-    if isHex
-        color = getOption("accentColor")
-        rgb = hexToRgb(hex)
-
-        color.red = rgb.r
-        color.green = rgb.g
-        color.blue = rgb.b
-        atom.config.set("accents-ui.accentColor", color)
-
-atom.config.onDidChange "accents-ui.fontSize", ->
-    # setFontsize(getOption("fontSize"))
-
-atom.config.onDidChange "accents-ui.useSyntax", ->
-    # setSyntax(getOption("useSyntax"))
