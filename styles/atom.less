@@ -9,25 +9,34 @@ atom-workspace {
 }
 
 atom-notifications {
-    atom-notification:first-child.has-close .message {
-        padding-right: 0;
+    atom-notification {
+        .content .message,
+        .content .message p {
+            font-size: @font-size;
+            padding-right: 0.625em !important;
+        }
     }
+}
+
+.vertical-scrollbar {
+    width: 1em !important;
+}
+.horizontal-scrollbar {
+    height: 1em !important;
 }
 
 .scrollbars-visible-always {
     // general
     /deep/::-webkit-scrollbar {
-        width: 12px; height: 12px;
+        width: 13px; height: 13px;
     }
+    /deep/::-webkit-scrollbar-corner,
     /deep/::-webkit-scrollbar-track {
-        background-color: transparent;
-    }
-    /deep/::-webkit-scrollbar-corner {
         background: transparent;
     }
     /deep/::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        border: 3px solid transparent;
+        border-radius: 13px;
+        border: 4px solid transparent;
         background-color: @scrollbar-color;
         background-clip: content-box;
         &:hover {
@@ -40,19 +49,20 @@ atom-notifications {
     atom-panel-container.left,
     atom-panel-container.right {
         /deep/::-webkit-scrollbar {
-            width: 12px; height: 12px;
+            width: 13px; height: 13px;
         }
+        /deep/::-webkit-scrollbar-corner,
         /deep/::-webkit-scrollbar-track {
-            background-color: @tree-view-background-color;
-        }
-        /deep/::-webkit-scrollbar-corner {
-            background: @tree-view-background-color;
+            background: transparent;
         }
         /deep/::-webkit-scrollbar-thumb {
-            background-color: lighten(@app-background-color, 2%);
+            border-radius: 13px;
             border: 4px solid transparent;
+            background-color: @scrollbar-color;
+            background-clip: content-box;
             &:hover {
-                background-color: lighten(@app-background-color, 4%);
+                background-color: @scrollbar-color-active;
+                background-clip: content-box;
             }
         }
     }
