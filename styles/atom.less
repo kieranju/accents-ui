@@ -1,0 +1,59 @@
+@import "ui-variables";
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+atom-workspace {
+    background-color: @app-background-color;
+}
+
+atom-notifications {
+    atom-notification:first-child.has-close .message {
+        padding-right: 0;
+    }
+}
+
+.scrollbars-visible-always {
+    // general
+    /deep/::-webkit-scrollbar {
+        width: 12px; height: 12px;
+    }
+    /deep/::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    /deep/::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+    /deep/::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        border: 3px solid transparent;
+        background-color: @scrollbar-color;
+        background-clip: content-box;
+        &:hover {
+            background-color: @scrollbar-color-active;
+            background-clip: content-box;
+        }
+    }
+
+    // left & right panels
+    atom-panel-container.left,
+    atom-panel-container.right {
+        /deep/::-webkit-scrollbar {
+            width: 12px; height: 12px;
+        }
+        /deep/::-webkit-scrollbar-track {
+            background-color: @tree-view-background-color;
+        }
+        /deep/::-webkit-scrollbar-corner {
+            background: @tree-view-background-color;
+        }
+        /deep/::-webkit-scrollbar-thumb {
+            background-color: lighten(@app-background-color, 2%);
+            border: 4px solid transparent;
+            &:hover {
+                background-color: lighten(@app-background-color, 4%);
+            }
+        }
+    }
+}

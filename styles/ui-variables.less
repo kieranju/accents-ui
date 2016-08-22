@@ -1,10 +1,12 @@
 @import "ui-root";
 
-// Accents
+// accents
 @accent-color: var(--accent-color);
 @accent-color-subtle: var(--accent-color-subtle);
 
-// Text Colors
+@test: var(--ui-scale);
+
+// text Colors
 @text-color: hsl(0,0%,66%);
 @text-color-subtle: hsl(0,0%,50%);
 @text-color-highlight: hsl(0,0%,94%);
@@ -14,20 +16,20 @@
 @text-color-warning: hsl( 36, 60%, 72%);
 @text-color-error: hsl( 9, 100%, 64%);
 
-// Background colors
+// background colors
 @background-color-info: hsl(208, 100%, 50%);
 @background-color-success: hsl(160, 70%, 36%);
 @background-color-warning: hsl(32, 60%, 50%);
 @background-color-error: hsl(0, 70%, 50%);
-@background-color-highlight: lighten(@base-background-color, 5%);
+@background-color-highlight: lighten(@base-background-color, 4%);
 @background-color-selected: lighten(@base-background-color, 10%);
-@app-background-color: darken(@base-background-color, 5%);
+@app-background-color: darken(@base-background-color, 4%);
 
-// Base colors
+// base colors
 @base-background-color: hsl(222,6%,22%);
 @base-border-color: darken(@base-background-color, 8%);
 
-// Component colors
+// component colors
 @pane-item-background-color: @base-background-color;
 @pane-item-border-color: @base-border-color;
 
@@ -43,7 +45,7 @@
 @panel-heading-background-color: lighten(@base-background-color, 4%);
 @panel-heading-border-color: @base-border-color;
 
-@overlay-background-color: lighten(@base-background-color, 5%);
+@overlay-background-color: lighten(@base-background-color, 4%);
 @overlay-border-color: @base-border-color;
 
 @button-background-color: lighten(@base-background-color, 10%);
@@ -60,25 +62,29 @@
 @tree-view-background-color: @base-background-color;
 @tree-view-border-color: @base-border-color;
 
-// Site colors
+// scrollbar
+@scrollbar-color: @overlay-background-color;
+@scrollbar-color-active: lighten(@scrollbar-color, 4%);
+
+// site colors
 @ui-site-color-1: hsl(208, 100%, 50%); // blue
 @ui-site-color-2: hsl(160, 70%, 42%); // green
 @ui-site-color-3: hsl(32, 60%, 50%); // orange
 @ui-site-color-4: #D831B0; // pink
 @ui-site-color-5: #EBDD5B; // yellow
 
-// Sizes
+// sizes
 @font-size: 1em;
-@input-font-size: 14px;
-@disclosure-arrow-size: 12px;
+@input-font-size: 0.875em;
+@disclosure-arrow-size: 0.75em;
 
-@component-padding: 10px;
-@component-icon-padding: 5px;
-@component-icon-size: 16px;
-@component-line-height: 25px;
+@component-padding: 0.625em;
+@component-icon-padding: 0.3125em;
+@component-icon-size: 1em;
+@component-line-height: 1.5625em;
 
-@tab-height: 60px;
+@tab-height: 3.75em;
 
-// Misc
+// misc
 @component-border-radius: 2px;
 @font-family: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
