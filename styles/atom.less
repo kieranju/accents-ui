@@ -1,7 +1,12 @@
 *, *:before, *:after {
     box-sizing: border-box;
 }
-
+.icon::before {
+    font-size: @component-icon-size;
+    width: @component-icon-size;
+    height: @component-icon-size;
+    top: 0px;
+}
 atom-workspace {
     background-color: @app-background-color;
 }

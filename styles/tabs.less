@@ -11,9 +11,7 @@
 }
 
 .tab-bar {
-    // background-color: @tab-bar-background-color;
-    background-color: @accent-color-subtle;
-    border-bottom: 5px solid @accent-color;
+    background-color: @tab-bar-background-color;
 
     .tab {
         color: @text-color;
@@ -27,7 +25,14 @@
             background-color: @tab-background-color-active;
         }
 
-        // Modified Icon (the blue circle) -------------------
+        .icon::before {
+            font-size: @font-size;
+            width: @font-size;
+            height: @font-size;
+            top: 0px;
+        }
+
+        // modified icon
         &.modified:not(:hover) .close-icon {
             top: 50%;
             right: @component-padding + 4px; // 4px -> half of icon size
@@ -53,8 +58,7 @@
             color: @text-color;
         }
 
-        // Dragging -------------------
-        // Styles get applied while dragging a tab
+        // dragging
         &.is-dragging {
             background: darken(@tab-background-color, 10%);
             border-color: transparent;
