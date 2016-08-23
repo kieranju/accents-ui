@@ -10,10 +10,44 @@ atom-workspace {
 
 atom-notifications {
     atom-notification {
-        .content .message,
-        .content .message p {
-            font-size: @font-size;
-            padding-right: 0.625em !important;
+        width: 25em !important;
+        padding-left: 1.5625em;
+
+        .content {
+            .message {
+                font-size: @font-size;
+                padding-right: 0.625em !important;
+
+                code {
+                    display: inline-block;
+                    margin-top: 0.625em;
+                }
+            }
+            .meta {
+                .btn-toolbar .btn {
+                    float: none;
+                }
+            }
+        }
+        .close {
+            height: 2.65em;
+            width: 2.65em;
+
+            &::before {
+                vertical-align: middle;
+            }
+        }
+
+        &:first-of-type {
+            .content {
+                .message p {
+
+                }
+            }
+        }
+
+        &::before {
+            width: 1.875em;
         }
     }
 }
