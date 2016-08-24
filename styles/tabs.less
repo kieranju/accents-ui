@@ -11,57 +11,129 @@
 }
 
 .tab-bar {
-    // background-color: @tab-bar-background-color;
-    background-color: @accent-color-subtle;
-    border-bottom: 5px solid @accent-color;
+    background-color: @tab-bar-background-color;
+    font-size: @font-size;
 
     .tab {
-        color: @text-color;
         height: @tab-height;
-        line-height: @tab-height;
-        font-size: @font-size;
-        border-right: 1px solid @tab-border-color;
-        background-color: @tab-background-color;
-        &.active {
-            color: @text-color-selected;
-            background-color: @tab-background-color-active;
+        background: @tab-background-color;
+        border-bottom: @tab-border-height solid @accent-color-subtle;
+        color: @text-color;
+        font-size: inherit;
+        line-height: @tab-height - @tab-border-height;
+        box-shadow: 0 0 0.4375em transparent;
+        transition: box-shadow 0.3s, background-color 0.3s, border-color 0.3s, color 0.3s;
+
+        // tab divider
+        &:not(:last-child):after {
+            position: absolute;
+            right: 0;
+            bottom: 0 - @tab-border-height;
+            width: 1px;
+            height: @tab-height;
+            background: rgba(0,0,0,0.15);
+            content: '';
         }
 
-        // Modified Icon (the blue circle) -------------------
+        // // close icon
+        // .close-icon {
+        //     &::before {
+        //         font-family: 'accents-ui';
+        //         content: '\0041';
+        //     }
+        // }
+
+        // old close icon
+        // .close-icon {
+        //     &:before {
+        //         text-align: center;
+        //         content: '+';
+        //         font-family: 'Georgia', serif;
+        //         width: 13px;
+        //         height: 13px;
+        //         line-height: 11px;
+        //         transition: color 0.6s;
+        //         transform: rotate(45deg);
+        //         color: transparent;
+        //         font-size: 17px;
+        //     }
+        // }
+
+        // tab modified
         &.modified:not(:hover) .close-icon {
-            top: 50%;
-            right: @component-padding + 4px; // 4px -> half of icon size
-            margin-top: -3px;
-            border-color: @text-color-info;
-        }
-        &.modified:hover .close-icon {
-            color: currentColor;
-        }
-
-        // close icon
-        .close-icon {
-            &::before {
-                font-family: 'accents-ui';
-                content: '\0041';
-                font-size: 12px;
-            }
-        }
-        .close-icon:hover {
-            color: @text-color-selected;
-        }
-        &.active .close-icon:hover {
-            color: @text-color;
+            width: 0.4375em;
+            height: 0.4375em;
+            border: none;
+            border-radius: 50%;
+            background: @accent-color;
+            -webkit-animation-name: pulse;
+            -webkit-animation-duration: 4s;
+            -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+            -webkit-animation-iteration-count: infinite;
         }
 
-        // Dragging -------------------
-        // Styles get applied while dragging a tab
-        &.is-dragging {
-            background: darken(@tab-background-color, 10%);
-            border-color: transparent;
-            opacity: 0.5;
-            & .close-icon {
-                visibility: hidden;
+        // tab hover
+        &:hover {
+            color: @text-color-highlight;
+
+            .close-icon {
+                &:before {
+                    color: @text-color-highlight;
+                }
             }
+        }
+
+        // tab active
+        &.active {
+            z-index: 10;
+            border-bottom: @tab-border-height solid @accent-color;
+            background-color: @tab-background-color-active;
+            box-shadow: 0 0 0.4375em darken(@tab-background-color, 4%);
+            color: @text-color-highlight;
+
+            // disable tab divider
+            &:not(:last-child):after {
+                background: transparent;
+            }
+
+            // next tab divider
+            & + .tab {
+                &:before {
+                    position: absolute;
+                    left: 0;
+                    width: 1px;
+                    height: @tab-height;
+                    background: rgba(0,0,0,0.2);
+                    content: '';
+                }
+            }
+        }
+    }
+
+    // dragging placeholder
+    .placeholder {
+        box-sizing: content-box;
+        margin: 0;
+        margin-left: -1px;
+        width: 2px;
+        height: @tab-height;
+        border-bottom: @tab-border-height solid @accent-color;
+        background: @accent-color;
+        pointer-events: none;
+
+        // resorted to pixel values because of em scaling on a circle...
+        // always lopsided because of subpixel values
+        &:after {
+            top: @tab-height;
+            right: 0;
+            bottom: 0;
+            left: calc(-12px / 2 + 1);
+            margin: 0;
+            width: 12px;
+            height: 12px;
+            border: 3px solid @accent-color;
+            border-radius: 50%;
+            background: @accent-color-subtle;
         }
     }
 }
