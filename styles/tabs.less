@@ -3,7 +3,7 @@
     font-size: @font-size;
 
     .tab {
-        padding: 0 2em 0 1em;
+        padding: 0 2em 0 1em;
         max-width: 12.5em;
         height: @tab-height;
         border-bottom: @tab-border-height solid @accent-color-subtle;
@@ -39,7 +39,7 @@
             // &::before {
             //     width: 1em !important;
             //     height: 1em !important;
-            //     top: -0.045454545454545456em;
+            //     top: -0.045454em;
             //     position: relative !important;
             //     font-size: 1.375em !important;
             //     line-height: 1 !important;
@@ -49,22 +49,25 @@
             // }
         }
 
-        // close icon
+        // tab icons
         .close-icon {
-        	top: 0;
-        	right: 0;
-        	width: 2em;
-            text-align: center;
-        	line-height: @tab-height - @tab-border-height;
+        	top: 0 !important;
+        	right: 0 !important;
+        	width: 2em !important;
+            height: auto !important;
+            border: 0 !important;
+            border-radius: 0 !important;
+            text-align: center !important;
+        	line-height: @tab-height - @tab-border-height !important;
 
             // close icon
         	&::before {
                 display: inline-block;
-                width: auto;
-                height: auto;
+                width: @font-size;
+                height: @font-size;
         		content: 'close';
         		vertical-align: middle;
-        		font-weight: normal;
+        		font-weight: normal !important;
         		font-style: normal;
         		font-size: @font-size;
         		font-family: 'Material Icons';
@@ -73,31 +76,33 @@
 
         // tab modified
         &.modified {
-            // not hover icon
-            &:not(:hover) .close-icon {
-                top: 0;
-                right: 0;
-                width: 2em;
-                height: auto;
-                border: none;
-                border-radius: 0;
-
+            // tab modified icons
+            .close-icon {
                 // modified icon
-                &::before {
-                    display: inline-block;
+                &::after {
+                    // display: inline-block; // doesn't render where it's supposed to be?
+                    width: @font-size;
+                    height: @font-size;
                     color: @accent-color-subtle;
             		content: 'bubble_chart';
-                    transition: color 0.3s @material-bezier; // shouldn't need this?
+            		vertical-align: middle;
+            		font-weight: 700; // fixes weird psuedo element glitch?
+            		font-style: normal;
+            		font-size: @font-size;
+            		font-family: 'Material Icons';
+                    transition: color 0.3s @material-bezier;
             	}
             }
 
-            // hover icon
+            // tab modified icons hover
             &:hover .close-icon {
-                // modified icon
+                // close icon
                 &::before {
+                    display: none;
+                }
+                // modified icon
+                &::after {
                     color: @accent-color;
-                    content: 'bubble_chart';
-                    transition: color 0.3s @material-bezier; // shouldn't need this?
             	}
             }
         }
@@ -112,14 +117,14 @@
             z-index: 10;
             border-bottom: @tab-border-height solid @accent-color;
             background-color: @tab-background-color-active;
-            box-shadow: 0 0 0.4375em darken(@tab-background-color, 4%);
+            // box-shadow: 0 0 0.4375em darken(@tab-background-color, 4%);
             color: @text-color-highlight;
 
             // tab modified
             &.modified:not(:hover) .close-icon {
-                &::before {
-                    color: @accent-color;
-                    content: 'bubble_chart';
+                // modified icon
+                &::after {
+
                 }
             }
 
