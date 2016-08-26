@@ -28,14 +28,25 @@
         // icons
         .icon::before {
             top: 0px;
-            width: @font-size;
-            height: @font-size;
-            font-size: @font-size;
+            width: @font-size !important;
+            height: @font-size !important;
+            font-size: @font-size !important;
         }
 
         // title
         .title {
-
+            // seti-icons fix... their implementation is messy
+            // &::before {
+            //     width: 1em !important;
+            //     height: 1em !important;
+            //     top: -0.045454545454545456em;
+            //     position: relative !important;
+            //     font-size: 1.375em !important;
+            //     line-height: 1 !important;
+            //     display: inline-block !important;
+            //     margin: 0 !important;
+            //     vertical-align: middle !important;
+            // }
         }
 
         // close icon
