@@ -1,20 +1,10 @@
-@-webkit-keyframes pulse {
-    0% {
-        opacity: 1.0;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1.0;
-    }
-}
-
 .tab-bar {
     background-color: @tab-bar-background-color;
     font-size: @font-size;
 
     .tab {
+        max-width: 12.5em;
+        padding: 0 2em 0 1em;
         height: @tab-height;
         background: @tab-background-color;
         border-bottom: @tab-border-height solid @accent-color-subtle;
@@ -22,7 +12,7 @@
         font-size: inherit;
         line-height: @tab-height - @tab-border-height;
         box-shadow: 0 0 0.4375em transparent;
-        transition: box-shadow 0.3s, background-color 0.3s, border-color 0.3s, color 0.3s;
+        transition: color 0.3s 0s @material-bezier, box-shadow 0.3s 0s @material-bezier, background-color 0.3s 0s @material-bezier, border-color 0.3s 0s @material-bezier;
 
         // tab divider
         &:not(:last-child):after {
@@ -35,6 +25,7 @@
             content: '';
         }
 
+        // icons
         .icon::before {
             font-size: @font-size;
             width: @font-size;
@@ -43,51 +34,61 @@
         }
 
         // close icon
-        // .close-icon {
-        //     &::before {
-        //         font-family: 'accents-ui';
-        //         content: '\0041';
-        //     }
-        // }
+        .close-icon {
+        	top: 0;
+        	right: 0;
+        	line-height: @tab-height - @tab-border-height;
+            text-align: center;
+        	width: 2em;
 
-        // old close icon
-        // .close-icon {
-        //     &:before {
-        //         text-align: center;
-        //         content: '+';
-        //         font-family: 'Georgia', serif;
-        //         width: 13px;
-        //         height: 13px;
-        //         line-height: 11px;
-        //         transition: color 0.6s;
-        //         transform: rotate(45deg);
-        //         color: transparent;
-        //         font-size: 17px;
-        //     }
-        // }
+            // close icon
+        	&::before {
+        		font-family: 'Material Icons';
+        		content: 'close';
+        		font-weight: normal;
+        		font-style: normal;
+        		font-size: @font-size;
+                width: auto;
+                height: auto;
+        		vertical-align: middle;
+                display: inline-block;
+        	}
+        }
 
         // tab modified
-        &.modified:not(:hover) .close-icon {
-            width: 0.4375em;
-            height: 0.4375em;
-            border: none;
-            border-radius: 50%;
-            background: @accent-color;
-            -webkit-animation-name: pulse;
-            -webkit-animation-duration: 4s;
-            -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-            -webkit-animation-iteration-count: infinite;
+        &.modified {
+            // not hover icon
+            &:not(:hover) .close-icon {
+                top: 0;
+                right: 0;
+                width: 2em;
+                height: auto;
+                border: none;
+                border-radius: 0;
+
+                // modified icon
+                &::before {
+            		content: 'bubble_chart';
+                    display: inline-block;
+                    color: @accent-color-subtle;
+                    transition: color 0.3s @material-bezier; // shouldn't need this?
+            	}
+            }
+
+            // hover icon
+            &:hover .close-icon {
+                // modified icon
+                &::before {
+                    content: 'bubble_chart';
+                    color: @accent-color;
+                    transition: color 0.3s @material-bezier; // shouldn't need this?
+            	}
+            }
         }
 
         // tab hover
         &:hover {
             color: @text-color-highlight;
-
-            .close-icon {
-                &:before {
-                    color: @text-color-highlight;
-                }
-            }
         }
 
         // tab active
@@ -97,6 +98,14 @@
             background-color: @tab-background-color-active;
             box-shadow: 0 0 0.4375em darken(@tab-background-color, 4%);
             color: @text-color-highlight;
+
+            // tab modified
+            &.modified:not(:hover) .close-icon {
+                &::before {
+                    color: @accent-color;
+                    content: 'bubble_chart';
+                }
+            }
 
             // disable tab divider
             &:not(:last-child):after {
@@ -113,6 +122,11 @@
                     background: rgba(0,0,0,0.2);
                     content: '';
                 }
+            }
+
+            // title
+            .title {
+                padding: 0;
             }
         }
     }
