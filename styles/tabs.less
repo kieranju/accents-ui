@@ -3,15 +3,15 @@
     font-size: @font-size;
 
     .tab {
+        padding: 0 2em 0 1em;
         max-width: 12.5em;
-        padding: 0 2em 0 1em;
         height: @tab-height;
-        background: @tab-background-color;
         border-bottom: @tab-border-height solid @accent-color-subtle;
+        background: @tab-background-color;
+        box-shadow: 0 0 0.4375em transparent;
         color: @text-color;
         font-size: inherit;
         line-height: @tab-height - @tab-border-height;
-        box-shadow: 0 0 0.4375em transparent;
         transition: color 0.3s 0s @material-bezier, box-shadow 0.3s 0s @material-bezier, background-color 0.3s 0s @material-bezier, border-color 0.3s 0s @material-bezier;
 
         // tab divider
@@ -27,31 +27,36 @@
 
         // icons
         .icon::before {
-            font-size: @font-size;
+            top: 0px;
             width: @font-size;
             height: @font-size;
-            top: 0px;
+            font-size: @font-size;
+        }
+
+        // title
+        .title {
+
         }
 
         // close icon
         .close-icon {
         	top: 0;
         	right: 0;
-        	line-height: @tab-height - @tab-border-height;
-            text-align: center;
         	width: 2em;
+            text-align: center;
+        	line-height: @tab-height - @tab-border-height;
 
             // close icon
         	&::before {
-        		font-family: 'Material Icons';
+                display: inline-block;
+                width: auto;
+                height: auto;
         		content: 'close';
+        		vertical-align: middle;
         		font-weight: normal;
         		font-style: normal;
         		font-size: @font-size;
-                width: auto;
-                height: auto;
-        		vertical-align: middle;
-                display: inline-block;
+        		font-family: 'Material Icons';
         	}
         }
 
@@ -68,9 +73,9 @@
 
                 // modified icon
                 &::before {
-            		content: 'bubble_chart';
                     display: inline-block;
                     color: @accent-color-subtle;
+            		content: 'bubble_chart';
                     transition: color 0.3s @material-bezier; // shouldn't need this?
             	}
             }
@@ -79,8 +84,8 @@
             &:hover .close-icon {
                 // modified icon
                 &::before {
-                    content: 'bubble_chart';
                     color: @accent-color;
+                    content: 'bubble_chart';
                     transition: color 0.3s @material-bezier; // shouldn't need this?
             	}
             }
