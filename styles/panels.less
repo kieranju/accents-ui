@@ -1,27 +1,62 @@
-
-// Panels
-// -------------------
-
-// Overrides: atom/static/panels.less
-
-.panel-heading {
-  border-bottom: 1px solid @panel-heading-border-color;
-  background-color: @panel-heading-background-color;
+@-webkit-keyframes hinge {
+    from {
+        transform: perspective(1000px) rotate3d(1, 0, 0, 2deg) translateY(-6px);
+        opacity: 0;
+    }
+    to {
+        transform: perspective(1000px) rotate3d(1, 0, 0, 0deg) translateY(0px);
+        opacity: 1;
+    }
 }
 
-.inset-panel {
-  background-color: @inset-panel-background-color;
-  .panel-heading {
-    background-color: lighten(@inset-panel-background-color, 4%);
-  }
-}
+// .panel-heading {
+//     border-bottom: 1px solid @panel-heading-border-color;
+//     background-color: @panel-heading-background-color;
+// }
+//
+// .inset-panel {
+//     background-color: @inset-panel-background-color;
+//
+//     .panel-heading {
+//         background-color: lighten(@inset-panel-background-color, 4%);
+//     }
+// }
 
+atom-panel.modal, .overlay {
+    padding: 0.9375em;
+    color: @text-color;
+    border-radius: @component-border-radius*2 !important;
+    background-color: @overlay-background-color;
+    box-shadow: @overlay-shadow;
 
-// Modal -------------------
-// Used on top of the editor, like the Command Palette.
+    &.from-top {
+        top: @tab-height + @tab-height/2;
+        -webkit-animation: hinge .2s @material-bezier;
+    }
 
-atom-panel.modal {
-  border: 1px solid @overlay-border-color;
-  border-top: none;
-  box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
+    &.select-list ol.list-group, .select-list ol.list-group {
+        .event {
+            padding: @component-padding;
+            border-radius: @component-border-radius;
+
+            &.selected {
+                background: @accent-color-subtle;
+            }
+        }
+        .two-lines {
+            padding: @component-padding;
+            border-radius: @component-border-radius;
+
+            &.selected {
+                background: @accent-color-subtle;
+
+                // .primary-line {
+                //     border-bottom: 1px solid rgba(0,0,0,0.075);
+                // }
+                // .status.icon {
+                //     color: @text-color-selected;
+                // }
+            }
+        }
+    }
 }

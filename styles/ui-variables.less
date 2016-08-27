@@ -3,6 +3,7 @@
 // accents
 @accent-color: var(--accent-color);
 @accent-color-subtle: var(--accent-color-subtle);
+@accent-color-faded: @accent-color-subtle; // TODO
 
 @ui-scale: var(--ui-scale);
 
@@ -15,6 +16,8 @@
 @text-color-success: hsl(140, 44% ,62%);
 @text-color-warning: hsl(36, 60%, 72%);
 @text-color-error: hsl(9, 100%, 64%);
+
+@text-selected: @accent-color-faded;
 
 // background colors
 @background-color-info: hsl(208, 100%, 50%);
@@ -34,7 +37,7 @@
 @pane-item-border-color: @base-border-color;
 
 @input-background-color: @base-background-color;
-@input-background-color-active: darken(@input-background-color, 2%);
+@input-background-color-active: @base-background-color;
 @input-border-color: @base-border-color;
 
 @tool-panel-background-color: @tab-background-color;
@@ -46,9 +49,9 @@
 @panel-heading-background-color: lighten(@base-background-color, 4%);
 @panel-heading-border-color: @base-border-color;
 
-@overlay-background-color: @tab-background-color-active;
+@overlay-background-color: @tab-background-color;
 @overlay-border-color: @base-border-color;
-@overlay-shadow: 0 0.125em 0.5em 0.0625em rgba(0, 0, 0, 0.15);
+@overlay-shadow: 0 0.25em 1em 0 rgba(0, 0, 0, 0.3);
 
 @button-background-color: lighten(@base-background-color, 10%);
 @button-background-color-hover: lighten(@button-background-color, 12%);
