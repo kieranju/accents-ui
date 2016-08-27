@@ -1,14 +1,14 @@
 .tooltip {
     .tooltip-inner {
+        font-weight: 400;
         line-height: 1;
-        padding: 0.75em;
-        text-shadow: @text-readability-shadow;
-        box-shadow: @overlay-shadow;
-        white-space: nowrap;
         max-width: none;
+        padding: .625em;
+        white-space: nowrap;
         border-radius: max(2px, @component-border-radius);
         background-color: @accent-color-subtle;
-        opacity: 1 !important;
+        box-shadow: @overlay-shadow;
+        text-shadow: @text-readability-shadow;
     }
 
     &.in {

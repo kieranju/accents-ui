@@ -7,14 +7,14 @@
 @ui-scale: var(--ui-scale);
 
 // text Colors
-@text-color: hsl(0,0%,66%);
-@text-color-subtle: hsl(0,0%,50%);
-@text-color-highlight: hsl(0,0%,94%);
-@text-color-selected: hsl(0,0%,100%);
+@text-color: hsl(0, 0%, 66%);
+@text-color-subtle: hsl(0, 0%, 50%);
+@text-color-highlight: hsl(0, 0%, 94%);
+@text-color-selected: hsl(0, 0%, 100%);
 @text-color-info: hsl(219, 79%, 66%);
-@text-color-success: hsl(140, 44%, 62%);
-@text-color-warning: hsl( 36, 60%, 72%);
-@text-color-error: hsl( 9, 100%, 64%);
+@text-color-success: hsl(140, 44% ,62%);
+@text-color-warning: hsl(36, 60%, 72%);
+@text-color-error: hsl(9, 100%, 64%);
 
 // background colors
 @background-color-info: hsl(208, 100%, 50%);
@@ -23,7 +23,7 @@
 @background-color-error: hsl(0, 70%, 50%);
 @background-color-highlight: lighten(@base-background-color, 4%);
 @background-color-selected: lighten(@base-background-color, 10%);
-@app-background-color: darken(@base-background-color, 4%);
+@app-background-color: @base-background-color;
 
 // base colors
 @base-background-color: #242424;
@@ -36,7 +36,7 @@
 @input-background-color: @app-background-color;
 @input-border-color: @base-border-color;
 
-@tool-panel-background-color: @base-background-color;
+@tool-panel-background-color: @overlay-background-color;
 @tool-panel-border-color: @base-border-color;
 
 @inset-panel-background-color: lighten(@base-background-color, 4%);
@@ -45,9 +45,9 @@
 @panel-heading-background-color: lighten(@base-background-color, 4%);
 @panel-heading-border-color: @base-border-color;
 
-@overlay-background-color: lighten(@base-background-color, 5%);
+@overlay-background-color: lighten(@base-background-color, 8%);
 @overlay-border-color: @base-border-color;
-@overlay-shadow: 0 0.125em 0.5em 0.0625em rgba(0, 0, 0, 0.3);
+@overlay-shadow: 0 0.125em 0.5em 0.0625em rgba(0, 0, 0, 0.15);
 
 @button-background-color: lighten(@base-background-color, 10%);
 @button-background-color-hover: lighten(@button-background-color, 12%);
@@ -57,8 +57,8 @@
 @tab-bar-background-color: @base-background-color;
 @tab-bar-border-color: @base-border-color;
 
-@tab-background-color: @overlay-background-color;
-@tab-background-color-active: lighten(@overlay-background-color, 4%);
+@tab-background-color: lighten(@base-background-color, 4%);
+@tab-background-color-active: lighten(@tab-background-color, 4%);
 @tab-border-color: @base-border-color;
 @tab-border-height: 0.3125em;
 
@@ -67,17 +67,17 @@
 
 // scrollbar
 @scrollbar-color: rgba(127, 127, 127, .2);
-@scrollbar-color-active: lighten(@scrollbar-color, 4%);
+@scrollbar-color-active: lighten(@scrollbar-color, 8%);
 
 // site colors
-@ui-site-color-1: hsl(208, 100%, 50%); // blue
-@ui-site-color-2: hsl(160, 70%, 42%); // green
-@ui-site-color-3: hsl(32, 60%, 50%); // orange
-@ui-site-color-4: #D831B0; // pink
-@ui-site-color-5: #EBDD5B; // yellow
+@ui-site-color-1: hsl(208, 100%, 50%);
+@ui-site-color-2: hsl(160, 70%, 42%);
+@ui-site-color-3: hsl(32, 60%, 50%);
+@ui-site-color-4: #d831b0;
+@ui-site-color-5: #ebdd5b;
 
 // sizes
-@font-size: 14px;
+@font-size: 16px;
 @input-font-size: 1em;
 @disclosure-arrow-size: 0.75em;
 
