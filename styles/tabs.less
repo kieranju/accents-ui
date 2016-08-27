@@ -60,17 +60,19 @@
         	line-height: @tab-height - @tab-border-height !important;
 
             // close icon
-        	&::before {
+            &::before {
+                font-family: 'Material Icons';
+                font-size: @font-size;
+                font-weight: normal !important;
+                font-style: normal;
                 display: inline-block;
                 width: @font-size;
                 height: @font-size;
-        		content: 'close';
-        		vertical-align: middle;
-        		font-weight: normal !important;
-        		font-style: normal;
-        		font-size: @font-size;
-        		font-family: 'Material Icons';
-        	}
+                content: 'close';
+                vertical-align: middle;
+                color: transparent;
+                transition: color 0.3s @material-bezier;
+            }
         }
 
         // tab modified
@@ -89,7 +91,6 @@
             		font-size: @font-size;
             		font-family: 'Material Icons';
                     transition: color 0.3s @material-bezier;
-
             	}
             }
 
@@ -109,6 +110,10 @@
         // tab hover
         &:hover {
             color: @text-color-highlight;
+
+            .close-icon::before {
+                color: @text-color-highlight;
+            }
         }
 
         // tab active
@@ -117,6 +122,11 @@
             background-color: @tab-background-color-active;
             color: @text-color-highlight;
 
+            .close-icon {
+                &::before {
+                    color: @text-color-highlight;
+                }
+            }
             // tab modified
             &.modified:not(:hover) .close-icon {
                 // modified icon
