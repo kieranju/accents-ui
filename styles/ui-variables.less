@@ -26,17 +26,18 @@
 @app-background-color: @base-background-color;
 
 // base colors
-@base-background-color: #242424;
+@base-background-color: #2e2e2e;
 @base-border-color: darken(@base-background-color, 8%);
 
 // component colors
 @pane-item-background-color: @base-background-color;
 @pane-item-border-color: @base-border-color;
 
-@input-background-color: @app-background-color;
+@input-background-color: @base-background-color;
+@input-background-color-active: darken(@input-background-color, 2%);
 @input-border-color: @base-border-color;
 
-@tool-panel-background-color: @overlay-background-color;
+@tool-panel-background-color: @tab-background-color;
 @tool-panel-border-color: @base-border-color;
 
 @inset-panel-background-color: lighten(@base-background-color, 4%);
@@ -45,7 +46,7 @@
 @panel-heading-background-color: lighten(@base-background-color, 4%);
 @panel-heading-border-color: @base-border-color;
 
-@overlay-background-color: lighten(@base-background-color, 8%);
+@overlay-background-color: @tab-background-color-active;
 @overlay-border-color: @base-border-color;
 @overlay-shadow: 0 0.125em 0.5em 0.0625em rgba(0, 0, 0, 0.15);
 
@@ -57,12 +58,12 @@
 @tab-bar-background-color: @base-background-color;
 @tab-bar-border-color: @base-border-color;
 
-@tab-background-color: lighten(@base-background-color, 4%);
+@tab-background-color: lighten(@base-background-color, 5%);
 @tab-background-color-active: lighten(@tab-background-color, 4%);
 @tab-border-color: @base-border-color;
 @tab-border-height: 0.3125em;
 
-@tree-view-background-color: @base-background-color;
+@tree-view-background-color: darken(@base-background-color, 4%);
 @tree-view-border-color: @base-border-color;
 
 // scrollbar
