@@ -1,20 +1,64 @@
+.tree-view {
+    padding: 0;
+    font-size: @font-size;
+    background: @tree-view-background-color;
 
-// Tree View
-// -------------------
+    .project-root {
+        & > .header.list-item {
+            line-height: @tab-height - @tab-border-height;
+            height: @tab-height;
+            padding: 0 .375em;
+            border-bottom: @tab-border-height solid @accent-color-subtle;
+            background: @tab-background-color;
 
-// Used to explore and open files in the current project.
-// Overrides: atom/tree-view
+            &::before {
+                visibility: hidden;
+            }
+        }
 
+        & > .entries.list-tree {
+            margin: .625em 0;
+        }
 
-.tree-view-resizer {
-  border-right: 1px solid @base-border-color;
+        &::before {
+            background-color: transparent;
+        }
+    }
+
+    .list-tree {
+        .list-item.selected::before {
+            background-color: @accent-color-subtle;
+        }
+    }
 }
 
-.tree-view {
-  color: @text-color;
-  background-color: @tree-view-background-color;
+// gutter divider for left or right positioned tree view
+.left .tree-view-scroller {
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 1px;
+        content: '';
+        background: @tree-view-background-color;
+    }
+}
 
-  .list-item.selected {
-    color: @text-color-selected;
-  }
+.right .tree-view-scroller {
+    &::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 1px;
+        content: '';
+        background: @tree-view-background-color;
+    }
+}
+
+.tree-view-resizer {
+    .tree-view-resize-handle {
+        width: 10px;
+    }
 }
