@@ -80,17 +80,17 @@
             .close-icon {
                 // modified icon
                 &::after {
-                    // display: inline-block; // doesn't render where it's supposed to be?
                     width: @font-size;
                     height: @font-size;
                     color: @accent-color-subtle;
             		content: 'bubble_chart';
             		vertical-align: middle;
-            		font-weight: 700; // fixes weird psuedo element glitch?
+            		font-weight: normal;
             		font-style: normal;
             		font-size: @font-size;
             		font-family: 'Material Icons';
                     transition: color 0.3s @material-bezier;
+
             	}
             }
 
@@ -114,17 +114,15 @@
 
         // tab active
         &.active {
-            z-index: 10;
             border-bottom: @tab-border-height solid @accent-color;
             background-color: @tab-background-color-active;
-            // box-shadow: 0 0 0.4375em darken(@tab-background-color, 4%);
             color: @text-color-highlight;
 
             // tab modified
             &.modified:not(:hover) .close-icon {
                 // modified icon
                 &::after {
-
+                    color: @accent-color;
                 }
             }
 
