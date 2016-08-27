@@ -1,106 +1,99 @@
 *, *:before, *:after {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 .icon::before {
-    font-size: @component-icon-size;
-    width: @component-icon-size;
-    height: @component-icon-size;
-    top: 0px;
+	font-size: @component-icon-size;
+	width: @component-icon-size;
+	height: @component-icon-size;
+	top: 0;
 }
+
 atom-workspace {
-    background-color: @app-background-color;
+	background-color: @app-background-color;
 }
 
 atom-notifications {
-    atom-notification {
-        width: 25em !important;
-        padding-left: 1.5625em;
+	atom-notification {
+		width: 25em !important;
 
-        .content {
-            .message {
-                font-size: @font-size;
-                padding-right: 0.625em !important;
+		.content {
+			.message {
+				font-size: @font-size;
+				padding-right: 2.625em !important;
+			}
+			.meta .btn-toolbar .btn {
+				float: none;
+			}
+		}
+		.close {
+			height: 2.65em;
+			width: 2.65em;
 
-                code {
-                    display: inline-block;
-                    margin-top: 0.625em;
-                }
-            }
-            .meta {
-                .btn-toolbar .btn {
-                    float: none;
-                }
-            }
-        }
-        .close {
-            height: 2.65em;
-            width: 2.65em;
+			&::before {
+				vertical-align: middle;
+			}
+		}
+		.close-all.btn {
+			right: 2.65em;
+		}
 
-            &::before {
-                vertical-align: middle;
-            }
-        }
-
-        &:first-of-type {
-            .content {
-                .message p {
-
-                }
-            }
-        }
-
-        &::before {
-            width: 1.875em;
-        }
-    }
+		&:first-of-type {
+			.content {
+				.message {
+					padding-right: 8.4375em !important;
+				}
+			}
+		}
+	}
 }
 
 .vertical-scrollbar {
-    width: 1em !important;
+	width: 1em !important;
 }
 .horizontal-scrollbar {
-    height: 1em !important;
+	height: 1em !important;
 }
-
 .scrollbars-visible-always {
-    // general
-    /deep/::-webkit-scrollbar {
-        width: 13px; height: 13px;
-    }
-    /deep/::-webkit-scrollbar-corner,
-    /deep/::-webkit-scrollbar-track {
-        background: transparent;
-    }
-    /deep/::-webkit-scrollbar-thumb {
-        border-radius: 13px;
-        border: 4px solid transparent;
-        background-color: @scrollbar-color;
-        background-clip: content-box;
-        &:hover {
-            background-color: @scrollbar-color-active;
-            background-clip: content-box;
-        }
-    }
+	// general
+	/deep/::-webkit-scrollbar {
+		width: 13px;
+		height: 13px;
+	}
+	/deep/::-webkit-scrollbar-corner,
+	/deep/::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	/deep/::-webkit-scrollbar-thumb {
+		border-radius: 13px;
+		border: 4px solid transparent;
+		background-color: @scrollbar-color;
+		background-clip: content-box;
+		&:hover {
+			background-color: @scrollbar-color-active;
+			background-clip: content-box;
+		}
+	}
 
-    // left & right panels
-    atom-panel-container.left,
-    atom-panel-container.right {
-        /deep/::-webkit-scrollbar {
-            width: 13px; height: 13px;
-        }
-        /deep/::-webkit-scrollbar-corner,
-        /deep/::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        /deep/::-webkit-scrollbar-thumb {
-            border-radius: 13px;
-            border: 4px solid transparent;
-            background-color: @scrollbar-color;
-            background-clip: content-box;
-            &:hover {
-                background-color: @scrollbar-color-active;
-                background-clip: content-box;
-            }
-        }
-    }
+	// left & right panels
+	atom-panel-container.left,
+	atom-panel-container.right {
+		/deep/::-webkit-scrollbar {
+			width: 13px;
+			height: 13px;
+		}
+		/deep/::-webkit-scrollbar-corner,
+		/deep/::-webkit-scrollbar-track {
+			background: transparent;
+		}
+		/deep/::-webkit-scrollbar-thumb {
+			border-radius: 13px;
+			border: 4px solid transparent;
+			background-color: @scrollbar-color;
+			background-clip: content-box;
+			&:hover {
+				background-color: @scrollbar-color-active;
+				background-clip: content-box;
+			}
+		}
+	}
 }
