@@ -33,37 +33,4 @@ atom-panel.modal, .overlay {
         top: @tab-height + @tab-height/2;
         -webkit-animation: hinge .2s @material-bezier;
     }
-
-    &.select-list ol.list-group, .select-list ol.list-group {
-        max-height: 3.25em * 7;
-
-        li {
-            line-height: 2em;
-        }
-
-        .event {
-            padding: @component-padding;
-            border-radius: @component-border-radius;
-
-            &.selected {
-                background: @accent-color-subtle;
-                text-shadow: @text-readability-shadow;
-            }
-        }
-        .two-lines {
-            padding: 0.25em;
-            border-radius: @component-border-radius;
-
-            &.selected {
-                background: @accent-color-subtle;
-
-                // .primary-line {
-                //     border-bottom: 1px solid rgba(0,0,0,0.075);
-                // }
-                // .status.icon {
-                //     color: @text-color-selected;
-                // }
-            }
-        }
-    }
 }

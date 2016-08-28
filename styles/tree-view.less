@@ -26,9 +26,14 @@
     }
 
     .list-tree {
+        // selected
+        .selected {
+            color: @text-color-selected;
+        }
         // folders
         .list-nested-item.selected::before {
-            background-color: @button-background-color;
+            // background-color: @button-background-color;
+            background-color: @accent-color-subtle;
         }
         // files
         .list-item.selected::before {

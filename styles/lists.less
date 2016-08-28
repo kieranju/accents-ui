@@ -1,58 +1,95 @@
-
-// Lists
-// -------------------
-
-// Used in different places, like the Tree View, Commmand Palette etc.
-// Overrides: atom/static/lists.less
-
-// List Group -------------------
 .list-group {
-  li {
-    padding-left: @component-padding/2;
-
-    // We want to highlight the background of the list items because we dont know their size.
-    &.selected {
-      color: @text-color-selected;
-      background-color: @background-color-selected;
-      &:before{ display: none; }
-    }
-  }
-}
-
-
-// List Tree -------------------
-.list-tree {
-  .selected {
-    color: @text-color-selected;
-  }
-}
-
-
-// Select List -------------------
-.select-list {
-  li {
-    padding: @component-padding/2 @component-padding;
-  }
-  .status {
-    float: right;
-  }
-}
-
-
-// Popover List -------------------
-// Used as a popover for something like autocomplete.
-.select-list.popover-list {
-  @popover-list-padding: @component-padding/2;
-
-  padding: @popover-list-padding;
-  border-radius: @component-border-radius;
-  background-color: @overlay-background-color;
-  box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
-
-  .list-group {
-    margin-top: @popover-list-padding;
     li {
-      padding-left: @popover-list-padding;
+        line-height: 2em;
+
+        &.selected {
+            color: @text-color-selected;
+            background-color: @accent-color-faded;
+            text-shadow: @text-readability-shadow;
+            border-radius: @component-border-radius;
+
+            &:before {
+                display: none;
+            }
+        }
     }
-  }
+
+    .event {
+        padding: @component-padding;
+        border-radius: @component-border-radius;
+    }
+    .two-lines {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        border-radius: @component-border-radius;
+
+        .status {
+            position: absolute;
+            right: 0;
+            padding-right: @component-padding;
+            text-align: right;
+        }
+        .primary-line {
+            margin-right: @font-size;
+            padding: 0 @component-padding;
+        }
+
+        .icon::before {
+            margin: 0;
+        }
+        &.selected {
+            background: @accent-color-subtle;
+
+            .primary-line {}
+            .secondary-line {
+                // border-top: 1px solid rgba(0, 0, 0, 0.05);
+            }
+        }
+    }
+}
+
+.select-list.command-palette .list-group {
+    max-height: 2.9375em * 7 !important;
+}
+
+.select-list.popover-list {
+    @popover-list-padding: @component-padding/2;
+    padding: @popover-list-padding;
+    border-radius: @component-border-radius;
+    background-color: @overlay-background-color;
+    box-shadow: @overlay-shadow;
+
+    .suggestion-description {
+        background: @overlay-background-color !important;
+        border-top: 1px solid @overlay-border-color !important;
+        box-shadow: @highlight-shadow-subtle !important;
+        .suggestion-description-content,
+        .suggestion-description-more-link {
+            font-size: 1em;
+        }
+    }
+
+    .list-group {
+        margin-top: @popover-list-padding;
+
+        .icon {
+            .icon-letter {
+                top: -0.2em !important;
+            }
+            i {
+                position: relative;
+                top: -0.1em !important;
+            }
+        }
+        .selected {
+            .icon {
+                color: @text-color-selected;
+                text-shadow: @text-readability-shadow;
+            }
+        }
+        li {
+            padding-left: @popover-list-padding;
+        }
+    }
 }
