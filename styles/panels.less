@@ -27,7 +27,7 @@ atom-panel.modal, .overlay {
     color: @text-color;
     border-radius: @component-border-radius*2 !important;
     background-color: @overlay-background-color;
-    box-shadow: @overlay-shadow;
+    box-shadow: @overlay-shadow, @highlight-shadow, @highlight-shadow-left, @highlight-shadow-right;
 
     &.from-top {
         top: @tab-height + @tab-height/2;
@@ -35,16 +35,23 @@ atom-panel.modal, .overlay {
     }
 
     &.select-list ol.list-group, .select-list ol.list-group {
+        max-height: 3.25em * 7;
+
+        li {
+            line-height: 2em;
+        }
+
         .event {
             padding: @component-padding;
             border-radius: @component-border-radius;
 
             &.selected {
                 background: @accent-color-subtle;
+                text-shadow: @text-readability-shadow;
             }
         }
         .two-lines {
-            padding: @component-padding;
+            padding: 0.25em;
             border-radius: @component-border-radius;
 
             &.selected {

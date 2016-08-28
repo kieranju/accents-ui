@@ -9,7 +9,39 @@
 }
 
 atom-workspace {
-	background-color: @app-background-color;
+	background-color: @base-background-color;
+}
+
+// Overwrites syntax theme background, gutter, and selection colours to better fit the ui
+atom-text-editor {
+    background: @tab-bar-background-color;
+
+    /deep/ .indent-guide {
+        color: fade(@text-color, 10%);
+    }
+	/deep/ .lines .cursor-line {
+		background: @background-color-highlight !important;
+	}
+    /deep/ .selection .region {
+        background: @background-color-highlight !important;
+    }
+    /deep/ .gutter {
+        background: transparent;
+        border: none;
+
+        .line-numbers {
+            .line-number {
+                background: transparent !important;
+                color: darken(@text-color-subtle, 8%) !important;
+				transition: color .3s !important;
+            }
+			.cursor-line-no-selection,
+			.cursor-line {
+			    transition: color 0s !important;
+			    color: @text-color !important;
+			}
+        }
+    }
 }
 
 atom-notifications {

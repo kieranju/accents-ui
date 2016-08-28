@@ -26,6 +26,11 @@
     }
 
     .list-tree {
+        // folders
+        .list-nested-item.selected::before {
+            background-color: @button-background-color;
+        }
+        // files
         .list-item.selected::before {
             background-color: @accent-color-subtle;
         }
