@@ -1,12 +1,13 @@
 .list-group {
     li {
-        line-height: 2em;
+        padding: @component-padding;
+        border-radius: @component-border-radius;
 
         &.selected {
-            color: @text-color-selected;
-            background-color: @accent-color-faded;
-            text-shadow: @text-readability-shadow;
             border-radius: @component-border-radius;
+            background-color: @accent-color-faded;
+            color: @text-color-selected;
+            text-shadow: @text-readability-shadow;
 
             &:before {
                 display: none;
@@ -14,55 +15,64 @@
         }
     }
 
-    .event {
-        padding: @component-padding;
-        border-radius: @component-border-radius;
-    }
     .two-lines {
-        display: flex;
+        position: relative;
+        display: flex !important;
         flex-direction: column;
-        padding: 0;
         border-radius: @component-border-radius;
 
         .status {
             position: absolute;
             right: 0;
+            margin: 0;
             padding-right: @component-padding;
             text-align: right;
+
+            &::before {
+                margin: 0;
+            }
         }
         .primary-line {
             margin-right: @font-size;
-            padding: 0 @component-padding;
+            padding: 0;
+        }
+        .secondary-line {
+            padding: 0;
+            color: @text-color-subtle;
+            font-style: italic;
+            font-size: @font-sub-size;
+
+            .character-match {
+                font-weight: normal;
+            }
         }
 
-        .icon::before {
-            margin: 0;
-        }
         &.selected {
             background: @accent-color-subtle;
 
-            .primary-line {}
             .secondary-line {
-                // border-top: 1px solid rgba(0, 0, 0, 0.05);
+                color: @text-color;
             }
         }
     }
 }
 
-.select-list.command-palette .list-group {
+.select-list .list-group {
     max-height: 2.9375em * 7 !important;
 }
 
+
 .select-list.popover-list {
-    @popover-list-padding: @component-padding/2;
     padding: @popover-list-padding;
     border-radius: @component-border-radius;
     background-color: @overlay-background-color;
     box-shadow: @overlay-shadow;
 
+    @popover-list-padding: @component-padding/2;
+
     .suggestion-description {
-        background: @overlay-background-color !important;
         border-top: 1px solid @overlay-border-color !important;
+        background: @overlay-background-color !important;
         box-shadow: @highlight-shadow-subtle !important;
         .suggestion-description-content,
         .suggestion-description-more-link {
