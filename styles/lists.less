@@ -1,4 +1,6 @@
 .list-group {
+    max-height: 2.9375em * 7 !important;
+
     li {
         padding: @component-padding;
         border-radius: @component-border-radius;
@@ -12,6 +14,12 @@
             &:before {
                 display: none;
             }
+        }
+        .pull-right::after {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
         }
     }
 
@@ -56,11 +64,6 @@
         }
     }
 }
-
-.select-list .list-group {
-    max-height: 2.9375em * 7 !important;
-}
-
 
 .select-list.popover-list {
     padding: @popover-list-padding;
