@@ -11,7 +11,7 @@
         color: @text-color;
         font-size: inherit;
         line-height: @tab-height - @tab-border-height;
-        transition: color 0.3s 0s @material-bezier, box-shadow 0.3s 0s @material-bezier, background-color 0.3s 0s @material-bezier, border-color 0.3s 0s @material-bezier;
+        transition: color 0.3s 0s @standard-bezier, box-shadow 0.3s 0s @standard-bezier, background-color 0.3s 0s @standard-bezier, border-color 0.3s 0s @standard-bezier;
 
         // tab divider
         &:not(:last-child):after {
@@ -71,7 +71,7 @@
                 content: 'close';
                 vertical-align: middle;
                 color: transparent;
-                transition: color 0.3s @material-bezier;
+                transition: color 0.3s @standard-bezier;
             }
         }
 
@@ -90,7 +90,7 @@
             		font-style: normal;
             		font-size: @font-size;
             		font-family: 'Material Icons';
-                    transition: color 0.3s @material-bezier;
+                    transition: color 0.3s @standard-bezier;
             	}
             }
 

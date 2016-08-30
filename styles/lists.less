@@ -9,7 +9,7 @@
             border-radius: @component-border-radius;
             background-color: @accent-color-faded;
             color: @text-color-selected;
-            text-shadow: @text-readability-shadow;
+            text-shadow: @shadow-text;
 
             &:before {
                 display: none;
@@ -69,14 +69,14 @@
     padding: @popover-list-padding;
     border-radius: @component-border-radius;
     background-color: @overlay-background-color;
-    box-shadow: @overlay-shadow;
+    box-shadow: @shadow-1;
 
     @popover-list-padding: @component-padding/2;
 
     .suggestion-description {
         border-top: 1px solid @overlay-border-color !important;
         background: @overlay-background-color !important;
-        box-shadow: @highlight-shadow-subtle !important;
+        box-shadow: @shadow-highlight-subtle-top !important;
         .suggestion-description-content,
         .suggestion-description-more-link {
             font-size: 1em;
@@ -98,7 +98,7 @@
         .selected {
             .icon {
                 color: @text-color-selected;
-                text-shadow: @text-readability-shadow;
+                text-shadow: @shadow-text;
             }
         }
         li {

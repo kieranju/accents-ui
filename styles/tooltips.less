@@ -7,21 +7,22 @@
         white-space: nowrap;
         border-radius: max(2px, @component-border-radius);
         background-color: @accent-color-subtle;
-        box-shadow: @overlay-shadow;
-        text-shadow: @text-readability-shadow;
+        box-shadow: @shadow-1;
+        text-shadow: @shadow-text;
     }
 
     &.in {
         opacity: 1;
     }
 
-    .keystroke {
-        padding: 0.15em 0.4em;
-        margin: 0 -0.3em 0 0.25em;
-        border-radius: max(2px, @component-border-radius / 2);
-        color: @text-color-selected;
-        background: @background-color-selected;
-    }
+    // what does this do?
+    // .keystroke {
+    //     padding: 0.15em 0.4em;
+    //     margin: 0 -0.3em 0 0.25em;
+    //     border-radius: max(2px, @component-border-radius / 2);
+    //     color: @text-color-selected;
+    //     background: @background-color-selected;
+    // }
 
     .tooltip-arrow {
         border-color: transparent !important;

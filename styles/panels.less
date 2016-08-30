@@ -27,11 +27,11 @@ atom-panel.modal, .overlay {
     color: @text-color;
     border-radius: @component-border-radius*2 !important;
     background-color: @overlay-background-color;
-    box-shadow: @overlay-shadow, @highlight-shadow, @highlight-shadow-left, @highlight-shadow-right;
+    box-shadow: @shadow-3, @shadow-highlight-top, @shadow-highlight-subtle-left, @shadow-highlight-subtle-right;
 
     &.from-top {
         top: @tab-height + @tab-height/2;
-        -webkit-animation: hinge .2s @material-bezier;
+        -webkit-animation: hinge .2s @standard-bezier;
     }
 
     .select-list .list-group {
