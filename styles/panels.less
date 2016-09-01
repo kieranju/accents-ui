@@ -42,4 +42,31 @@ atom-panel.modal, .overlay {
     .message, .loading, .error-message {
         font-size: @font-sub-size;
     }
+
+    // command palette flex
+    .command-palette {
+        li {
+            display: flex;
+            flex-direction: row-reverse;
+
+            & > * {
+                flex: 1;
+            }
+
+            // title
+            span {
+                flex-basis: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .pull-right {
+                display: flex;
+
+                & > * {
+                    flex: 1;
+                }
+            }
+        }
+    }
 }
