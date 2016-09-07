@@ -1,30 +1,36 @@
 *, *:before, *:after {
 	box-sizing: border-box;
 }
+
+// icon overrides
 .icon::before {
-	font-size: @component-icon-size;
-	width: @component-icon-size;
-	height: @component-icon-size;
+	font-size: @component-icon-size !important;
+	width: @component-icon-size !important;
+	height: @component-icon-size !important;
 	top: 0 !important;
+	margin-right: @component-icon-padding !important;
 }
 
 atom-workspace {
 	background-color: @base-background-color;
 }
 
-// Overwrites syntax theme background, gutter, and selection colours to better fit the ui
+// overwrites syntax theme background, gutter, and selection colours to better fit the ui
 atom-text-editor {
     background: @tab-bar-background-color;
-
+	.indent-guide,
     /deep/ .indent-guide {
         color: fade(@text-color, 10%);
     }
+	.lines .cursor-line,
 	/deep/ .lines .cursor-line {
 		background: @background-color-highlight !important;
 	}
+	.selection .region,
     /deep/ .selection .region {
         background: @background-color-highlight !important;
     }
+	.gutter,
     /deep/ .gutter {
         background: transparent;
         border: none;
@@ -78,6 +84,101 @@ atom-notifications {
 		}
 	}
 }
+.settings-view {
+	.section:first-child,
+	.section:last-child {
+		padding: 1.25em;
+	}
+    .section-heading, .sub-section-heading {
+        font-weight: 400 !important;
+        font-size: 1.5em !important;;
+		&::before {
+			display: none;
+		}
+    }
+	.settings-title {
+		font-size: 1.125em;
+	}
+	.config-menu {
+        min-width: 12.5em;
+        max-width: 12.5em;
+		border: 0;
+		background: transparent;
+
+		.nav li {
+			a {
+				padding: 0;
+				line-height: 3em;
+				padding: 0 0.9375em;
+			}
+			&.active {
+				a {
+					background: @accent-color-subtle;
+				}
+			}
+		}
+
+        .button-area {
+            margin: 0;
+
+            .btn {
+				height: 100%;
+                text-align: left;
+                border-radius: 0;
+				line-height: 3.375em;
+				padding: 0 0.9375em;
+				color: @text-color;
+
+                background: transparent;
+                transition: none;
+
+                &:hover {
+                    background-color: @tab-background-color;
+					color: @text-color-highlight;
+                }
+                &:active {
+					box-shadow: none;
+                }
+            }
+        }
+    }
+    // .btn.btn-info,
+    // .btn.btn-primary {
+    //     background: @accent-color;
+    //     &:hover {
+    //         background: @accent-color !important;
+    //     }
+    // }
+    .alert-info {
+		border: 0;
+        background: @accent-color-subtle;
+		box-shadow: @shadow-highlight-top, @shadow-highlight-subtle-right, @shadow-highlight-subtle-right;
+        color: @text-color-highlight;
+		cursor: default;
+
+		-webkit-user-select: none;
+    }
+    .package-card,
+    .thumbnail {
+        background: @background-color-highlight;
+        box-shadow: @shadow-1;
+		border: 0;
+
+		&:hover {
+			box-shadow: @shadow-2;
+		}
+    }
+    .checkbox {
+        input {
+            &:active {
+                background: @accent-color-subtle !important;
+            }
+            &:checked {
+                background: @accent-color;
+            }
+        }
+    }
+}
 
 .vertical-scrollbar {
 	width: 1em !important;
@@ -116,14 +217,19 @@ atom-notifications {
 	}
 
 	// modals
-	atom-panel.modal {
-		/deep/::-webkit-scrollbar {
-			width: 5px;
-			height: 5px;
-		}
-		/deep/::-webkit-scrollbar-thumb {
-			border-radius: 5px;
-			border: 0;
-		}
-	}
+	// atom-panel.modal {
+	// 	/deep/::-webkit-scrollbar {
+	// 		width: 5px;
+	// 		height: 5px;
+	// 	}
+	// 	/deep/::-webkit-scrollbar-thumb {
+	// 		border-radius: 5px;
+	// 		border: 0;
+	// 	}
+	// }
+}
+
+::selection {
+    color: black;
+    background: white;
 }

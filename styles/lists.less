@@ -5,6 +5,22 @@
         padding: @component-padding;
         border-radius: @component-border-radius;
 
+        .status {
+            position: absolute;
+            right: 0;
+            margin: 0;
+            padding-right: @component-padding;
+            text-align: right;
+
+            &::before {
+                margin: 0 !important;
+            }
+        }
+
+        .no-icon {
+            padding-left: 1.3125em;
+        }
+
         &.selected {
             border-radius: @component-border-radius;
             background-color: @accent-color-faded;
@@ -23,17 +39,6 @@
         flex-direction: column;
         border-radius: @component-border-radius;
 
-        .status {
-            position: absolute;
-            right: 0;
-            margin: 0;
-            padding-right: @component-padding;
-            text-align: right;
-
-            &::before {
-                margin: 0;
-            }
-        }
         .primary-line {
             margin-right: @font-size;
             padding: 0;

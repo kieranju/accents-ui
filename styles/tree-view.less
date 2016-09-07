@@ -42,33 +42,34 @@
     }
 }
 
-// gutter divider for left or right positioned tree view
-.left .tree-view-scroller {
-    &::after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 1px;
-        content: '';
-        background: @tree-view-background-color;
+// project header "tab" divider
+atom-panel-container {
+    &.left {
+        .tree-view .project-root:first-child > .header.list-item {
+            &::after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0 - @tab-border-height;
+                z-index: 100;
+                width: 1px;
+                background: rgba(0,0,0,0.15);
+                content: '';
+            }
+        }
     }
-}
-
-.right .tree-view-scroller {
-    &::after {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 1px;
-        content: '';
-        background: @tree-view-background-color;
-    }
-}
-
-.tree-view-resizer {
-    .tree-view-resize-handle {
-        width: 10px;
+    &.right {
+        .tree-view .project-root:first-child > .header.list-item {
+            &::after {
+                position: absolute;
+                top: 0;
+                bottom: 0 - @tab-border-height;
+                left: 0;
+                z-index: 100;
+                width: 1px;
+                background: rgba(0,0,0,0.15);
+                content: '';
+            }
+        }
     }
 }
