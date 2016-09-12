@@ -16,22 +16,24 @@ atom-workspace {
 }
 
 // overwrites syntax theme background, gutter, and selection colours to better fit the ui
-atom-text-editor {
+atom-text-editor,
+atom-text-editor::shadow {
     background: @tab-bar-background-color;
-	.indent-guide,
-    /deep/ .indent-guide {
+
+	.cursor {
+		border-color: @text-color !important;
+	}
+	.indent-guide {
         color: fade(@text-color, 10%);
     }
-	.lines .cursor-line,
-	/deep/ .lines .cursor-line {
+	.lines .cursor-line {
 		background: @background-color-highlight !important;
 	}
-	.selection .region,
-    /deep/ .selection .region {
+
+    .selection .region {
         background: @background-color-highlight !important;
     }
-	.gutter,
-    /deep/ .gutter {
+    .gutter {
         background: transparent;
         border: none;
 
@@ -96,8 +98,9 @@ atom-notifications {
 			display: none;
 		}
     }
-	.settings-title {
+	.setting-title {
 		font-size: 1.125em;
+		line-height: 1.5rem;
 	}
 	.config-menu {
         min-width: 12.5em;
@@ -110,6 +113,13 @@ atom-notifications {
 				padding: 0;
 				line-height: 3em;
 				padding: 0 0.9375em;
+				border-top-right-radius: @component-border-radius;
+				border-bottom-right-radius: @component-border-radius;
+			}
+			&:hover {
+				a {
+					background: transparent;
+				}
 			}
 			&.active {
 				a {
@@ -133,7 +143,7 @@ atom-notifications {
                 transition: none;
 
                 &:hover {
-                    background-color: @tab-background-color;
+                    background-color: transparent;
 					color: @text-color-highlight;
                 }
                 &:active {

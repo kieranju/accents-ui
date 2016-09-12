@@ -5,11 +5,13 @@ atom-text-editor[mini]::shadow {
     border-radius: @component-border-radius;
     background-color: @tab-bar-background-color;
 
-
     .placeholder-text {
         color: @text-color-subtle;
     }
     .selection .region {
         background-color: @accent-color-faded !important;
+    }
+    .cursor {
+        border-color: @text-color;
     }
 }
