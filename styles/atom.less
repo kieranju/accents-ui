@@ -70,6 +70,7 @@ atom-notifications {
 			width: 2.65em;
 
 			&::before {
+				margin: 0 !important;
 				vertical-align: middle;
 			}
 		}
@@ -77,7 +78,11 @@ atom-notifications {
 			right: 2.65em;
 		}
 
-		&:first-of-type {
+		&.icon::before {
+			width: 30px !important;
+			height: 100% !important;
+		}
+		&:first-of-type:not(:only-child) {
 			.content {
 				.message {
 					padding-right: 8.4375em !important;
