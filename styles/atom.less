@@ -2,13 +2,20 @@
 	box-sizing: border-box;
 }
 
+.form-control {
+	border-radius: @component-border-radius;
+	box-shadow: none;
+}
+
 // icon overrides
-.icon::before {
-	font-size: @component-icon-size !important;
-	width: @component-icon-size !important;
-	height: @component-icon-size !important;
-	top: 0 !important;
-	margin-right: @component-icon-padding !important;
+.icon {
+	&::before {
+		font-size: @component-icon-size !important;
+		width: @component-icon-size !important;
+		height: @component-icon-size !important;
+		top: 0 !important;
+		margin-right: @component-icon-padding !important;
+	}
 }
 
 atom-workspace {
@@ -94,7 +101,60 @@ atom-notifications {
 .settings-view {
 	atom-text-editor[mini] {
 		background: @tree-view-background-color;
-		padding: 0.5em;
+		opacity: 1 !important;
+	}
+	.btn.icon {
+		&::before {
+            position: relative;
+            top: 2px !important;
+        }
+		&.icon-cloud-download,
+        &.icon-gear,
+        &.icon-trashcan,
+        &.icon-link,
+        &.icon-bug,
+        &.icon-squirrel,
+        &.icon-law,
+        &.icon-link-external,
+		&.icon-playback-play,
+		&.icon-playback-pause {
+            &::before {
+                font-family: 'Material Icons';
+            }
+        }
+        &.icon-cloud-download::before {
+            content: 'file_download';
+        }
+        &.icon-gear::before {
+            content: 'settings';
+        }
+        &.icon-trashcan::before {
+            content: 'delete';
+        }
+        &.icon-link::before {
+            content: 'link';
+        }
+        &.icon-bug::before {
+            content: 'bug_report';
+        }
+        &.icon-squirrel::before {
+            content: 'timeline';
+        }
+        &.icon-law::before {
+            content: 'gavel';
+        }
+        &.icon-link-external:before {
+            content: 'launch';
+        }
+        &.icon-playback-play::before {
+            content: 'play_arrow';
+        }
+		&.icon-playback-pause::before {
+			content: 'pause';
+		}
+	}
+	.btn.active-theme-settings {
+		margin-left: 0.25em;
 	}
 	.link {
 		color: @accent-color;
@@ -115,9 +175,14 @@ atom-notifications {
 			display: none;
 		}
     }
+	.setting-description {
+		font-weight: normal;
+		font-size: 1em;
+	}
 	.setting-title {
 		font-size: 1.125em;
 		line-height: 1.5rem;
+		font-weight: normal;
 	}
 	.config-menu {
         min-width: 12.5em;
@@ -130,8 +195,6 @@ atom-notifications {
 				padding: 0;
 				line-height: 3em;
 				padding: 0 0.9375em;
-				border-top-right-radius: @component-border-radius;
-				border-bottom-right-radius: @component-border-radius;
 			}
 			&:hover {
 				a {
@@ -180,20 +243,32 @@ atom-notifications {
     .alert-info {
 		border: 0;
         background: @accent-color-subtle;
-		box-shadow: @shadow-highlight-top, @shadow-highlight-subtle-right, @shadow-highlight-subtle-right;
-        color: @text-color-highlight;
+		color: @text-color-highlight;
 		cursor: default;
 
 		-webkit-user-select: none;
     }
+	.package-readme {
+		font-size: 1em;
+
+		h2 {
+			font-size: 1.125em;
+		}
+		a {
+			color: @accent-color;
+		}
+	}
     .package-card,
     .thumbnail {
+		font-size: 1em;
         background: @background-color-highlight;
         box-shadow: @shadow-1;
 		border: 0;
+		transition: box-shadow 0.15s @standard-bezier, background 0.15s @standard-bezier;
 
 		&:hover {
 			box-shadow: @shadow-2;
+			transition: box-shadow 0s @standard-bezier, background 0s @standard-bezier;
 		}
     }
     .checkbox {

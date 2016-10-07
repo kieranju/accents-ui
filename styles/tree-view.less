@@ -8,7 +8,7 @@
             line-height: @tab-height - @tab-border-height;
             height: @tab-height;
             padding: 0 .375em;
-            border-bottom: @tab-border-height solid @accent-color-subtle;
+            border-bottom: @tab-border-height solid @tab-background-color;
             background: @tab-bar-background-color;
 
             &::before {
@@ -26,13 +26,15 @@
     }
 
     .list-tree {
+        .list-item, .list-nested-item::before {
+            transition: opacity 0.175s;
+        }
         // selected
         .selected {
             color: @text-color-selected;
         }
         // folders
         .list-nested-item.selected::before {
-            // background-color: @button-background-color;
             background-color: @accent-color-subtle;
         }
         // files
@@ -40,36 +42,27 @@
             background-color: @accent-color-subtle;
         }
     }
+
+    &:not(:hover) {
+        .list-tree {
+            .list-item, .list-nested-item::before {
+                opacity: 0.5;
+                transition: opacity 0.5s @standard-bezier;
+            }
+        }
+    }
 }
 
 // project header "tab" divider
 atom-panel-container {
     &.left {
-        .tree-view .project-root:first-child > .header.list-item {
-            &::after {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0 - @tab-border-height;
-                z-index: 100;
-                width: 1px;
-                background: rgba(0,0,0,0.15);
-                content: '';
-            }
+        .tool-panel {
+            box-shadow: inset 5px 0px red;
         }
     }
     &.right {
-        .tree-view .project-root:first-child > .header.list-item {
-            &::after {
-                position: absolute;
-                top: 0;
-                bottom: 0 - @tab-border-height;
-                left: 0;
-                z-index: 100;
-                width: 1px;
-                background: rgba(0,0,0,0.15);
-                content: '';
-            }
+        .tool-panel {
+            border-left: 1px solid @tree-view-background-color;
         }
     }
 }

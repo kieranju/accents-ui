@@ -1,8 +1,37 @@
+.btn-toolbar {
+    .btn-group {
+        .btn.status-indicator {
+            position: absolute;
+            top: 0; bottom: 0;
+            width: 0.25em;
+        }
+    }
+}
+
+.btn-group {
+    & > .btn {
+        z-index: 0 !important;
+        border: 0 !important;
+    }
+}
+
 .btn {
-    height: @component-line-height;
-    color: lighten(@text-color, 6%);
+    &.icon {
+        &:empty::before {
+            margin-right: 0 !important;
+            text-align: center;
+        }
+    }
+
+    height: auto;
     background-color: @button-background-color;
-    &:focus,
+    box-shadow: none !important;
+    border: 0 !important;
+
+    &:focus {
+        color: @text-color-highlight;
+        background-color: @button-background-color;
+    }
     &:hover {
         color: @text-color-highlight;
         background-color: @button-background-color-hover;
@@ -53,9 +82,4 @@
     &.selected:hover {
         background-color: lighten(@bg, 8%);
     }
-}
-
-// button Group
-.btn-group > .btn {
-    border-color: hsla(0,0%,0%,.2);
 }
