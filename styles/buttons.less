@@ -27,22 +27,32 @@
     background-color: @button-background-color;
     box-shadow: none !important;
     border: 0 !important;
+    transition: background-color 0.3s @standard-bezier, color 0.3s @standard-bezier;
 
-    &:focus {
-        color: @text-color-highlight;
-        background-color: @button-background-color;
-    }
+    &:focus,
     &:hover {
         color: @text-color-highlight;
         background-color: @button-background-color-hover;
+        transition: background-color 0.15s, color 0.15s;
     }
     &:active {
         color: fade(@text-color-selected, 66%);
         background-color: darken(@button-background-color, 2%);
+        transition: background-color 0s, color 0s;
     }
     &.selected {
         color: @text-color-selected;
-        background-color: @button-background-color-selected;
+        background-color: @accent-color-subtle;
+
+        &:focus {
+            background-color: @accent-color-subtle;
+        }
+        &:hover {
+            background-color: @accent-color;
+        }
+        &:active {
+            background-color: @accent-color-subtle;
+        }
     }
     &:focus,
     &:focus:active {

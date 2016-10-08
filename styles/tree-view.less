@@ -8,9 +8,14 @@
             line-height: @tab-height - @tab-border-height;
             height: @tab-height;
             padding: 0 .375em;
-            border-bottom: @tab-border-height solid @tab-background-color;
+            border-bottom: @tab-border-height solid;
+            border-color: @accent-color-subtle;
             background: @tab-bar-background-color;
+            transition: border-color 0.175s;
 
+            .name {
+                transition: opacity 0.175s;
+            }
             &::before {
                 visibility: hidden;
             }
@@ -33,21 +38,33 @@
         .selected {
             color: @text-color-selected;
         }
-        // folders
-        .list-nested-item.selected::before {
+        // files, folders
+        .list-nested-item.selected::before, .list-item.selected::before {
             background-color: @accent-color-subtle;
-        }
-        // files
-        .list-item.selected::before {
-            background-color: @accent-color-subtle;
+            transition: background-color 0.175s;
         }
     }
 
     &:not(:hover) {
+        .project-root {
+            & > .header.list-item {
+                border-color: @tab-background-color;
+                transition: border-color 0.5s @standard-bezier;
+
+                .name {
+                    opacity: 0.5;
+                    transition: opacity 0.5s @standard-bezier;
+                }
+            }
+        }
         .list-tree {
-            .list-item, .list-nested-item::before {
+            .list-item {
                 opacity: 0.5;
                 transition: opacity 0.5s @standard-bezier;
+            }
+            .list-item.selected::before, .list-nested-item.selected::before {
+                background-color: @tab-background-color;
+                transition: background-color 0.5s @standard-bezier;
             }
         }
     }
@@ -55,14 +72,26 @@
 
 // project header "tab" divider
 atom-panel-container {
-    &.left {
-        .tool-panel {
-            box-shadow: inset 5px 0px red;
+    &.left .tree-view-scroller {
+        &::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 1px;
+            content: '';
+            background: @tree-view-background-color;
         }
     }
-    &.right {
-        .tool-panel {
-            border-left: 1px solid @tree-view-background-color;
+    &.right .tree-view-scroller {
+        &::after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 1px;
+            content: '';
+            background: @tree-view-background-color;
         }
     }
 }

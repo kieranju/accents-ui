@@ -103,6 +103,13 @@ atom-notifications {
 		background: @tree-view-background-color;
 		opacity: 1 !important;
 	}
+	.themes-picker {
+		.setting-description {
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow-x: hidden;
+		}
+	}
 	.btn.icon {
 		&::before {
             position: relative;
@@ -164,9 +171,12 @@ atom-notifications {
 			color: @accent-color;
 		}
 	}
-	.section:first-child,
-	.section:last-child {
-		padding: 1.25em;
+	.section {
+		&:first-child,
+		&:last-child {
+			padding: 1em;
+		}
+		padding: 1em;
 	}
     .section-heading, .sub-section-heading {
         font-weight: 400 !important;
@@ -185,6 +195,7 @@ atom-notifications {
 		font-weight: normal;
 	}
 	.config-menu {
+		padding-top: 0.71875em;
         min-width: 12.5em;
         max-width: 12.5em;
 		border: 0;
@@ -239,6 +250,9 @@ atom-notifications {
 		&:focus {
             background: @accent-color !important;
         }
+		&:active {
+			background: @accent-color-subtle !important;
+		}
     }
     .alert-info {
 		border: 0;
