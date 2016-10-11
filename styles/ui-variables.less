@@ -23,12 +23,12 @@
 @background-color-warning: #cc8533;
 @background-color-error: #d92626;
 @background-color-highlight: lighten(@base-background-color, 4%);
-@background-color-selected: lighten(@base-background-color, 10%);
+@background-color-selected: lighten(@base-background-color, 6%);
 @app-background-color: @base-background-color;
 
 // base colors
 @base-background-color: #282828;
-@base-border-color: transparent; // darken(@base-background-color, 8%)
+@base-border-color: transparent;
 
 // component colors
 @pane-item-background-color: @base-background-color;
@@ -52,6 +52,7 @@
 @overlay-border-color: darken(@overlay-background-color, 4%);
 
 @button-background-color: lighten(@base-background-color, 10%);
+@button-background-color-raised: lighten(@button-background-color, 6%);
 @button-background-color-hover: lighten(@button-background-color, 12%);
 @button-background-color-selected: @button-background-color-hover;
 @button-border-color: @base-border-color;

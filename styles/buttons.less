@@ -9,26 +9,28 @@
 }
 
 .btn-group {
+    box-shadow: @shadow-1;
+
     & > .btn {
         z-index: 0 !important;
         border: 0 !important;
+        box-shadow: none !important;
     }
 }
 
 .btn {
+    height: auto;
+    background-color: @button-background-color;
+    border: 0 !important;
+    transition: background-color 0.3s @standard-bezier, color 0.3s @standard-bezier;
+    box-shadow: @shadow-1 !important;
+
     &.icon {
         &:empty::before {
             margin-right: 0 !important;
             text-align: center;
         }
     }
-
-    height: auto;
-    background-color: @button-background-color;
-    box-shadow: none !important;
-    border: 0 !important;
-    transition: background-color 0.3s @standard-bezier, color 0.3s @standard-bezier;
-
     &:focus,
     &:hover {
         color: @text-color-highlight;
@@ -45,13 +47,13 @@
         background-color: @accent-color-subtle;
 
         &:focus {
-            background-color: @accent-color-subtle;
+            background-color: @accent-color-subtle !important;
         }
         &:hover {
-            background-color: @accent-color;
+            background-color: @accent-color !important;
         }
         &:active {
-            background-color: @accent-color-subtle;
+            background-color: @accent-color-subtle !important;
         }
     }
     &:focus,
@@ -91,5 +93,19 @@
     &.selected:focus,
     &.selected:hover {
         background-color: lighten(@bg, 8%);
+    }
+}
+
+.form-control {
+    border-radius: @component-border-radius;
+	box-shadow: @shadow-1;
+    transition: background-color 0.15s, color 0.15s;
+    height: auto;
+    padding: 0.375em 0.625em;
+
+    &:hover,
+    &:focus {
+        box-shadow: @shadow-1 !important;
+        color: @text-color-highlight !important;
     }
 }

@@ -1,9 +1,10 @@
 atom-text-editor[mini],
 atom-text-editor[mini]::shadow {
-    padding-left: @component-padding/2;
+    padding-left: @component-padding;
     color: @text-color;
     border-radius: @component-border-radius;
-    background-color: @tab-bar-background-color;
+    background: @button-background-color;
+    box-shadow: @shadow-1;
 
     .placeholder-text {
         color: @text-color-subtle;
@@ -13,5 +14,12 @@ atom-text-editor[mini]::shadow {
     }
     .cursor {
         border-color: @text-color;
+    }
+}
+
+.find-and-replace .find-container {
+    atom-text-editor[mini],
+    atom-text-editor[mini]::shadow {
+        padding-right: 5em;
     }
 }

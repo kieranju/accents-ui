@@ -2,11 +2,6 @@
 	box-sizing: border-box;
 }
 
-.form-control {
-	border-radius: @component-border-radius;
-	box-shadow: none;
-}
-
 // icon overrides
 .icon {
 	&::before {
@@ -100,8 +95,12 @@ atom-notifications {
 }
 .settings-view {
 	atom-text-editor[mini] {
-		background: @tree-view-background-color;
+		padding-top: 0.375em;
+		padding-bottom: 0.375em;
 		opacity: 1 !important;
+	}
+	.packages .search-container .btn-group {
+		display: flex;
 	}
 	.themes-picker {
 		.setting-description {
@@ -172,15 +171,17 @@ atom-notifications {
 		}
 	}
 	.section {
+		padding: 1.5em;
+
 		&:first-child,
 		&:last-child {
-			padding: 1em;
+			padding: 1.5em;
 		}
-		padding: 1em;
 	}
     .section-heading, .sub-section-heading {
         font-weight: 400 !important;
-        font-size: 1.4em !important;;
+        font-size: 1.4em !important;
+
 		&::before {
 			display: none;
 		}
@@ -196,6 +197,8 @@ atom-notifications {
 	}
 	.config-menu {
 		padding-top: 0.71875em;
+		padding-left: 0.71875em;
+		// padding-right: 0.71875em;
         min-width: 12.5em;
         max-width: 12.5em;
 		border: 0;
@@ -203,9 +206,9 @@ atom-notifications {
 
 		.nav li {
 			a {
-				padding: 0;
-				line-height: 3em;
-				padding: 0 0.9375em;
+				line-height: @component-line-height;
+				padding: 0.375em 0.625em;
+				border-radius: @component-border-radius;
 			}
 			&:hover {
 				a {
@@ -215,6 +218,7 @@ atom-notifications {
 			&.active {
 				a {
 					background: @accent-color-subtle;
+					box-shadow: @shadow-1;
 				}
 			}
 		}
@@ -226,11 +230,15 @@ atom-notifications {
 				height: 100%;
                 text-align: left;
                 border-radius: 0;
-				line-height: 3.375em;
-				padding: 0 0.9375em;
+				line-height: @component-line-height;
+				padding: 0.375em 0.625em;
 				color: @text-color;
+				overflow-x: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
 
                 background: transparent;
+				box-shadow: none !important;
                 transition: none;
 
                 &:hover {
@@ -254,6 +262,9 @@ atom-notifications {
 			background: @accent-color-subtle !important;
 		}
     }
+	.alert {
+		box-shadow: @shadow-1;
+	}
     .alert-info {
 		border: 0;
         background: @accent-color-subtle;
@@ -280,13 +291,17 @@ atom-notifications {
 		border: 0;
 		transition: box-shadow 0.15s @standard-bezier, background 0.15s @standard-bezier;
 
-		&:hover {
+		&:hover,
+		&:active {
 			box-shadow: @shadow-2;
-			transition: box-shadow 0s @standard-bezier, background 0s @standard-bezier;
+			transition: box-shadow 0.075s, background 0.075s;
+			background: @background-color-selected;
 		}
     }
     .checkbox {
         input {
+			box-shadow: @shadow-1 !important;
+
             &:active {
                 background: @accent-color-subtle !important;
             }
@@ -332,18 +347,6 @@ atom-notifications {
 			background: @tree-view-background-color;
 		}
 	}
-
-	// modals
-	// atom-panel.modal {
-	// 	/deep/::-webkit-scrollbar {
-	// 		width: 5px;
-	// 		height: 5px;
-	// 	}
-	// 	/deep/::-webkit-scrollbar-thumb {
-	// 		border-radius: 5px;
-	// 		border: 0;
-	// 	}
-	// }
 }
 
 ::selection {
