@@ -13,6 +13,12 @@
 	}
 }
 
+.background-message {
+	color: @scrollbar-color-active !important;
+	font-weight: normal !important;
+	font-size: 2em !important;
+}
+
 atom-workspace {
 	background-color: @base-background-color;
 }
@@ -109,6 +115,9 @@ atom-notifications {
 			overflow-x: hidden;
 		}
 	}
+	.copy-icon:hover {
+		color: @accent-color;
+	}
 	.btn.icon {
 		&::before {
             position: relative;
@@ -164,6 +173,7 @@ atom-notifications {
 	}
 	.link {
 		color: @accent-color;
+		transition: color 0.3s @standard-bezier;
 
 		&:hover,
 		&:focus {
@@ -179,6 +189,8 @@ atom-notifications {
 		}
 	}
     .section-heading, .sub-section-heading {
+		margin-top: 1.25em;
+		margin-bottom: 1.25em;
         font-weight: 400 !important;
         font-size: 1.4em !important;
 
@@ -281,6 +293,7 @@ atom-notifications {
 		}
 		a {
 			color: @accent-color;
+			transition: color 0.3s @standard-bezier;
 		}
 	}
     .package-card,
@@ -291,6 +304,9 @@ atom-notifications {
 		border: 0;
 		transition: box-shadow 0.15s @standard-bezier, background 0.15s @standard-bezier;
 
+		&:first-child {
+			margin-top: 0.9375em;
+		}
 		&:hover,
 		&:active {
 			box-shadow: @shadow-2;
@@ -301,6 +317,7 @@ atom-notifications {
     .checkbox {
         input {
 			box-shadow: @shadow-1 !important;
+			transition: background-color 0.3s @standard-bezier;
 
             &:active {
                 background: @accent-color-subtle !important;
