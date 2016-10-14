@@ -23,7 +23,7 @@
 
         &.selected {
             border-radius: @component-border-radius;
-            background-color: @accent-color-faded;
+            background-color: @accent-color-subtle;
             color: @text-color-selected;
             text-shadow: @shadow-text;
             box-shadow: @shadow-1; // TODO: gets cut off because of overflow...
@@ -56,9 +56,9 @@
         }
 
         &.selected {
-            background: @accent-color-subtle;
+            background-color: @accent-color-subtle;
 
-            .secondary-line {
+            .secondary-line { 
                 color: @text-color;
             }
         }
@@ -75,7 +75,7 @@
 
     .suggestion-description {
         border-top: 1px solid @overlay-border-color !important;
-        background: @overlay-background-color !important;
+        background-color: @overlay-background-color !important;
         box-shadow: @shadow-highlight-subtle-top !important;
         .suggestion-description-content,
         .suggestion-description-more-link {

@@ -1,10 +1,22 @@
 *, *:before, *:after {
 	box-sizing: border-box;
+	outline-color: @accent-color !important;
+}
+
+select {
+	position: relative;
+	-webkit-appearance: none !important;
+
+	// TODO...
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><linearGradient id='gradient'><stop offset='10%' stop-color='%23F00'/><stop offset='90%' stop-color='%23fcc'/> </linearGradient><rect fill='url(%23gradient)' x='0' y='0' width='100%' height='100%'/></svg>") !important;
+	background-repeat: no-repeat;
+	background-position: right 10px top 50%;
 }
 
 // icon overrides
 .icon {
 	&::before {
+		position: relative !important;
 		font-size: @component-icon-size !important;
 		width: @component-icon-size !important;
 		height: @component-icon-size !important;
@@ -17,12 +29,6 @@
 	font-size: 1em;
 }
 
-.background-message {
-	color: @scrollbar-color-active !important;
-	font-weight: normal !important;
-	font-size: 2em !important;
-}
-
 atom-workspace {
 	background-color: @base-background-color;
 }
@@ -30,7 +36,7 @@ atom-workspace {
 // overwrites syntax theme background, gutter, and selection colours to better fit the ui
 atom-text-editor,
 atom-text-editor::shadow {
-    background: @tab-bar-background-color;
+    background-color: @tab-bar-background-color;
 
 	.cursor {
 		border-color: @text-color !important;
@@ -39,25 +45,23 @@ atom-text-editor::shadow {
         color: fade(@text-color, 10%);
     }
 	.lines .cursor-line {
-		background: @background-color-highlight !important;
+		background-color: @background-color-highlight !important;
 	}
 
     .selection .region {
-        background: @background-color-highlight !important;
+        background-color: @background-color-highlight !important;
     }
     .gutter {
-        background: transparent;
+        background-color: transparent;
         border: none;
 
         .line-numbers {
             .line-number {
-                background: transparent !important;
+                background-color: transparent !important;
                 color: darken(@text-color-subtle, 8%) !important;
-				transition: color .3s !important;
             }
 			.cursor-line-no-selection,
 			.cursor-line {
-			    transition: color 0s !important;
 			    color: @text-color !important;
 			}
         }
@@ -218,7 +222,7 @@ atom-notifications {
         min-width: 12.5em;
         max-width: 12.5em;
 		border: 0;
-		background: transparent;
+		background-color: transparent;
 
 		.nav li {
 			a {
@@ -228,12 +232,12 @@ atom-notifications {
 			}
 			&:hover {
 				a {
-					background: transparent;
+					background-color: transparent;
 				}
 			}
 			&.active {
 				a {
-					background: @accent-color-subtle;
+					background-color: @accent-color-subtle;
 					box-shadow: @shadow-1;
 				}
 			}
@@ -253,7 +257,7 @@ atom-notifications {
 				white-space: nowrap;
 				text-overflow: ellipsis;
 
-                background: transparent;
+                background-color: transparent;
 				box-shadow: none !important;
                 transition: none;
 
@@ -269,21 +273,35 @@ atom-notifications {
     }
     .btn.btn-info,
     .btn.btn-primary {
-        background: @accent-color-subtle;
+        background-color: @accent-color-subtle;
         &:hover,
 		&:focus {
-            background: @accent-color !important;
+            background-color: @accent-color !important;
         }
 		&:active {
-			background: @accent-color-subtle !important;
+			background-color: @accent-color-subtle !important;
 		}
     }
+	.form-control {
+	    border-radius: @component-border-radius;
+		box-shadow: @shadow-1;
+	    transition: background-color 0.15s, color 0.15s;
+	    height: auto;
+	    padding: 0.375em 0.625em;
+
+	    &:hover,
+	    &:focus {
+	        box-shadow: @shadow-1 !important;
+	        color: @text-color-highlight !important;
+	        background-color: @button-background-color-hover;
+	    }
+	}
 	.alert {
 		box-shadow: @shadow-1;
 	}
     .alert-info {
 		border: 0;
-        background: @accent-color-subtle;
+        background-color: @accent-color-subtle;
 		color: @text-color-highlight;
 		cursor: default;
 
@@ -303,7 +321,7 @@ atom-notifications {
     .package-card,
     .thumbnail {
 		font-size: 1em;
-        background: @background-color-highlight;
+        background-color: @background-color-highlight;
         box-shadow: @shadow-1;
 		border: 0;
 		transition: box-shadow 0.15s @standard-bezier, background 0.15s @standard-bezier;
@@ -315,7 +333,7 @@ atom-notifications {
 		&:active {
 			box-shadow: @shadow-2;
 			transition: box-shadow 0.075s, background 0.075s;
-			background: @background-color-selected;
+			background-color: @background-color-selected;
 		}
     }
     .checkbox {
@@ -324,10 +342,10 @@ atom-notifications {
 			transition: background-color 0.3s @standard-bezier;
 
             &:active {
-                background: @accent-color-subtle !important;
+                background-color: @accent-color-subtle !important;
             }
             &:checked {
-                background: @accent-color;
+                background-color: @accent-color;
             }
         }
     }
@@ -347,7 +365,7 @@ atom-notifications {
 	}
 	/deep/::-webkit-scrollbar-corner,
 	/deep/::-webkit-scrollbar-track {
-		background: transparent;
+		background-color: transparent;
 	}
 	/deep/::-webkit-scrollbar-thumb {
 		border-radius: 13px;
@@ -365,12 +383,12 @@ atom-notifications {
 	atom-panel-container.right {
 		/deep/::-webkit-scrollbar-corner,
 		/deep/::-webkit-scrollbar-track {
-			background: @tree-view-background-color;
+			background-color: @tree-view-background-color;
 		}
 	}
 }
 
 ::selection {
     color: black;
-    background: white;
+    background-color: white;
 }

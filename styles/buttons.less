@@ -1,20 +1,12 @@
-.btn-toolbar {
-    .btn-group {
-        .btn.status-indicator {
-            position: absolute;
-            top: 0; bottom: 0;
-            width: 0.25em;
-        }
-    }
-}
-
 .btn-group {
     box-shadow: @shadow-1;
 
-    & > .btn {
+    .btn {
         z-index: 0 !important;
         border: 0 !important;
         box-shadow: none !important;
+        padding: 0 0.625em;
+        line-height: 1.6875em;
     }
 }
 
@@ -24,12 +16,19 @@
     border: 0 !important;
     transition: background-color 0.3s @standard-bezier, color 0.3s @standard-bezier;
     box-shadow: @shadow-1 !important;
+    line-height: 1.6875em;
+    padding: 0 0.625em;
 
     &.icon {
         &:empty::before {
             margin-right: 0 !important;
             text-align: center;
         }
+    }
+    &.status-indicator {
+        position: absolute;
+        top: 0; bottom: 0;
+        width: 0.2em;
     }
     &:focus,
     &:hover {
@@ -46,14 +45,12 @@
         color: @text-color-selected;
         background-color: @accent-color-subtle;
 
-        &:focus {
-            background-color: @accent-color-subtle !important;
-        }
+        &:focus,
         &:hover {
-            background-color: @accent-color !important;
+            background-color: @accent-color;
         }
         &:active {
-            background-color: @accent-color-subtle !important;
+            background-color: @accent-color-subtle;
         }
     }
     &:focus,
@@ -61,7 +58,7 @@
         outline: none;
     }
 }
-// colored buttons
+
 .btn.btn-primary {
     .btn-color(@background-color-info);
 }
@@ -92,20 +89,6 @@
     }
     &.selected:focus,
     &.selected:hover {
-        background-color: lighten(@bg, 8%);
-    }
-}
-
-.form-control {
-    border-radius: @component-border-radius;
-	box-shadow: @shadow-1;
-    transition: background-color 0.15s, color 0.15s;
-    height: auto;
-    padding: 0.375em 0.625em;
-
-    &:hover,
-    &:focus {
-        box-shadow: @shadow-1 !important;
-        color: @text-color-highlight !important;
+        background-color: lighten(@bg, 10%);
     }
 }
