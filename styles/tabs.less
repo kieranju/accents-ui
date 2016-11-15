@@ -153,28 +153,18 @@
 
     // dragging placeholder
     .placeholder {
-        box-sizing: content-box;
-        margin: 0;
-        margin-left: -1px;
-        width: 2px;
-        height: @tab-height;
-        border-bottom: @tab-border-height solid @accent-color;
         background-color: @accent-color;
         pointer-events: none;
 
-        // resorted to pixel values because of em scaling on a circle...
-        // always lopsided because of subpixel values
-        &:after {
+        &::after {
+            left: calc(-6px / 2);
             top: @tab-height;
-            right: 0;
-            bottom: 0;
-            left: calc(-12px / 2 + 1);
-            margin: 0;
-            width: 12px;
-            height: 12px;
-            border: 3px solid @accent-color;
+            margin: -2px 0 0;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
             background-color: @accent-color-subtle;
+            box-shadow: 0 0 0 3px @accent-color;
         }
     }
 }
