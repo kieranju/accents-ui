@@ -69,14 +69,12 @@ atom-text-editor {
 
     // Minimap styling
     // https://atom.io/packages/minimap
-    &::shadow {
-        atom-text-editor-minimap {
-            /deep/ .minimap-visible-area {
-                background: transparent;
+    atom-text-editor-minimap {
+        /deep/ .minimap-visible-area {
+            background: transparent;
 
-                &:after {
-                    background: fadeout(@accent-color-subtle, 50%) !important;
-                }
+            &:after {
+                background: fadeout(@accent-color-subtle, 50%) !important;
             }
         }
     }
