@@ -82,11 +82,22 @@
 @disclosure-arrow-size: 0.75em;
 
 @component-padding: 0.625em;
-@component-icon-padding: 0.3125em;
-@component-icon-size: @font-size;
-@component-line-height: 1.6875em;
+@component-line-height: 1.750em;
 
-@tab-height: 3.75em;
+@remainder: mod(@font-size, @component-icon-multiple);
+.define-icon-size() when (@remainder = 0) {
+    @icon-size: @font-size;
+}
+.define-icon-size() when (@remainder > 0) {
+    @icon-size: @font-size + @component-icon-multiple - @remainder;
+}
+.define-icon-size();
+
+@component-icon-padding: 0.3125em;
+@component-icon-multiple: 2;
+@component-icon-size: @icon-size;
+
+@tab-height: 3.5em;
 
 // misc
 @component-border-radius: 2px;
