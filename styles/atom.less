@@ -1,4 +1,6 @@
-*, *:before, *:after {
+*,
+*:after,
+*:before {
 	box-sizing: border-box;
 	outline-color: @accent-color !important;
 }
@@ -7,10 +9,8 @@ select {
 	background-image: url("data:image/svg+xml;utf8,<svg width='13' height='13' viewBox='0 0 10 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' style='fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:1.5;'><path d='M2.014,3.547l3.007,2.949l2.965,-2.992' style='fill:none;stroke:%23a8a8a8;stroke-width:2px;'/></svg>") !important;
 	background-position: right 10px top 50%;
 	background-repeat: no-repeat;
-
 	-webkit-appearance: none !important;
 }
-
 // icon overrides
 .icon {
 	&::before {
@@ -30,39 +30,42 @@ select {
 atom-workspace {
 	background-color: @base-background-color;
 }
-
 // overwrites syntax theme background, gutter, and selection colours to better fit the ui
 atom-text-editor {
-    background-color: @tab-bar-background-color;
+	background-color: @tab-bar-background-color;
 
 	.cursor {
 		border-color: @text-color !important;
 	}
+
 	.indent-guide {
-        color: fade(@text-color, 10%);
-    }
+		color: fade(@text-color, 10%);
+	}
+
 	.lines .cursor-line {
 		background-color: @background-color-highlight !important;
 	}
 
-    .selection .region {
-        background-color: @background-color-highlight !important;
-    }
-    .gutter {
-        background-color: transparent;
-        border: none;
+	.selection .region {
+		background-color: @background-color-highlight !important;
+	}
 
-        .line-numbers {
-            .line-number {
-                background-color: transparent !important;
-                color: darken(@text-color-subtle, 8%) !important;
-            }
-			.cursor-line-no-selection,
-			.cursor-line {
-			    color: @text-color !important;
+	.gutter {
+		background-color: transparent;
+		border: none;
+
+		.line-numbers {
+			.line-number {
+				background-color: transparent !important;
+				color: darken(@text-color-subtle, 8%) !important;
 			}
-        }
-    }
+
+			.cursor-line,
+			.cursor-line-no-selection {
+				color: @text-color !important;
+			}
+		}
+	}
 }
 
 atom-notifications {
@@ -74,21 +77,24 @@ atom-notifications {
 				font-size: @font-size;
 				padding-right: 2.625em !important;
 			}
+
 			.meta .btn-toolbar .btn {
 				float: none;
 			}
 		}
+
 		.close {
 			height: 2em;
 			width: 1.25em;
-            line-height: 1.25;
-            padding-top: 0.625em;
-            right: 0.625em;
+			line-height: 1.25;
+			padding-top: 0.625em;
+			right: 0.625em;
 
 			&::before {
 				margin: 0 !important;
 			}
 		}
+
 		.close-all.btn {
 			top: 6px;
 			right: 2.65em;
@@ -101,6 +107,7 @@ atom-notifications {
 			width: 30px !important;
 			height: 100% !important;
 		}
+
 		&:first-of-type:not(:only-child) {
 			.content {
 				.message {
@@ -110,15 +117,28 @@ atom-notifications {
 		}
 	}
 }
+
 .settings-view {
 	atom-text-editor[mini] {
 		padding-top: 0.375em;
 		padding-bottom: 0.375em;
 		opacity: 1 !important;
 	}
+
 	.packages .search-container .btn-group {
 		display: flex;
 	}
+
+  .packages .error-message {
+    padding: 0;
+  }
+
+  .close {
+    top: -3px;
+    text-shadow: none;
+    opacity: 1;
+  }
+
 	.themes-picker {
 		.setting-description {
 			white-space: nowrap;
@@ -126,71 +146,87 @@ atom-notifications {
 			overflow-x: hidden;
 		}
 	}
+
 	.copy-icon:hover {
 		color: @accent-color;
 	}
+
 	.btn.icon {
 		&::before {
-            position: relative;
-            top: 2px !important;
-        }
+			position: relative;
+			top: 2px !important;
+		}
+
+		&.icon-bug,
 		&.icon-cloud-download,
-        &.icon-gear,
-        &.icon-trashcan,
-        &.icon-link,
-        &.icon-bug,
-        &.icon-squirrel,
-        &.icon-law,
-        &.icon-link-external,
+		&.icon-gear,
+		&.icon-law,
+		&.icon-link,
+		&.icon-link-external,
+		&.icon-playback-pause,
 		&.icon-playback-play,
-		&.icon-playback-pause {
-            &::before {
-                font-family: 'Material Icons';
-            }
-        }
-        &.icon-cloud-download::before {
-            content: 'file_download';
-        }
-        &.icon-gear::before {
-            content: 'settings';
-        }
-        &.icon-trashcan::before {
-            content: 'delete';
-        }
-        &.icon-link::before {
-            content: 'link';
-        }
-        &.icon-bug::before {
-            content: 'bug_report';
-        }
-        &.icon-squirrel::before {
-            content: 'timeline';
-        }
-        &.icon-law::before {
-            content: 'gavel';
-        }
-        &.icon-link-external:before {
-            content: 'launch';
-        }
-        &.icon-playback-play::before {
-            content: 'play_arrow';
-        }
+		&.icon-squirrel,
+		&.icon-trashcan {
+			&::before {
+				font-family: 'Material Icons';
+			}
+		}
+
+		&.icon-cloud-download::before {
+			content: 'file_download';
+		}
+
+		&.icon-gear::before {
+			content: 'settings';
+		}
+
+		&.icon-trashcan::before {
+			content: 'delete';
+		}
+
+		&.icon-link::before {
+			content: 'link';
+		}
+
+		&.icon-bug::before {
+			content: 'bug_report';
+		}
+
+		&.icon-squirrel::before {
+			content: 'timeline';
+		}
+
+		&.icon-law::before {
+			content: 'gavel';
+		}
+
+		&.icon-link-external:before {
+			content: 'launch';
+		}
+
+		&.icon-playback-play::before {
+			content: 'play_arrow';
+		}
+
 		&.icon-playback-pause::before {
 			content: 'pause';
 		}
 	}
+
 	.btn.active-theme-settings {
 		margin-left: 0.25em;
 	}
+
 	.link {
 		color: @accent-color;
 		transition: color 0.3s @standard-bezier;
 
-		&:hover,
-		&:focus {
+		&:focus,
+		&:hover {
 			color: @accent-color;
 		}
 	}
+
 	.section {
 		padding: 1.5em;
 
@@ -199,31 +235,36 @@ atom-notifications {
 			padding: 1.5em;
 		}
 	}
-    .section-heading, .sub-section-heading {
+
+	.section-heading,
+	.sub-section-heading {
 		margin-top: 1.25em;
 		margin-bottom: 1.25em;
-        font-weight: 400 !important;
-        font-size: 1.4em !important;
+		font-weight: 400 !important;
+		font-size: 1.4em !important;
 
 		&::before {
 			display: none;
 		}
-    }
+	}
+
 	.setting-description {
 		font-weight: normal;
 		font-size: 1em;
 	}
+
 	.setting-title {
 		font-size: 1.125em;
 		line-height: 1.5rem;
 		font-weight: normal;
 	}
+
 	.config-menu {
 		padding-top: 0.71875em;
 		padding-left: 0.71875em;
 		// padding-right: 0.71875em;
-        min-width: 12.5em;
-        max-width: 12.5em;
+		min-width: 12.5em;
+		max-width: 12.5em;
 		border: 0;
 		background-color: transparent;
 
@@ -233,11 +274,13 @@ atom-notifications {
 				padding: 0.375em 0.625em;
 				border-radius: @component-border-radius;
 			}
+
 			&:hover {
 				a {
 					background-color: transparent;
 				}
 			}
+
 			&.active {
 				a {
 					background-color: @accent-color-subtle;
@@ -246,141 +289,157 @@ atom-notifications {
 			}
 		}
 
-        .button-area {
-            margin: 0;
+		.button-area {
+			margin: 0;
 
-            .btn {
+			.btn {
 				height: 100%;
-                text-align: left;
-                border-radius: 0;
+				text-align: left;
+				border-radius: 0;
 				line-height: @component-line-height;
 				padding: 0.375em 0.625em;
 				color: @text-color;
 				overflow-x: hidden;
 				white-space: nowrap;
 				text-overflow: ellipsis;
-
-                background-color: transparent;
+				background-color: transparent;
 				box-shadow: none !important;
-                transition: none;
+				transition: none;
 
-                &:hover {
-                    background-color: transparent;
+				&:hover {
+					background-color: transparent;
 					color: @text-color-highlight;
-                }
-                &:active {
+				}
+
+				&:active {
 					box-shadow: none;
-                }
-            }
-        }
-    }
-    .btn.btn-info,
-    .btn.btn-primary {
-        background-color: @accent-color-subtle;
-        &:hover,
-		&:focus {
-            background-color: @accent-color !important;
-        }
+				}
+			}
+		}
+	}
+
+	.btn.btn-info,
+	.btn.btn-primary {
+		background-color: @accent-color-subtle;
+
+		&:focus,
+		&:hover {
+			background-color: @accent-color !important;
+		}
+
 		&:active {
 			background-color: @accent-color-subtle !important;
 		}
-    }
+	}
+
 	.form-control {
-	    border-radius: @component-border-radius;
+		border-radius: @component-border-radius;
 		box-shadow: @shadow-1;
-	    transition: background-color 0.15s, color 0.15s;
-	    height: auto;
-	    padding: 0.375em 0.625em;
+		transition: background-color 0.15s, color 0.15s;
+		height: auto;
+		padding: 0.375em 0.625em;
 
-	    &:hover,
-	    &:focus {
-	        box-shadow: @shadow-1 !important;
-	        color: @text-color-highlight !important;
-	        background-color: @button-background-color-hover;
-	    }
+		&:focus,
+		&:hover {
+			box-shadow: @shadow-1 !important;
+			color: @text-color-highlight !important;
+			background-color: @button-background-color-hover;
+		}
 	}
+
 	.alert {
+    border: 0;
 		box-shadow: @shadow-1;
-	}
-    .alert-info {
-		border: 0;
-        background-color: @accent-color-subtle;
-		color: @text-color-highlight;
+    color: @text-color-highlight;
 		cursor: default;
-
 		-webkit-user-select: none;
-    }
+	}
+
+	.alert-info,
+  .alert-danger {
+		background-color: @accent-color-subtle;
+	}
+
 	.package-readme {
 		font-size: 1em;
 
 		h2 {
 			font-size: 1.125em;
 		}
+
 		a {
 			color: @accent-color;
 			transition: color 0.3s @standard-bezier;
 		}
 	}
-    .package-card,
-    .thumbnail {
+
+	.package-card,
+	.thumbnail {
 		font-size: 1em;
-        background-color: @background-color-highlight;
-        box-shadow: @shadow-1;
+		background-color: @background-color-highlight;
+		box-shadow: @shadow-1;
 		border: 0;
 		transition: box-shadow 0.15s @standard-bezier, background 0.15s @standard-bezier;
 
 		&:first-child {
 			margin-top: 0.9375em;
 		}
-		&:hover,
-		&:active {
+
+		&:active,
+		&:hover {
 			box-shadow: @shadow-2;
 			transition: box-shadow 0.075s, background 0.075s;
 			background-color: @background-color-selected;
 		}
-    }
-    .checkbox {
-        input {
+	}
+
+	.checkbox {
+		input {
 			box-shadow: @shadow-1 !important;
 			transition: background-color 0.3s @standard-bezier;
 
-            &:active {
-                background-color: @accent-color-subtle !important;
-            }
-            &:checked {
-                background-color: @accent-color;
-            }
-        }
-    }
+			&:active {
+				background-color: @accent-color-subtle !important;
+			}
+
+			&:checked {
+				background-color: @accent-color;
+			}
+		}
+	}
 }
 
 .vertical-scrollbar {
 	width: 1em !important;
 }
+
 .horizontal-scrollbar {
 	height: 1em !important;
 }
+
 .scrollbars-visible-always {
 	// general
 	/deep/::-webkit-scrollbar {
 		width: 13px;
 		height: 13px;
 	}
+
 	/deep/::-webkit-scrollbar-corner,
 	/deep/::-webkit-scrollbar-track {
 		background-color: transparent;
 	}
+
 	/deep/::-webkit-scrollbar-thumb {
 		border-radius: 13px;
 		border: 4px solid transparent;
 		background-color: @scrollbar-color;
 		background-clip: content-box;
+
 		&:hover {
 			background-color: @scrollbar-color-active;
 			background-clip: content-box;
 		}
 	}
-
 	// left & right panels
 	atom-panel-container.left,
 	atom-panel-container.right {
@@ -392,6 +451,6 @@ atom-notifications {
 }
 
 ::selection {
-    color: black;
-    background-color: white;
+	color: black;
+	background-color: white;
 }
