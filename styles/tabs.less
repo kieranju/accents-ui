@@ -46,28 +46,30 @@
 
         // tab icons
         .close-icon {
-        	top: 0 !important;
-        	right: 0 !important;
-        	width: 1.7142857142857142em !important;
+          	top: 0 !important;
+          	right: 0 !important;
+          	width: 1.7142857142857142em !important;
             height: auto !important;
             border: 0 !important;
             border-radius: 0 !important;
             text-align: left !important;
-        	line-height: @tab-height - @tab-border-height !important;
+          	line-height: @tab-height - @tab-border-height !important;
 
             // close icon
             &::before {
-                font-family: 'Material Icons';
-                font-size: @font-size;
-                font-weight: normal !important;
-                font-style: normal;
                 display: inline-block;
                 width: @font-size;
                 height: @font-size;
+                color: transparent;
                 content: 'close';
                 vertical-align: middle;
-                color: transparent;
+                font-weight: normal !important;
+                font-style: normal;
+                font-size: @font-size;
+                font-family: 'Material Icons';
                 transition: color 0.3s @standard-bezier;
+
+                -webkit-font-smoothing: auto;
             }
         }
 
