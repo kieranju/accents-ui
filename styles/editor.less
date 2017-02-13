@@ -2,7 +2,7 @@
 @import "ui-mixins";
 
 atom-text-editor[mini],
-atom-text-editor[mini]::shadow {
+atom-text-editor[mini].editor {
     color: @text-color-highlight;
     background-color: @input-background-color;
     border: 1px solid @input-border-color;
@@ -19,7 +19,7 @@ atom-text-editor[mini]::shadow {
 }
 
 atom-text-editor[mini].is-focused,
-atom-text-editor[mini].is-focused::shadow {
+atom-text-editor[mini].is-focused.editor {
     background-color: @input-background-color;
 
     .selection .region {
