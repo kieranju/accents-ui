@@ -5,21 +5,20 @@
 	outline-color: @accent-color !important;
 }
 
+// custom select list style
 select {
 	background-image: url("data:image/svg+xml;utf8,<svg width='13' height='13' viewBox='0 0 10 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' style='fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:1.5;'><path d='M2.014,3.547l3.007,2.949l2.965,-2.992' style='fill:none;stroke:%23a8a8a8;stroke-width:2px;'/></svg>") !important;
-	background-position: right 10px top 50% !important;
+	background-position: right 8px top calc(50% - 1px) !important;
 	background-repeat: no-repeat !important;
 	-webkit-appearance: none !important;
 }
+
 // icon overrides
 .icon {
 	&::before {
-		position: relative !important;
 		font-size: @component-icon-size !important;
 		width: @component-icon-size !important;
 		height: @component-icon-size !important;
-		top: 0 !important;
-		margin-right: @component-icon-padding !important;
 	}
 }
 
@@ -30,6 +29,7 @@ select {
 atom-workspace {
 	background-color: @base-background-color;
 }
+
 // overwrites syntax theme background, gutter, and selection colours to better fit the ui
 atom-text-editor {
 	background-color: @tab-bar-background-color;

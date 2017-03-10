@@ -82,26 +82,15 @@
 @disclosure-arrow-size: 0.75em;
 
 @component-padding: 0.625em;
-@component-line-height: 1.750em;
-
-@remainder: mod(@font-size, @component-icon-multiple);
-.define-icon-size() when (@remainder = 0) {
-    @icon-size: @font-size;
-}
-.define-icon-size() when (@remainder > 0) {
-    @icon-size: @font-size + @component-icon-multiple - @remainder;
-}
-.define-icon-size();
-
+@component-line-height: 2em;
 @component-icon-padding: 0.3125em;
-@component-icon-multiple: 2;
-@component-icon-size: @icon-size;
+@component-icon-size: 16px;
 
 @tab-height: 3.5em;
 
 // misc
 @component-border-radius: 2px;
-@font-family: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+@font-family: 'source sans pro', '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
 
 @shadow-highlight-top: inset 0px 1px rgba(255, 255, 255, 0.065);
 @shadow-highlight-right: inset -1px 0px rgba(255, 255, 255, 0.065);
