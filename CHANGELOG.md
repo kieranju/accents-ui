@@ -1,3 +1,8 @@
+## TODO
+* popover list spazzing...
+* icon alignment
+* checkbox sizing and alignment
+
 ## < 1.2.0
 * Tons of undocumented styling
 * Native font size scaling
