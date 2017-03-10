@@ -7,10 +7,14 @@
         & > .header.list-item {
             line-height: @tab-height - @tab-border-height;
             height: @tab-height;
-            padding: 0 .375em;
+            padding: 0 .25em;
             border-bottom: @tab-border-height solid;
             border-color: @accent-color-subtle;
             background-color: @tab-bar-background-color;
+
+            .name::before {
+                display: none;
+            }
 
             &::before {
                 visibility: hidden;
