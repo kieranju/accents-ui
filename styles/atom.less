@@ -151,12 +151,10 @@ atom-notifications {
 		color: @accent-color;
 	}
 
-	.btn.icon {
-		&::before {
-			position: relative;
-			top: 2px !important;
-		}
+	.btn.icon,
+	.config-menu .icon {
 
+		&.icon-settings,
 		&.icon-bug,
 		&.icon-cloud-download,
 		&.icon-gear,
@@ -166,10 +164,23 @@ atom-notifications {
 		&.icon-playback-pause,
 		&.icon-playback-play,
 		&.icon-squirrel,
-		&.icon-trashcan {
+		&.icon-trashcan,
+		&.icon-code,
+		&.icon-device-desktop,
+		&.icon-keyboard,
+		&.icon-plus,
+		&.icon-paintcan,
+		&.icon-package {
 			&::before {
 				font-family: 'Material Icons';
+				position: relative;
+				top: 3px !important;
+				font-size: 17px !important;
 			}
+		}
+
+		&.icon-settings::before {
+			content: 'settings';
 		}
 
 		&.icon-cloud-download::before {
@@ -210,6 +221,30 @@ atom-notifications {
 
 		&.icon-playback-pause::before {
 			content: 'pause';
+		}
+
+		&.icon-code::before {
+			content: 'code';
+		}
+
+		&.icon-device-desktop::before {
+			content: 'desktop_mac';
+		}
+
+		&.icon-keyboard::before {
+			content: 'dialpad'
+		}
+
+		&.icon-plus::before {
+			content: 'add';
+		}
+
+		&.icon-paintcan::before {
+			content: 'palette';
+		}
+
+		&.icon-package::before {
+			content: 'layers';
 		}
 	}
 
@@ -338,6 +373,7 @@ atom-notifications {
 		transition: background-color 0.15s, color 0.15s;
 		height: auto;
 		padding: 0.375em 0.625em;
+		line-height: @component-line-height;
 
 		&:focus,
 		&:hover {
@@ -348,15 +384,15 @@ atom-notifications {
 	}
 
 	.alert {
-    border: 0;
+    	border: 0;
 		box-shadow: @shadow-1;
-    color: @text-color-highlight;
+    	color: @text-color-highlight;
 		cursor: default;
 		-webkit-user-select: none;
 	}
 
 	.alert-info,
-  .alert-danger {
+  	.alert-danger {
 		background-color: @accent-color-subtle;
 	}
 
@@ -393,17 +429,39 @@ atom-notifications {
 		}
 	}
 
-	.checkbox {
-		input {
-			box-shadow: @shadow-1 !important;
-			transition: background-color 0.3s @standard-bezier;
+	input[type="checkbox"] {
+		width: 1.5rem;
+		height: 1.5rem;
+		box-shadow: @shadow-1 !important;
+		transition: background-color 0.3s @standard-bezier;
 
-			&:active {
-				background-color: @accent-color-subtle !important;
+		&::before,
+		&::after {
+			top: 17px;
+			left: 9px;
+			opacity: 0;
+			transition: transform 0ms 300ms linear, opacity 300ms @standard-bezier;
+		}
+		&::before {
+			width: 6px;
+		}
+		&::after {
+			width: 14px;
+		}
+
+		&:active {
+			background-color: @accent-color-subtle !important;
+		}
+		&:checked {
+			background-color: @accent-color;
+
+			&::before,
+			&::after {
+				transition: transform 225ms @standard-bezier, opacity 300ms @standard-bezier;
+				opacity: 1;
 			}
-
-			&:checked {
-				background-color: @accent-color;
+			&::after {
+				transition-delay: 45ms;
 			}
 		}
 	}
