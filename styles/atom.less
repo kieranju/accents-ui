@@ -41,24 +41,19 @@ atom-text-editor {
 		background-color: @background-color-highlight !important;
 	}
 
-	.gutter-container {
-		background-color: @tree-view-background-color;
+	.gutter {
+		background-color: transparent;
+		border: none;
 
-		.gutter {
-			background-color: transparent;
-			border-bottom-left-radius: 0.25em;
-			border: none;
+		.line-numbers {
+			.line-number {
+				background-color: transparent !important;
+				color: darken(@text-color-subtle, 8%) !important;
+			}
 
-			.line-numbers {
-				.line-number {
-					background-color: transparent !important;
-					color: darken(@text-color-subtle, 8%) !important;
-				}
-
-				.cursor-line,
-				.cursor-line-no-selection {
-					color: @text-color !important;
-				}
+			.cursor-line,
+			.cursor-line-no-selection {
+				color: @text-color !important;
 			}
 		}
 	}
