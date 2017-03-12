@@ -13,15 +13,6 @@ select {
 	-webkit-appearance: none !important;
 }
 
-// icon overrides
-.icon {
-	&::before {
-		font-size: @component-icon-size !important;
-		width: @component-icon-size !important;
-		height: @component-icon-size !important;
-	}
-}
-
 .about {
 	font-size: 1em;
 }
@@ -151,103 +142,6 @@ atom-notifications {
 		color: @accent-color;
 	}
 
-	.btn.icon,
-	.config-menu .icon {
-
-		&.icon-settings,
-		&.icon-bug,
-		&.icon-cloud-download,
-		&.icon-gear,
-		&.icon-law,
-		&.icon-link,
-		&.icon-link-external,
-		&.icon-playback-pause,
-		&.icon-playback-play,
-		&.icon-squirrel,
-		&.icon-trashcan,
-		&.icon-code,
-		&.icon-device-desktop,
-		&.icon-keyboard,
-		&.icon-plus,
-		&.icon-paintcan,
-		&.icon-package {
-			&::before {
-				font-family: 'Material Icons';
-				position: relative;
-				top: 3px !important;
-				font-size: 17px !important;
-			}
-		}
-
-		&.icon-settings::before {
-			content: 'settings';
-		}
-
-		&.icon-cloud-download::before {
-			content: 'file_download';
-		}
-
-		&.icon-gear::before {
-			content: 'settings';
-		}
-
-		&.icon-trashcan::before {
-			content: 'delete';
-		}
-
-		&.icon-link::before {
-			content: 'link';
-		}
-
-		&.icon-bug::before {
-			content: 'bug_report';
-		}
-
-		&.icon-squirrel::before {
-			content: 'timeline';
-		}
-
-		&.icon-law::before {
-			content: 'gavel';
-		}
-
-		&.icon-link-external:before {
-			content: 'launch';
-		}
-
-		&.icon-playback-play::before {
-			content: 'play_arrow';
-		}
-
-		&.icon-playback-pause::before {
-			content: 'pause';
-		}
-
-		&.icon-code::before {
-			content: 'code';
-		}
-
-		&.icon-device-desktop::before {
-			content: 'desktop_mac';
-		}
-
-		&.icon-keyboard::before {
-			content: 'dialpad'
-		}
-
-		&.icon-plus::before {
-			content: 'add';
-		}
-
-		&.icon-paintcan::before {
-			content: 'palette';
-		}
-
-		&.icon-package::before {
-			content: 'layers';
-		}
-	}
-
 	.btn.active-theme-settings {
 		margin-left: 0.25em;
 	}
@@ -291,7 +185,7 @@ atom-notifications {
 	.setting-title {
 		font-size: 1.125em;
 		line-height: 1.5rem;
-		font-weight: normal;
+		font-weight: normal !important;
 	}
 
 	.config-menu {

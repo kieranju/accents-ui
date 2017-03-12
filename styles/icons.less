@@ -1,0 +1,134 @@
+.settings-view .sub-section .sub-section-heading.has-items::after {
+  font-family: 'Material Icons' !important;
+  font-size: 24px !important;
+  content: 'remove' !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+.settings-view .sub-section.collapsed .sub-section-heading:after {
+  content: 'add' !important;
+}
+
+.icon {
+	&::before,
+  &::after {
+		font-size: @component-icon-size !important;
+		width: @component-icon-size !important;
+		height: @component-icon-size !important;
+	}
+}
+
+.icon {
+  &.icon-bug,
+  &.icon-cloud-download,
+  &.icon-code,
+  &.icon-device-desktop,
+  &.icon-gear,
+  &.icon-heart,
+  &.icon-hourglass,
+  &.icon-keyboard,
+  &.icon-law,
+  &.icon-link,
+  &.icon-link-external,
+  &.icon-package,
+  &.icon-paintcan,
+  &.icon-playback-pause,
+  &.icon-playback-play,
+  &.icon-plus,
+  &.icon-settings,
+  &.icon-squirrel,
+  &.icon-tools,
+  &.icon-trashcan,
+  &.icon-search {
+    &::before {
+      font-family: 'Material Icons' !important;
+      position: relative !important;
+      top: 3px !important;
+      font-size: 17px !important;
+    }
+  }
+
+  &.icon-settings::before {
+    content: 'tune';
+  }
+
+  &.icon-cloud-download::before {
+    content: 'file_download';
+  }
+
+  &.icon-gear::before {
+    content: 'settings';
+  }
+
+  &.icon-trashcan::before {
+    content: 'delete';
+  }
+
+  &.icon-link::before {
+    content: 'link';
+  }
+
+  &.icon-bug::before {
+    content: 'bug_report';
+  }
+
+  &.icon-squirrel::before {
+    content: 'timeline';
+  }
+
+  &.icon-law::before {
+    content: 'gavel';
+  }
+
+  &.icon-link-external:before {
+    content: 'launch';
+  }
+
+  &.icon-playback-play::before {
+    content: 'play_arrow';
+  }
+
+  &.icon-playback-pause::before {
+    content: 'pause';
+  }
+
+  &.icon-code::before {
+    content: 'code';
+  }
+
+  &.icon-device-desktop::before {
+    content: 'desktop_mac';
+  }
+
+  &.icon-keyboard::before {
+    content: 'dialpad';
+  }
+
+  &.icon-plus::before {
+    content: 'add';
+  }
+
+  &.icon-paintcan::before {
+    content: 'palette';
+  }
+
+  &.icon-package::before {
+    content: 'layers';
+  }
+
+  &.icon-heart::before {
+    content: 'favorite';
+  }
+
+  &.icon-hourglass::before {
+    content: 'hourglass_full';
+  }
+
+  &.icon-tools::before {
+    content: 'settings';
+  }
+
+  &.icon-search::before {
+    content: 'search';
+  }
+}
