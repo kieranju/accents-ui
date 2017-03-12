@@ -39,13 +39,28 @@
   &.icon-squirrel,
   &.icon-tools,
   &.icon-trashcan,
-  &.icon-search {
+  &.icon-search,
+  &.icon-file-directory,
+  &.icon-file-text,
+  &.icon-book {
     &::before {
       font-family: 'Material Icons' !important;
       position: relative !important;
       top: 3px !important;
       font-size: 17px !important;
     }
+  }
+
+  &.icon-book::before {
+    content: 'import_contacts';
+  }
+
+  &.icon-file-text::before {
+    content: 'insert_drive_file';
+  }
+
+  &.icon-file-directory::before {
+    content: 'folder';
   }
 
   &.icon-settings::before {
