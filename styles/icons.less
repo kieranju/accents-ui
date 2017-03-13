@@ -21,6 +21,7 @@
 .icon {
   &.icon-bug,
   &.icon-cloud-download,
+  &.icon-cloud-upload,
   &.icon-code,
   &.icon-device-desktop,
   &.icon-gear,
@@ -42,13 +43,18 @@
   &.icon-search,
   &.icon-file-directory,
   &.icon-file-text,
-  &.icon-book {
+  &.icon-book,
+  &.icon-color-mode {
     &::before {
       font-family: 'Material Icons' !important;
       position: relative !important;
       top: 3px !important;
       font-size: 17px !important;
     }
+  }
+
+  &.icon-color-mode::before {
+    content: 'gradient';
   }
 
   &.icon-book::before {
@@ -69,6 +75,10 @@
 
   &.icon-cloud-download::before {
     content: 'file_download';
+  }
+
+  &.icon-cloud-upload::before {
+    content: 'file_upload';
   }
 
   &.icon-gear::before {
@@ -128,7 +138,7 @@
   }
 
   &.icon-package::before {
-    content: 'layers';
+    content: 'extension';
   }
 
   &.icon-heart::before {
