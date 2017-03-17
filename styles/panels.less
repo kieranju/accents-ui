@@ -1,14 +1,3 @@
-@-webkit-keyframes hinge {
-    from {
-        transform: perspective(1000px) rotate3d(1, 0, 0, 2deg) translateY(-6px);
-        opacity: 0;
-    }
-    to {
-        transform: perspective(1000px) rotate3d(1, 0, 0, 0deg) translateY(0px);
-        opacity: 1;
-    }
-}
-
 atom-panel.modal, .overlay {
     padding: 0.9375em;
     color: @text-color;
@@ -19,7 +8,7 @@ atom-panel.modal, .overlay {
 
     &.from-top {
         top: @tab-height + @tab-height / 2;
-        -webkit-animation: hinge 225ms @standard-bezier;
+        animation: hinge 225ms @standard-bezier;
     }
 
     .select-list .list-group {

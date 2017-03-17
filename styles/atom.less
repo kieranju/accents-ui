@@ -323,6 +323,14 @@ atom-notifications {
 		}
 	}
 
+	.package-card .meta-controls .install-button.is-installing,
+	.package-card .meta-controls .uninstall-button.is-uninstalling {
+		opacity: 1;
+		background-image: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(0,0,0,.25) 20px, rgba(0,0,0,.25) 40px);
+		background-size: 200%;
+		animation: installation 750ms linear infinite;
+	}
+
 	input[type="checkbox"] {
 		width: 1.5rem;
 		height: 1.5rem;
