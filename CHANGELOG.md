@@ -1,7 +1,6 @@
 ## TODO
-* popover list spazzing...
-* icon alignment
-* checkbox sizing and alignment
+* horizontal dragging placeholder
+*
 
 ## < 1.2.0
 * Tons of undocumented styling
@@ -9,4 +8,4 @@
 * Configuration
 
 ## 2.0
-* Re-created from scratch using the "official" UI barebones template from the Atom community
+* Re-created from scratch using an "official" UI barebones template from the Atom community

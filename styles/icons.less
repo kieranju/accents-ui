@@ -41,16 +41,56 @@
   &.icon-tools,
   &.icon-trashcan,
   &.icon-search,
+  &.icon-file,
   &.icon-file-directory,
   &.icon-file-text,
   &.icon-book,
-  &.icon-color-mode {
+  &.icon-alert,
+  &.icon-circle-slash,
+  &.icon-color-mode,
+  &.icon-bell,
+  &.icon-clock,
+  &.icon-file-media,
+  &.icon-file-directory-create,
+  &.icon-file-add {
     &::before {
       font-family: 'Material Icons' !important;
       position: relative !important;
       top: 3px !important;
       font-size: 17px !important;
     }
+  }
+
+  &.icon-bell::before {
+    content: 'notifications';
+  }
+
+  &.icon-circle-slash::before {
+    content: 'not_interested';
+  }
+
+  &.icon-alert::before {
+    content: 'warning';
+  }
+
+  &.icon-file-add::before {
+    content: 'note_add';
+  }
+
+  &.icon-file-directory-create::before {
+    content: 'create_new_folder';
+  }
+
+  &.icon-file::before {
+    content: 'insert_drive_file';
+  }
+
+  &.icon-file-media::before {
+    content: 'image';
+  }
+
+  &.icon-clock::before {
+    content: 'schedule';
   }
 
   &.icon-color-mode::before {
