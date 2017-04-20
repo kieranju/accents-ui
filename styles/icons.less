@@ -9,9 +9,15 @@
   content: 'add' !important;
 }
 
-.icon {
+.icon-logo-github::before {
+    padding-left: 2px;
+    padding-right: 2px;
+    vertical-align: middle;
+}
+
+.icon:not(.icon-logo-github) {
 	&::before,
-  &::after {
+    &::after {
 		font-size: @component-icon-size !important;
 		width: @component-icon-size !important;
 		height: @component-icon-size !important;
@@ -52,13 +58,33 @@
   &.icon-clock,
   &.icon-file-media,
   &.icon-file-directory-create,
-  &.icon-file-add {
+  &.icon-file-add,
+  &.icon-info,
+  &.icon-question,
+  &.icon-check,
+  &.icon-clippy {
     &::before {
       font-family: 'Material Icons' !important;
       position: relative !important;
       top: 3px !important;
       font-size: 17px !important;
     }
+  }
+
+  &.icon-clippy::before {
+    content: 'content_paste';
+  }
+
+  &.icon-check::before {
+    content: 'check';
+  }
+
+  &.icon-question::before {
+    content: 'help_outline';
+  }
+
+  &.icon-info::before {
+    content: 'info_outline';
   }
 
   &.icon-bell::before {
