@@ -5,17 +5,23 @@
     .tab {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-
-        padding: 0 1.7142857142857142em 0 1em;
-        max-width: 12.5em;
+        padding: 0 1em 0;
         height: @tab-height;
         border-bottom: @tab-border-height solid @accent-color-subtle;
         background-color: @tab-background-color;
         color: @text-color;
+
+        max-width: 12rem; // sized tabs
+        // max-width: 100%; // fullsize tabs
+        // text-align: center; // fullsize tabs
+
         font-size: inherit;
-        // line-height: @tab-height - @tab-border-height;
+        line-height: @tab-height - @tab-border-height;
         transition: color 0.3s 0s @standard-bezier, box-shadow 0.3s 0s @standard-bezier, background-color 0.3s 0s @standard-bezier, border-color 0.3s 0s @standard-bezier;
+
+		justify-content: center;
+        flex: 1 0 !important;
+        flex-basis: 3rem !important;
 
         // tab divider
         &:not(:last-child):after {
@@ -46,14 +52,15 @@
 
         // tab icons
         .close-icon {
-          	top: 0 !important;
-          	right: 0 !important;
-          	width: 1.7142857142857142em !important;
-            height: auto !important;
+            top: 0 !important;
+            right: 0 !important;
+            transform: scale(0.5);
+          	width: 1em !important;
+            height: 1em !important;
             border: 0 !important;
             border-radius: 0 !important;
-            text-align: left !important;
-          	line-height: @tab-height - @tab-border-height !important;
+          	line-height: 1 !important;
+            margin: .4rem !important;
 
             // close icon
             &::before {
@@ -62,9 +69,8 @@
                 height: @font-size;
                 color: transparent;
                 content: 'close';
-                vertical-align: middle;
                 font-weight: normal !important;
-                font-style: normal;
+                font-style: normal !important;
                 font-size: @font-size;
                 font-family: 'Material Icons';
                 transition: color 0.3s @standard-bezier;
@@ -77,15 +83,17 @@
         &.modified {
             // tab modified icons
             .close-icon {
+                transform: scale(0.75);
+
                 // modified icon
                 &::after {
+                    display: inline-block;
                     width: @font-size;
                     height: @font-size;
                     color: @accent-color-subtle;
-            		content: 'bubble_chart';
-            		vertical-align: middle;
-            		font-weight: normal;
-            		font-style: normal;
+            		content: 'cancel';
+                    font-weight: normal !important;
+                    font-style: normal !important;
             		font-size: @font-size;
             		font-family: 'Material Icons';
                     transition: color 0.3s @standard-bezier;
@@ -119,6 +127,7 @@
             border-bottom: @tab-border-height solid @accent-color;
             background-color: @tab-background-color-active;
             color: @text-color-highlight;
+            flex-basis: 12em !important;
 
             .close-icon {
                 &::before {
