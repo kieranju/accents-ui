@@ -1,4 +1,4 @@
-atom-panel.modal, .overlay {
+atom-panel.modal, atom-panel.overlay {
     padding: 0.9375em;
     color: @text-color;
     max-width: 31.25em;
@@ -47,9 +47,53 @@ atom-panel.modal, .overlay {
     }
 }
 
-atom-panel.tool-panel {
+// panel dividers
+atom-panel {
+    // top panels
+    &.header {
+        border-bottom: 1px solid @tool-panel-border-color;
+    }
+
+    // bottom panels
+    &.footer {
+        border-top: 1px solid @tool-panel-border-color;
+    }
     &.bottom {
         border-top: 1px solid @tool-panel-border-color;
         box-shadow: inset 0px 1px @base-background-color;
     }
+
+    // left panels
+    &.left {
+        border-right: 1px solid @tool-panel-border-color;
+    }
+
+    // right panels
+    &.right {
+        border-left: 1px solid @tool-panel-border-color;
+    }
+}
+
+.status-bar {
+    height: 38px; // match title-bar
+    font-size: @font-size;
+    background-color: @tree-view-background-color;
+    box-shadow: inset 0px 1px @base-background-color;
+}
+.status-bar-left, .status-bar-right {
+    .file-info {
+        max-width: 20vw !important;
+    }
+    &::before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+}
+
+.title-bar {
+    height: 38px;
+    background-color: @tree-view-background-color;
+    font-size: @font-sub-size;
 }

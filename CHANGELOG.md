@@ -1,6 +1,10 @@
 ## TODO
 * horizontal dragging placeholder (see tree-view project drag and drop)
-* tree-view selected style for right-hand menu
+* config for...
+  - tab height, fullsize tabs, tab text alignment
+  - tree-view focus opacity
+  - font size
+* base colour inherit from syntax theme?
 
 ## < 1.2.0
 * Tons of undocumented styling

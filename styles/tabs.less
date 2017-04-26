@@ -5,7 +5,7 @@
     .tab {
 		display: flex;
 		flex-direction: column;
-        padding: 0 1em 0;
+        padding: 0 1rem 0;
         height: @tab-height;
         border-bottom: @tab-border-height solid @accent-color-subtle;
         background-color: @tab-background-color;
@@ -38,16 +38,16 @@
         .close-icon {
             top: 0 !important;
             right: 0 !important;
-            transform: scale(0.5);
-          	width: 1em !important;
-            height: 1em !important;
+            margin: .2rem;
+          	width: 1rem !important;
+            height: 1rem !important;
             border: 0 !important;
             border-radius: 0 !important;
           	line-height: 1 !important;
-            margin: .4rem !important;
 
             // close icon
             &::before {
+                transform: scale(0.5);
                 display: inline-block;
                 width: @font-size;
                 height: @font-size;
@@ -68,21 +68,20 @@
         &.modified {
             // tab modified icons
             .close-icon {
-                transform: scale(0.75);
-
                 // modified icon
                 &::after {
                     display: inline-block;
                     width: @font-size;
                     height: @font-size;
                     color: @accent-color-subtle;
-            		content: 'cancel';
+                    content: 'cancel';
                     font-weight: normal !important;
                     font-style: normal !important;
-            		font-size: @font-size;
-            		font-family: 'Material Icons';
+                    font-size: @font-size;
+                    font-family: 'Material Icons';
                     transition: color 0.3s @standard-bezier;
-            	}
+                    transform: scale(0.75);
+            	  }
             }
 
             // tab modified icons hover
