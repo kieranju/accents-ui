@@ -21,6 +21,7 @@
 		font-size: @component-icon-size !important;
 		width: @component-icon-size !important;
 		height: @component-icon-size !important;
+        text-align: center !important;
 	}
 }
 
@@ -66,8 +67,12 @@
     &::before {
       font-family: 'Material Icons' !important;
       position: relative !important;
+      font-size: @component-icon-size !important;
       top: 3px !important;
-      font-size: 17px !important;
+
+      & when (@font-size <= 16px) {
+          top: 2px !important;
+      }
     }
   }
 

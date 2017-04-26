@@ -11,17 +11,17 @@
         background-color: @tab-background-color;
         color: @text-color;
 
-        max-width: 12rem; // sized tabs
-        // max-width: 100%; // fullsize tabs
-        // text-align: center; // fullsize tabs
+        max-width: 12.5rem; // sized tabs
+        max-width: 100%; // fullsize tabs
+        text-align: center; // optional
 
         font-size: inherit;
         line-height: @tab-height - @tab-border-height;
         transition: color 0.3s 0s @standard-bezier, box-shadow 0.3s 0s @standard-bezier, background-color 0.3s 0s @standard-bezier, border-color 0.3s 0s @standard-bezier;
 
 		justify-content: center;
-        flex: 1 0 !important;
-        flex-basis: 3rem !important;
+        flex: 1 1 !important;
+        flex-basis: 12rem !important;
 
         // tab divider
         &:not(:last-child):after {
@@ -32,22 +32,6 @@
             height: @tab-height;
             background-color: rgba(0,0,0,0.15);
             content: '';
-        }
-
-        // title
-        .title {
-            // seti-icons fix... their implementation is messy
-            // &::before {
-            //     width: 1em !important;
-            //     height: 1em !important;
-            //     top: -0.045454em;
-            //     position: relative !important;
-            //     font-size: 1.375em !important;
-            //     line-height: 1 !important;
-            //     display: inline-block !important;
-            //     margin: 0 !important;
-            //     vertical-align: middle !important;
-            // }
         }
 
         // tab icons
@@ -73,7 +57,8 @@
                 font-style: normal !important;
                 font-size: @font-size;
                 font-family: 'Material Icons';
-                transition: color 0.3s @standard-bezier;
+                transition: color 0.3s @standard-bezier, opacity 0.3s @standard-bezier;
+                opacity: 0;
 
                 -webkit-font-smoothing: auto;
             }
@@ -119,6 +104,7 @@
 
             .close-icon::before {
                 color: @text-color-highlight;
+                opacity: 1;
             }
         }
 
@@ -127,7 +113,7 @@
             border-bottom: @tab-border-height solid @accent-color;
             background-color: @tab-background-color-active;
             color: @text-color-highlight;
-            flex-basis: 12em !important;
+            flex-shrink: 0 !important;
 
             .close-icon {
                 &::before {
@@ -151,6 +137,7 @@
             & + .tab {
                 &:before {
                     position: absolute;
+                    top: 0;
                     left: 0;
                     width: 1px;
                     height: @tab-height;

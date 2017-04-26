@@ -1,6 +1,6 @@
 ## TODO
-* horizontal dragging placeholder
-*
+* horizontal dragging placeholder (see tree-view project drag and drop)
+* tree-view selected style for right-hand menu
 
 ## < 1.2.0
 * Tons of undocumented styling
