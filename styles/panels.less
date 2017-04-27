@@ -1,99 +1,99 @@
 atom-panel.modal, atom-panel.overlay {
-    padding: 0.9375em;
-    color: @text-color;
-    max-width: 31.25em;
-    border-radius: @component-border-radius * 2 !important;
-    background-color: @overlay-background-color;
-    box-shadow: @shadow-3, @shadow-highlight-top, @shadow-highlight-subtle-left, @shadow-highlight-subtle-right;
+  padding: 0.9375em;
+  color: @text-color;
+  max-width: 31.25em;
+  border-radius: @component-border-radius * 2 !important;
+  background-color: @overlay-background-color;
+  box-shadow: @shadow-3, @shadow-highlight-top, @shadow-highlight-subtle-left, @shadow-highlight-subtle-right;
 
-    &.from-top {
-        top: @tab-height + @tab-height / 2;
-        animation: hinge 225ms @standard-bezier;
-    }
+  &.from-top {
+    top: @tab-height + @tab-height / 2;
+    animation: hinge 225ms @standard-bezier;
+  }
 
-    .select-list .list-group {
-        margin: 0;
-    }
+  .select-list .list-group {
+    margin: 0;
+  }
 
-    .message, .loading, .error-message {
-        font-size: @font-sub-size;
-    }
+  .message, .loading, .error-message {
+    font-size: @font-sub-size;
+  }
 
-    // command palette flex
-    .command-palette {
-        li {
-            display: flex;
-            flex-direction: row-reverse;
+  // command palette flex
+  .command-palette {
+    li {
+      display: flex;
+      flex-direction: row-reverse;
 
-            & > * {
-                flex: 1;
-            }
+      & > * {
+        flex: 1;
+      }
 
-            // title
-            span {
-                flex-basis: 100%;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
+      // title
+      span {
+        flex-basis: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
 
-            .pull-right {
-                display: flex;
+      .pull-right {
+        display: flex;
 
-                & > * {
-                    flex: 1;
-                }
-            }
+        & > * {
+          flex: 1;
         }
+      }
     }
+  }
 }
 
 // panel dividers
 atom-panel {
-    // top panels
-    &.header {
-        border-bottom: 1px solid @tool-panel-border-color;
-    }
+  // top panels
+  &.header {
+    border-bottom: 1px solid @tool-panel-border-color;
+  }
 
-    // bottom panels
-    &.footer {
-        border-top: 1px solid @tool-panel-border-color;
-    }
-    &.bottom {
-        border-top: 1px solid @tool-panel-border-color;
-        box-shadow: inset 0px 1px @base-background-color;
-    }
+  // bottom panels
+  &.footer {
+    border-top: 1px solid @tool-panel-border-color;
+  }
+  &.bottom {
+    border-top: 1px solid @tool-panel-border-color;
+    box-shadow: inset 0px 1px @base-background-color;
+  }
 
-    // left panels
-    &.left {
-        border-right: 1px solid @tool-panel-border-color;
-    }
+  // left panels
+  &.left {
+    border-right: 1px solid @tool-panel-border-color;
+  }
 
-    // right panels
-    &.right {
-        border-left: 1px solid @tool-panel-border-color;
-    }
+  // right panels
+  &.right {
+    border-left: 1px solid @tool-panel-border-color;
+  }
 }
 
 .status-bar {
-    height: 38px; // match title-bar
-    font-size: @font-size;
-    background-color: @tree-view-background-color;
-    box-shadow: inset 0px 1px @base-background-color;
+  height: 38px; // match title-bar
+  font-size: @font-size;
+  background-color: @tree-view-background-color;
+  box-shadow: inset 0px 1px @base-background-color;
 }
 .status-bar-left, .status-bar-right {
-    .file-info {
-        max-width: 20vw !important;
-    }
-    &::before {
-        content: '';
-        display: inline-block;
-        vertical-align: middle;
-        height: 100%;
-    }
+  .file-info {
+    max-width: 20vw !important;
+  }
+  &::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
 }
 
 .title-bar {
-    height: 38px;
-    background-color: @tree-view-background-color;
-    font-size: @font-sub-size;
+  height: 38px;
+  background-color: @tree-view-background-color;
+  font-size: @font-sub-size;
 }

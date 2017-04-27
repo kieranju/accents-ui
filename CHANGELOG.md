@@ -1,10 +1,18 @@
 ## TODO
 * horizontal dragging placeholder (see tree-view project drag and drop)
 * config for...
-  - tab height, fullsize tabs, tab text alignment
+  - tab height, full-size tabs, tab text alignment
   - tree-view focus opacity
   - font size
 * base colour inherit from syntax theme?
+* support atom 1.17 panels
+* fix notifications
+* settings view...
+  - breadcrumb alignment
+  - float-right header alignment
+* custom loading indicator
+* consistent input styling
+* check the styleguide
 
 ## < 1.2.0
 * Tons of undocumented styling

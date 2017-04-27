@@ -1,106 +1,106 @@
 .list-group {
-    // max-height: 2.71em * 7 !important;
+  // max-height: 2.71em * 7 !important;
 
-    li {
-        padding: 0.5em @component-padding;
-        border-radius: @component-border-radius;
+  li {
+    padding: 0.5em @component-padding;
+    border-radius: @component-border-radius;
 
-        .status {
-            position: absolute;
-            right: 0;
-            margin: 0;
-            padding-right: @component-padding;
-            text-align: right;
+    .status {
+      position: absolute;
+      right: 0;
+      margin: 0;
+      padding-right: @component-padding;
+      text-align: right;
 
-            &::before {
-                margin: 0 !important;
-            }
-        }
-
-        .no-icon {
-            padding-left: 1.3125em;
-        }
-
-        &.selected {
-            background-color: @accent-color-subtle;
-            color: @text-color-selected;
-            text-shadow: @shadow-text;
-
-            &:before {
-                display: none;
-            }
-        }
+      &::before {
+        margin: 0 !important;
+      }
     }
 
-    .two-lines {
-        position: relative;
-        display: flex !important;
-        flex-direction: column;
-        border-radius: @component-border-radius;
-
-        .primary-line {
-            margin-right: @font-size;
-            padding: 0;
-        }
-        .secondary-line {
-            padding: 0;
-            color: @text-color-subtle;
-            font-style: italic;
-            font-size: @font-sub-size;
-
-            .character-match {
-                font-weight: normal;
-            }
-        }
-
-        &.selected {
-            background-color: @accent-color-subtle;
-
-            .secondary-line {
-                color: @text-color;
-            }
-        }
+    .no-icon {
+      padding-left: 1.3125em;
     }
+
+    &.selected {
+      background-color: @accent-color-subtle;
+      color: @text-color-selected;
+      text-shadow: @shadow-text;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .two-lines {
+    position: relative;
+    display: flex !important;
+    flex-direction: column;
+    border-radius: @component-border-radius;
+
+    .primary-line {
+      margin-right: @font-size;
+      padding: 0;
+    }
+    .secondary-line {
+      padding: 0;
+      color: @text-color-subtle;
+      font-style: italic;
+      font-size: @font-sub-size;
+
+      .character-match {
+        font-weight: normal;
+      }
+    }
+
+    &.selected {
+      background-color: @accent-color-subtle;
+
+      .secondary-line {
+        color: @text-color;
+      }
+    }
+  }
 }
 
 .select-list.popover-list {
-    padding: @popover-list-padding;
-    border-radius: @component-border-radius;
-    background-color: @overlay-background-color;
-    box-shadow: @shadow-1;
+  padding: @popover-list-padding;
+  border-radius: @component-border-radius;
+  background-color: @overlay-background-color;
+  box-shadow: @shadow-1;
 
-    @popover-list-padding: @component-padding/2;
+  @popover-list-padding: @component-padding/2;
 
-    .suggestion-description {
-        border-top: 1px solid @overlay-border-color !important;
-        background-color: @overlay-background-color !important;
-        box-shadow: @shadow-highlight-subtle-top !important;
-        .suggestion-description-content,
-        .suggestion-description-more-link {
-            font-size: 1em;
-        }
+  .suggestion-description {
+    border-top: 1px solid @overlay-border-color !important;
+    background-color: @overlay-background-color !important;
+    box-shadow: @shadow-highlight-subtle-top !important;
+    .suggestion-description-content,
+    .suggestion-description-more-link {
+      font-size: 1em;
     }
+  }
 
-    .list-group {
-        margin-top: @popover-list-padding;
+  .list-group {
+    margin-top: @popover-list-padding;
 
-        .icon {
-            .icon-letter {
-                top: -0.2em !important;
-            }
-            i {
-                position: relative;
-                top: -0.1em !important;
-            }
-        }
-        .selected {
-            .icon {
-                color: @text-color-selected;
-                text-shadow: @shadow-text;
-            }
-        }
-        li {
-            padding-left: @popover-list-padding;
-        }
+    .icon {
+      .icon-letter {
+        top: -0.2em !important;
+      }
+      i {
+        position: relative;
+        top: -0.1em !important;
+      }
     }
+    .selected {
+      .icon {
+        color: @text-color-selected;
+        text-shadow: @shadow-text;
+      }
+    }
+    li {
+      padding-left: @popover-list-padding;
+    }
+  }
 }

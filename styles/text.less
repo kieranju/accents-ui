@@ -13,10 +13,10 @@
 .highlight-success { .highlight-mixin(@background-color-success); }
 
 .highlight-mixin(@color) {
-    padding: 1px 4px;
-    color: @text-color-highlight;
-    border-radius: @component-border-radius;
-    background-color: @color;
+  padding: 1px 4px;
+  color: @text-color-highlight;
+  border-radius: @component-border-radius;
+  background-color: @color;
 }
 
 .input-text,
@@ -24,25 +24,25 @@
 .input-textarea,
 .input-number,
 .input-select {
-    padding-left: @component-padding;
-    color: @text-color;
-    border-radius: @component-border-radius;
-    background-color: @button-background-color;
-    box-shadow: @shadow-1;
+  padding-left: @component-padding;
+  color: @text-color;
+  border-radius: @component-border-radius;
+  background-color: @button-background-color;
+  box-shadow: @shadow-1;
 }
 .input-select {
-    transition: background-color 0.15s, color 0.15s;
-    padding: 0 30px 0 0.625em !important;
+  transition: background-color 0.15s, color 0.15s;
+  padding: 0 30px 0 0.625em !important;
 
-    &:hover,
-    &:focus {
-        color: @text-color-highlight;
-        background-color: @button-background-color-hover;
-    }
+  &:hover,
+  &:focus {
+    color: @text-color-highlight;
+    background-color: @button-background-color-hover;
+  }
 }
 
 .background-message {
-	color: @scrollbar-color-active;
-	font-weight: normal;
-	font-size: 2em;
+  color: @scrollbar-color-active;
+  font-weight: normal;
+  font-size: 2em;
 }

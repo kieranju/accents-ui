@@ -1,103 +1,103 @@
 .btn-group {
-    box-shadow: @shadow-1;
+  box-shadow: @shadow-1;
 
-    .btn {
-        z-index: 0 !important;
-        border: 0 !important;
-        box-shadow: none !important;
-        padding: 0 0.625em;
-        line-height: 1.6875em;
-    }
+  .btn {
+    z-index: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 0.625em;
+    line-height: 1.6875em;
+  }
 
-    & > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
-        border-radius: 0;
-    }
+  & > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+    border-radius: 0;
+  }
 
-    // visible first child hack
-    & > .btn:first-child[style*="display: none"] + .btn {
-        border-radius: @component-border-radius !important;
-    }
+  // visible first child hack
+  & > .btn:first-child[style*="display: none"] + .btn {
+    border-radius: @component-border-radius !important;
+  }
 }
 
 .btn {
-    height: auto;
-    background-color: @button-background-color;
-    border: 0 !important;
-    transition: background-color 0.3s @standard-bezier, color 0.3s @standard-bezier;
-    box-shadow: @shadow-1 !important;
-    line-height: 1.6875em;
-    padding: 0 0.625em;
+  height: auto;
+  background-color: @button-background-color;
+  border: 0 !important;
+  transition: background-color 0.3s @standard-bezier, color 0.3s @standard-bezier;
+  box-shadow: @shadow-1 !important;
+  line-height: 1.6875em;
+  padding: 0 0.625em;
 
-    &.icon {
-        &:empty::before {
-            margin-right: 0 !important;
-            text-align: center;
-        }
+  &.icon {
+    &:empty::before {
+      margin-right: 0 !important;
+      text-align: center;
     }
-    &.status-indicator {
-        position: absolute;
-        top: 0; bottom: 0;
-        width: 0.2em;
-    }
+  }
+  &.status-indicator {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 0.2em;
+  }
+  &:focus,
+  &:hover {
+    color: @text-color-highlight;
+    background-color: @button-background-color-hover;
+    transition: background-color 0.15s, color 0.15s;
+  }
+  &:active {
+    color: fade(@text-color-selected, 66%);
+    background-color: darken(@button-background-color, 2%);
+    transition: background-color 0s, color 0s;
+  }
+  &.selected {
+    color: @text-color-selected;
+    background-color: @accent-color-subtle;
+
     &:focus,
     &:hover {
-        color: @text-color-highlight;
-        background-color: @button-background-color-hover;
-        transition: background-color 0.15s, color 0.15s;
+      background-color: @accent-color;
     }
     &:active {
-        color: fade(@text-color-selected, 66%);
-        background-color: darken(@button-background-color, 2%);
-        transition: background-color 0s, color 0s;
+      background-color: @accent-color-subtle;
     }
-    &.selected {
-        color: @text-color-selected;
-        background-color: @accent-color-subtle;
-
-        &:focus,
-        &:hover {
-            background-color: @accent-color;
-        }
-        &:active {
-            background-color: @accent-color-subtle;
-        }
-    }
-    &:focus,
-    &:focus:active {
-        outline: none;
-    }
+  }
+  &:focus,
+  &:focus:active {
+    outline: none;
+  }
 }
 
 .btn.btn-primary {
-    .btn-color(@background-color-info);
+  .btn-color(@background-color-info);
 }
 .btn.btn-info {
-    .btn-color(@background-color-info);
+  .btn-color(@background-color-info);
 }
 .btn.btn-success {
-    .btn-color(@background-color-success);
+  .btn-color(@background-color-success);
 }
 .btn.btn-warning {
-    .btn-color(@background-color-warning);
+  .btn-color(@background-color-warning);
 }
 .btn.btn-error {
-    .btn-color(@background-color-error);
+  .btn-color(@background-color-error);
 }
 .btn-color(@bg) {
-    color: @text-color-selected;
-    background-color: @bg;
-    &:focus,
-    &:hover {
-        background-color: lighten(@bg, 4%);
-    }
-    &:active {
-        background-color: darken(@bg, 4%);
-    }
-    &.selected {
-        background-color: lighten(@bg, 4%);
-    }
-    &.selected:focus,
-    &.selected:hover {
-        background-color: lighten(@bg, 10%);
-    }
+  color: @text-color-selected;
+  background-color: @bg;
+  &:focus,
+  &:hover {
+    background-color: lighten(@bg, 4%);
+  }
+  &:active {
+    background-color: darken(@bg, 4%);
+  }
+  &.selected {
+    background-color: lighten(@bg, 4%);
+  }
+  &.selected:focus,
+  &.selected:hover {
+    background-color: lighten(@bg, 10%);
+  }
 }

@@ -1,171 +1,171 @@
 .tab-bar {
-    background-color: @tab-bar-background-color;
-    font-size: @font-size;
+  background-color: @tab-bar-background-color;
+  font-size: @font-size;
 
-    .tab {
-		display: flex;
-		flex-direction: column;
-        padding: 0 1rem 0;
-        height: @tab-height;
-        border-bottom: @tab-border-height solid @accent-color-subtle;
-        background-color: @tab-background-color;
-        color: @text-color;
+  .tab {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem 0;
+    height: @tab-height;
+    border-bottom: @tab-border-height solid @accent-color-subtle;
+    background-color: @tab-background-color;
+    color: @text-color;
 
-        max-width: 12.5rem; // sized tabs
-        max-width: 100%; // fullsize tabs
-        text-align: center; // optional
+    max-width: 12.5rem; // sized tabs
+    max-width: 100%; // fullsize tabs
+    text-align: center; // optional
 
-        font-size: inherit;
-        line-height: @tab-height - @tab-border-height;
-        transition: color 0.3s 0s @standard-bezier, box-shadow 0.3s 0s @standard-bezier, background-color 0.3s 0s @standard-bezier, border-color 0.3s 0s @standard-bezier;
+    font-size: inherit;
+    line-height: @tab-height - @tab-border-height;
+    transition: color 0.3s 0s @standard-bezier, box-shadow 0.3s 0s @standard-bezier, background-color 0.3s 0s @standard-bezier, border-color 0.3s 0s @standard-bezier;
 
-		justify-content: center;
-        flex: 1 1 !important;
-        flex-basis: 12rem !important;
+    justify-content: center;
+    flex: 1 1 !important;
+    flex-basis: 12rem !important;
 
-        // tab divider
-        &:not(:last-child):after {
-            position: absolute;
-            right: 0;
-            bottom: 0 - @tab-border-height;
-            width: 1px;
-            height: @tab-height;
-            background-color: rgba(0,0,0,0.15);
-            content: '';
-        }
-
-        // tab icons
-        .close-icon {
-            top: 0 !important;
-            right: 0 !important;
-            margin: .2rem;
-          	width: 1rem !important;
-            height: 1rem !important;
-            border: 0 !important;
-            border-radius: 0 !important;
-          	line-height: 1 !important;
-
-            // close icon
-            &::before {
-                transform: scale(0.5);
-                display: inline-block;
-                width: @font-size;
-                height: @font-size;
-                color: transparent;
-                content: 'close';
-                font-weight: normal !important;
-                font-style: normal !important;
-                font-size: @font-size;
-                font-family: 'Material Icons';
-                transition: color 0.3s @standard-bezier, opacity 0.3s @standard-bezier;
-                opacity: 0;
-
-                -webkit-font-smoothing: auto;
-            }
-        }
-
-        // tab modified
-        &.modified {
-            // tab modified icons
-            .close-icon {
-                // modified icon
-                &::after {
-                    display: inline-block;
-                    width: @font-size;
-                    height: @font-size;
-                    color: @accent-color-subtle;
-                    content: 'cancel';
-                    font-weight: normal !important;
-                    font-style: normal !important;
-                    font-size: @font-size;
-                    font-family: 'Material Icons';
-                    transition: color 0.3s @standard-bezier;
-                    transform: scale(0.75);
-            	  }
-            }
-
-            // tab modified icons hover
-            &:hover .close-icon {
-                // close icon
-                &::before {
-                    display: none;
-                }
-                // modified icon
-                &::after {
-                    color: @accent-color;
-            	}
-            }
-        }
-
-        // tab hover
-        &:hover {
-            color: @text-color-highlight;
-
-            .close-icon::before {
-                color: @text-color-highlight;
-                opacity: 1;
-            }
-        }
-
-        // tab active
-        &.active {
-            border-bottom: @tab-border-height solid @accent-color;
-            background-color: @tab-background-color-active;
-            color: @text-color-highlight;
-            flex-shrink: 0 !important;
-
-            .close-icon {
-                &::before {
-                    color: @text-color-highlight;
-                }
-            }
-            // tab modified
-            &.modified:not(:hover) .close-icon {
-                // modified icon
-                &::after {
-                    color: @accent-color;
-                }
-            }
-
-            // disable tab divider
-            &:not(:last-child):after {
-                background-color: transparent;
-            }
-
-            // next tab divider
-            & + .tab {
-                &:before {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 1px;
-                    height: @tab-height;
-                    background-color: rgba(0,0,0,0.2);
-                    content: '';
-                }
-            }
-
-            // title
-            .title {
-                padding: 0;
-            }
-        }
+    // tab divider
+    &:not(:last-child):after {
+      position: absolute;
+      right: 0;
+      bottom: 0 - @tab-border-height;
+      width: 1px;
+      height: @tab-height;
+      background-color: rgba(0,0,0,0.15);
+      content: '';
     }
 
-    // dragging placeholder
-    .placeholder {
-        background-color: @accent-color;
-        pointer-events: none;
+    // tab icons
+    .close-icon {
+      top: 0 !important;
+      right: 0 !important;
+      margin: .2rem;
+      width: 1rem !important;
+      height: 1rem !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      line-height: 1 !important;
 
+      // close icon
+      &::before {
+        transform: scale(0.5);
+        display: inline-block;
+        width: @font-size;
+        height: @font-size;
+        color: transparent;
+        content: 'close';
+        font-weight: normal !important;
+        font-style: normal !important;
+        font-size: @font-size;
+        font-family: 'Material Icons';
+        transition: color 0.3s @standard-bezier, opacity 0.3s @standard-bezier;
+        opacity: 0;
+
+        -webkit-font-smoothing: auto;
+      }
+    }
+
+    // tab modified
+    &.modified {
+      // tab modified icons
+      .close-icon {
+        // modified icon
         &::after {
-            left: calc(-6px / 2);
-            top: @tab-height;
-            margin: -2px 0 0;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background-color: @accent-color-subtle;
-            box-shadow: 0 0 0 3px @accent-color;
+          display: inline-block;
+          width: @font-size;
+          height: @font-size;
+          color: @accent-color-subtle;
+          content: 'cancel';
+          font-weight: normal !important;
+          font-style: normal !important;
+          font-size: @font-size;
+          font-family: 'Material Icons';
+          transition: color 0.3s @standard-bezier;
+          transform: scale(0.75);
         }
+      }
+
+      // tab modified icons hover
+      &:hover .close-icon {
+        // close icon
+        &::before {
+          display: none;
+        }
+        // modified icon
+        &::after {
+          color: @accent-color;
+        }
+      }
     }
+
+    // tab hover
+    &:hover {
+      color: @text-color-highlight;
+
+      .close-icon::before {
+        color: @text-color-highlight;
+        opacity: 1;
+      }
+    }
+
+    // tab active
+    &.active {
+      border-bottom: @tab-border-height solid @accent-color;
+      background-color: @tab-background-color-active;
+      color: @text-color-highlight;
+      flex-shrink: 0 !important;
+
+      .close-icon {
+        &::before {
+          color: @text-color-highlight;
+        }
+      }
+      // tab modified
+      &.modified:not(:hover) .close-icon {
+        // modified icon
+        &::after {
+          color: @accent-color;
+        }
+      }
+
+      // disable tab divider
+      &:not(:last-child):after {
+        background-color: transparent;
+      }
+
+      // next tab divider
+      & + .tab {
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 1px;
+          height: @tab-height;
+          background-color: rgba(0,0,0,0.2);
+          content: '';
+        }
+      }
+
+      // title
+      .title {
+        padding: 0;
+      }
+    }
+  }
+
+  // dragging placeholder
+  .placeholder {
+    background-color: @accent-color;
+    pointer-events: none;
+
+    &::after {
+      left: calc(-6px / 2);
+      top: @tab-height;
+      margin: -2px 0 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: @accent-color-subtle;
+      box-shadow: 0 0 0 3px @accent-color;
+    }
+  }
 }
