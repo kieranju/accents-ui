@@ -116,9 +116,14 @@ atom-notifications {
 		opacity: 1 !important;
 	}
 
+	table {
+		margin-bottom: 0;
+	}
+
 	.breadcrumb {
-		font-size: 1.4em;
-		line-height: 1;
+		padding: 1.1875em !important;
+		font-size: 1.5em !important;
+		line-height: 1 !important;
 
 		& > li + li::before {
 			padding: 0 0 0 5px;
@@ -173,38 +178,37 @@ atom-notifications {
 	}
 
 	.section {
-		padding: 1.5em;
+		padding: 1.1875em !important;
 		border: 0 !important;
-
-		&:first-child,
-		&:last-child {
-			padding: 1.5em;
-		}
 	}
 
 	.sub-section {
-		margin: 0;
+		margin: 1rem 0 0 0 !important;
+	}
+
+	.control-group {
+		margin-top: 1.25rem !important;
 	}
 
 	.section-heading,
 	.sub-section-heading {
-		margin-top: 1.25em;
-		margin-bottom: 1.25em;
+		margin-top: 0rem !important;
+		margin-bottom: 1.25rem !important;
 		font-weight: 400 !important;
-		font-size: 1.4em !important;
+		font-size: 1.5rem !important;
 
 		&::before {
-			display: none;
+			display: none !important;
 		}
 	}
 
 	.setting-description {
 		font-weight: normal;
-		font-size: 1em;
+		font-size: 1rem;
 	}
 
 	.setting-title {
-		font-size: 1.125em;
+		font-size: 1.125rem;
 		line-height: 1.5rem;
 		font-weight: normal !important;
 	}
@@ -354,23 +358,40 @@ atom-notifications {
 }
 
 input[type="checkbox"] {
+	position: relative;
 	width: 1.5rem;
 	height: 1.5rem;
 	box-shadow: @shadow-1 !important;
 	transition: background-color 0.3s @standard-bezier;
+	overflow: hidden;
 
 	&::before,
 	&::after {
-		top: 17px;
-		left: 9px;
+		top: auto;
+		right: auto;
+		bottom: auto;
+		left: auto;
+		margin: 0;
 		opacity: 0;
-		transition: transform 0ms 300ms linear, opacity 300ms @standard-bezier;
+		transform: none !important;
+		transition: transform 0ms 300ms @standard-bezier, opacity 300ms @standard-bezier;
+		display: none;
+		background: transparent;
+		width: @font-size;
+		height: @font-size;
 	}
 	&::before {
-		width: 6px;
-	}
-	&::after {
-		width: 14px;
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		color: @base-background-color;
+		content: 'check';
+		vertical-align: middle;
+		text-align: center;
+		font-size: @component-icon-size !important;
+		font-family: 'Material Icons' !important;
+		transform: scale(0.4) !important;
+		transform-origin: center;
 	}
 
 	&:active {
@@ -381,11 +402,9 @@ input[type="checkbox"] {
 
 		&::before,
 		&::after {
-			transition: transform 225ms @standard-bezier, opacity 300ms @standard-bezier;
 			opacity: 1;
-		}
-		&::after {
-			transition-delay: 45ms;
+			transform: scale(1) !important;
+			transition: transform 250ms @standard-bezier, opacity 300ms @standard-bezier;
 		}
 	}
 }
