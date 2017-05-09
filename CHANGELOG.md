@@ -7,12 +7,10 @@
 * base colour inherit from syntax theme?
 * support atom 1.17 panels
 * fix notifications
-* settings view...
-  - breadcrumb alignment
-  - float-right header alignment
 * custom loading indicator
-* consistent input styling
+* consistent input type styling
 * check the styleguide
+* tweak panels and autocomplete styles
 
 ## < 1.2.0
 * Tons of undocumented styling
