@@ -111,7 +111,6 @@ atom-notifications {
 
 .settings-view {
 
-
 	.updates-heading-container {
 		align-items: initial;
 	}
@@ -344,6 +343,10 @@ atom-notifications {
 		box-shadow: @shadow-1;
 		border: 0;
 		transition: box-shadow 0.15s @standard-bezier, background 0.15s @standard-bezier;
+
+		&:first-child {
+			margin-top: 0.9375em;
+		}
 
 		&:active,
 		&:hover {
