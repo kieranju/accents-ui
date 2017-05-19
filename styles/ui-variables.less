@@ -44,7 +44,7 @@
 @panel-heading-background-color: lighten(@base-background-color, 4%);
 @panel-heading-border-color: @base-border-color;
 
-@overlay-background-color: @tab-background-color;
+@overlay-background-color: lighten(@base-background-color, 4%);
 @overlay-border-color: @base-border-color;
 @overlay-border-color: darken(@overlay-background-color, 4%);
 
@@ -56,10 +56,10 @@
 @tab-bar-background-color: @base-background-color;
 @tab-bar-border-color: @base-border-color;
 
-@tab-background-color: lighten(@base-background-color, 5%);
-@tab-background-color-active: lighten(@tab-background-color, 4%);
+@tab-background-color: @tool-panel-background-color;
+@tab-background-color-active: @base-background-color;
 @tab-border-color: @base-border-color;
-@tab-border-height: 0.3125rem;
+@tab-border-height: 0.25rem;
 
 @tree-view-background-color: darken(@base-background-color, 2%);
 @tree-view-border-color: darken(@tool-panel-background-color, 4%);

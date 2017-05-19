@@ -1,43 +1,36 @@
+// default style
 .tab-bar {
-  background-color: @tab-bar-background-color;
+  background-color: @tab-background-color;
   font-size: @font-size;
+  height: @tab-height;
+  box-shadow: inset 0 -1px @tool-panel-border-color;
+  border-radius: 0;
 
   .tab {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    padding: 0 1rem 0;
+    padding: 0 2rem 0;
     height: @tab-height;
-    border-bottom: @tab-border-height solid @accent-color-subtle;
+    line-height: @tab-height - @tab-border-height;
     background-color: @tab-background-color;
+    border-top: @tab-border-height solid @tab-background-color;
     color: @text-color;
 
     max-width: 12.5rem; // sized tabs
     max-width: 100%; // fullsize tabs
-    text-align: center; // optional
+    text-align: center;
 
     font-size: inherit;
-    line-height: @tab-height - @tab-border-height;
-    transition: color 0.3s 0s @standard-bezier, box-shadow 0.3s 0s @standard-bezier, background-color 0.3s 0s @standard-bezier, border-color 0.3s 0s @standard-bezier;
+    transition: color 300ms 0s @standard-bezier, background-color 150ms 0s @standard-bezier;
 
-    justify-content: center;
     flex: 1 1 !important;
     flex-basis: 12rem !important;
 
-    // tab divider
-    &:not(:last-child):after {
-      position: absolute;
-      right: 0;
-      bottom: 0 - @tab-border-height;
-      width: 1px;
-      height: @tab-height;
-      background-color: rgba(0,0,0,0.15);
-      content: '';
-    }
-
     // tab icons
     .close-icon {
-      top: 0 !important;
-      right: 0 !important;
+      top: (@tab-height/2) - @tab-border-height - 0.5rem !important;
+      right: 0.25rem !important;
       margin: .2rem;
       width: 1rem !important;
       height: 1rem !important;
@@ -58,10 +51,28 @@
         font-style: normal !important;
         font-size: @font-size;
         font-family: 'Material Icons';
-        transition: color 0.3s @standard-bezier, opacity 0.3s @standard-bezier;
+        transition: color 300ms @standard-bezier, opacity 300ms @standard-bezier;
         opacity: 0;
 
         -webkit-font-smoothing: auto;
+      }
+    }
+
+    // target specific tab types
+    &[data-type$="AboutView"],
+    &[data-type$="Editor"],
+    &[data-type$="SettingsView"],
+    &[data-type$="StyleguideView"],
+    &[data-type$="TimecopView"],
+    &[data-type="MarkdownPreviewView"] {
+      box-shadow: -1px 0 @tool-panel-border-color, inset 0 -1px @tool-panel-border-color, inset 1px 0 @base-background-color;
+      margin-right: 1px;
+
+      &:first-child {
+        box-shadow: inset 0 -1px @tool-panel-border-color, inset 0 -2px @base-background-color;
+      }
+      &:last-child {
+        margin-right: 0;
       }
     }
 
@@ -80,17 +91,19 @@
           font-style: normal !important;
           font-size: @font-size;
           font-family: 'Material Icons';
-          transition: color 0.3s @standard-bezier;
+          transition: color 300ms @standard-bezier;
           transform: scale(0.75);
         }
       }
 
       // tab modified icons hover
       &:hover .close-icon {
+
         // close icon
         &::before {
           display: none;
         }
+
         // modified icon
         &::after {
           color: @accent-color;
@@ -100,8 +113,17 @@
 
     // tab hover
     &:hover {
-      color: @text-color-highlight;
+      // target specific tab types
+      &[data-type$="AboutView"],
+      &[data-type$="Editor"],
+      &[data-type$="SettingsView"],
+      &[data-type$="StyleguideView"],
+      &[data-type$="TimecopView"],
+      &[data-type="MarkdownPreviewView"] {
+        color: @text-color-highlight;
+      }
 
+      // close icon
       .close-icon::before {
         color: @text-color-highlight;
         opacity: 1;
@@ -110,40 +132,51 @@
 
     // tab active
     &.active {
-      border-bottom: @tab-border-height solid @accent-color;
-      background-color: @tab-background-color-active;
-      color: @text-color-highlight;
       flex-shrink: 0 !important;
 
-      .close-icon {
-        &::before {
-          color: @text-color-highlight;
+      // target specific tab types
+      &[data-type$="AboutView"],
+      &[data-type$="Editor"],
+      &[data-type$="SettingsView"],
+      &[data-type$="StyleguideView"],
+      &[data-type$="TimecopView"],
+      &[data-type="MarkdownPreviewView"] {
+        border-top-right-radius: @component-border-radius;
+        border-top-left-radius: @component-border-radius;
+        background-color: @tab-background-color-active;
+        color: @text-color-highlight;
+        box-shadow: 1px 0 @tool-panel-border-color, -1px 0 @tool-panel-border-color, inset 1px 0 lighten(@base-background-color, 2%), inset -1px 0 lighten(@base-background-color, 2%);
+        border-top: @tab-border-height solid @accent-color;
+        height: @tab-height - @tab-border-height;
+        line-height: @tab-height - @tab-border-height * 2 - @tab-border-height;
+        margin-top: @tab-border-height;
+
+        &:first-child:last-child {
+          box-shadow: none;
         }
-      }
-      // tab modified
-      &.modified:not(:hover) .close-icon {
-        // modified icon
-        &::after {
-          color: @accent-color;
+        &:first-child {
+          box-shadow: 1px 0 @tool-panel-border-color, inset -1px 0 lighten(@base-background-color, 1%);
+        }
+        &:last-child {
+          box-shadow: -1px 0 @tool-panel-border-color, inset 1px 0 lighten(@base-background-color, 1%);
+        }
+        & + .tab {
+          box-shadow: inset 0 -1px @tool-panel-border-color;
+        }
+
+        .close-icon {
+          top: (@tab-height/2) - (@tab-border-height*2) - 0.5rem !important;
         }
       }
 
-      // disable tab divider
-      &:not(:last-child):after {
-        background-color: transparent;
+      // close icon
+      .close-icon::before {
+        color: @text-color-highlight;
       }
 
-      // next tab divider
-      & + .tab {
-        &:before {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 1px;
-          height: @tab-height;
-          background-color: rgba(0,0,0,0.2);
-          content: '';
-        }
+      // modified icon
+      &.modified:not(:hover) .close-icon::after {
+        color: @accent-color;
       }
 
       // title
@@ -169,4 +202,9 @@
       box-shadow: 0 0 0 3px @accent-color;
     }
   }
+}
+
+// dock tab reset
+atom-dock .tab-bar .tab.active {
+  background-color: @tool-panel-background-color;
 }

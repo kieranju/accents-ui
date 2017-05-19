@@ -66,6 +66,10 @@
   &.icon-info,
   &.icon-question,
   &.icon-check,
+  &.icon-chevron-up,
+  &.icon-chevron-right,
+  &.icon-chevron-down,
+  &.icon-chevron-left,
   &.icon-clippy {
     &::before {
       font-family: 'Material Icons' !important;
@@ -77,6 +81,22 @@
         top: 2px !important;
       }
     }
+  }
+
+  &.icon-chevron-up::before {
+    content: 'expand_less';
+  }
+
+  &.icon-chevron-right::before {
+    content: 'chevron_right';
+  }
+
+  &.icon-chevron-down::before {
+    content: 'expand_more';
+  }
+
+  &.icon-chevron-left::before {
+    content: 'chevron_left';
   }
 
   &.icon-clippy::before {

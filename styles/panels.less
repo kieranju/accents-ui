@@ -63,8 +63,8 @@ atom-panel {
     border-top: 1px solid @tool-panel-border-color;
   }
   &.bottom {
-    border-top: 1px solid @tool-panel-border-color;
-    box-shadow: inset 0px 1px @base-background-color;
+    border-top: 1px solid @base-background-color;
+    box-shadow: 0px -1px @tool-panel-border-color;
   }
 
   // left panels
@@ -75,6 +75,64 @@ atom-panel {
   // right panels
   &.right {
     border-left: 1px solid @tool-panel-border-color;
+  }
+}
+
+// dock dividers
+atom-dock {
+  .atom-dock-inner {
+    &.bottom, &.top {
+      min-height: 1px;
+    }
+    &.left, &.right {
+      min-width: 1px;
+    }
+  }
+
+  // transition
+  .atom-dock-mask:not(:active) {
+    transition: height 300ms @standard-bezier, width 300ms @standard-bezier;
+  }
+
+  &.top .atom-dock-mask {
+    box-shadow: inset 0px -1px @tool-panel-border-color, inset 0 -2px @base-background-color;
+  }
+  &.right .atom-dock-mask {
+    box-shadow: inset 1px 0px @tool-panel-border-color;
+  }
+  &.bottom .atom-dock-mask {
+    box-shadow: inset 0px 1px @tool-panel-border-color, inset 0 2px @base-background-color;
+  }
+  &.left .atom-dock-mask {
+    box-shadow: inset -1px 0px @tool-panel-border-color;
+  }
+
+  .atom-dock-toggle-button-inner {
+    background-color: transparent !important;
+
+    .icon::before {
+      background-color: @tool-panel-border-color;
+      border-radius: @component-border-radius;
+      box-shadow: 0 0 0 3px @tool-panel-border-color;
+    }
+  }
+
+  .atom-dock-toggle-button {
+    .atom-dock-toggle-button-inner {
+      transition: transform 250ms 0ms @standard-bezier, background-color 300ms @standard-bezier;
+    }
+    .icon {
+      transition: opacity 375ms 0ms @standard-bezier;
+    }
+
+    &:not(.atom-dock-toggle-button-visible) {
+      .atom-dock-toggle-button-inner {
+        transition: transform 200ms 50ms @standard-bezier, background-color 300ms @standard-bezier;
+      }
+      .icon {
+        transition: opacity 250ms 0ms @standard-bezier;
+      }
+    }
   }
 }
 
