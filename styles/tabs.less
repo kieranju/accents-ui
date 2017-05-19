@@ -22,7 +22,7 @@
     text-align: center;
 
     font-size: inherit;
-    transition: color 300ms 0s @standard-bezier, background-color 150ms 0s @standard-bezier;
+    transition: color 300ms 0s @standard-bezier;
 
     flex: 1 1 !important;
     flex-basis: 12rem !important;
@@ -65,11 +65,11 @@
     &[data-type$="StyleguideView"],
     &[data-type$="TimecopView"],
     &[data-type="MarkdownPreviewView"] {
-      box-shadow: -1px 0 @tool-panel-border-color, inset 0 -1px @tool-panel-border-color, inset 1px 0 @base-background-color;
+      box-shadow: -1px 0 @tool-panel-border-color, inset 0 -1px @tool-panel-border-color;
       margin-right: 1px;
 
       &:first-child {
-        box-shadow: inset 0 -1px @tool-panel-border-color, inset 0 -2px @base-background-color;
+        box-shadow: inset 0 -1px @tool-panel-border-color;
       }
       &:last-child {
         margin-right: 0;
@@ -145,7 +145,7 @@
         border-top-left-radius: @component-border-radius;
         background-color: @tab-background-color-active;
         color: @text-color-highlight;
-        box-shadow: 1px 0 @tool-panel-border-color, -1px 0 @tool-panel-border-color, inset 1px 0 lighten(@base-background-color, 2%), inset -1px 0 lighten(@base-background-color, 2%);
+        box-shadow: 1px 0 @tool-panel-border-color, -1px 0 @tool-panel-border-color, inset 1px 0 lighten(@base-background-color, 1%), inset -1px 0 lighten(@base-background-color, 1%);
         border-top: @tab-border-height solid @accent-color;
         height: @tab-height - @tab-border-height;
         line-height: @tab-height - @tab-border-height * 2 - @tab-border-height;
