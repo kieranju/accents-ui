@@ -2,7 +2,6 @@
 .tab-bar {
   background-color: @tab-background-color;
   font-size: @font-size;
-  height: @tab-height;
   box-shadow: inset 0 -1px @tool-panel-border-color;
   border-radius: 0;
 
@@ -26,6 +25,16 @@
 
     flex: 1 1 !important;
     flex-basis: 12rem !important;
+
+    box-shadow: -1px 0 @tool-panel-border-color, inset 0 -1px @tool-panel-border-color;
+    margin-right: 1px;
+
+    &:first-child {
+      box-shadow: inset 0 -1px @tool-panel-border-color;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
 
     // tab icons
     .close-icon {
@@ -55,24 +64,6 @@
         opacity: 0;
 
         -webkit-font-smoothing: auto;
-      }
-    }
-
-    // target specific tab types
-    &[data-type$="AboutView"],
-    &[data-type$="Editor"],
-    &[data-type$="SettingsView"],
-    &[data-type$="StyleguideView"],
-    &[data-type$="TimecopView"],
-    &[data-type="MarkdownPreviewView"] {
-      box-shadow: -1px 0 @tool-panel-border-color, inset 0 -1px @tool-panel-border-color;
-      margin-right: 1px;
-
-      &:first-child {
-        box-shadow: inset 0 -1px @tool-panel-border-color;
-      }
-      &:last-child {
-        margin-right: 0;
       }
     }
 
@@ -119,6 +110,7 @@
       &[data-type$="SettingsView"],
       &[data-type$="StyleguideView"],
       &[data-type$="TimecopView"],
+      &[data-type$="ResultsPaneView"],
       &[data-type="MarkdownPreviewView"] {
         color: @text-color-highlight;
       }
@@ -133,6 +125,7 @@
     // tab active
     &.active {
       flex-shrink: 0 !important;
+      box-shadow: -1px 0 @tool-panel-border-color;
 
       // target specific tab types
       &[data-type$="AboutView"],
@@ -140,6 +133,7 @@
       &[data-type$="SettingsView"],
       &[data-type$="StyleguideView"],
       &[data-type$="TimecopView"],
+      &[data-type$="ResultsPaneView"],
       &[data-type="MarkdownPreviewView"] {
         border-top-right-radius: @component-border-radius;
         border-top-left-radius: @component-border-radius;
