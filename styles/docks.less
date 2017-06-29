@@ -1,0 +1,32 @@
+// make handles not take up any space when dock is open
+.atom-dock-resize-handle {
+  position: absolute;
+  z-index: 11;
+
+  &.left {
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &.right {
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  &.bottom {
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+// add borders
+.atom-dock-inner.atom-dock-open.left {
+  // border-right: 1px solid @tree-view-border-color;
+}
+
+.atom-dock-inner.atom-dock-open.right {
+  // border-left: 1px solid @tree-view-border-color;
+}

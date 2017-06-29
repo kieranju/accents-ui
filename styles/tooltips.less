@@ -5,9 +5,10 @@
     max-width: none;
     padding: 0.375em 0.625em;
     white-space: nowrap;
-    border-radius: max(2px, @component-border-radius);
+    border-radius: @component-border-radius;
     background-color: @accent-color-subtle;
     box-shadow: @shadow-1;
+    border: none;
     text-shadow: @shadow-text;
   }
 
@@ -26,6 +27,6 @@
   }
 
   .tooltip-arrow {
-    border-color: transparent !important;
+    display: none;
   }
 }

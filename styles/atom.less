@@ -26,7 +26,7 @@ atom-text-editor {
 	background-color: @tab-bar-background-color;
 
 	.cursor {
-		border-color: @text-color !important;
+		border-color: @text-color;
 	}
 
 	.indent-guide {
@@ -34,11 +34,11 @@ atom-text-editor {
 	}
 
 	.lines .cursor-line {
-		background-color: @background-color-highlight !important;
+		background-color: @background-color-highlight;
 	}
 
 	.selection .region {
-		background-color: @background-color-highlight !important;
+		background-color: @background-color-highlight;
 	}
 
 	.gutter {
@@ -47,13 +47,13 @@ atom-text-editor {
 
 		.line-numbers {
 			.line-number {
-				background-color: transparent !important;
-				color: darken(@text-color-subtle, 8%) !important;
+				background-color: transparent;
+				color: darken(@text-color-subtle, 8%);
 			}
 
 			.cursor-line,
 			.cursor-line-no-selection {
-				color: @text-color !important;
+				color: @text-color;
 			}
 		}
 	}

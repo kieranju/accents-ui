@@ -2,7 +2,6 @@
 .tab-bar {
   background-color: @tab-background-color;
   font-size: @font-size;
-  box-shadow: inset 0 -1px @tool-panel-border-color;
   border-radius: 0;
 
   .tab {
@@ -11,34 +10,26 @@
     flex-direction: column;
     padding: 0 2rem 0;
     height: @tab-height;
-    line-height: @tab-height - @tab-border-height;
+    line-height: @tab-height - (@tab-border-height * 2);
     background-color: @tab-background-color;
     border-top: @tab-border-height solid @tab-background-color;
     color: @text-color;
-
     max-width: 12.5rem; // sized tabs
     max-width: 100%; // fullsize tabs
     text-align: center;
-
     font-size: inherit;
     transition: color 300ms 0s @standard-bezier;
-
     flex: 1 1 !important;
     flex-basis: 12rem !important;
-
-    box-shadow: -1px 0 @tool-panel-border-color, inset 0 -1px @tool-panel-border-color;
     margin-right: 1px;
 
-    &:first-child {
-      box-shadow: inset 0 -1px @tool-panel-border-color;
-    }
     &:last-child {
       margin-right: 0;
     }
 
     // tab icons
     .close-icon {
-      top: (@tab-height/2) - @tab-border-height - 0.5rem !important;
+      top: (@tab-height / 2) - (@tab-border-height * 3) - (@tab-border-height / 2) !important;
       right: 0.25rem !important;
       margin: .2rem;
       width: 1rem !important;
@@ -125,7 +116,6 @@
     // tab active
     &.active {
       flex-shrink: 0 !important;
-      box-shadow: -1px 0 @tool-panel-border-color;
 
       // target specific tab types
       &[data-type$="AboutView"],
@@ -139,28 +129,8 @@
         border-top-left-radius: @component-border-radius;
         background-color: @tab-background-color-active;
         color: @text-color-highlight;
-        box-shadow: 1px 0 @tool-panel-border-color, -1px 0 @tool-panel-border-color, inset 1px 0 lighten(@base-background-color, 1%), inset -1px 0 lighten(@base-background-color, 1%);
         border-top: @tab-border-height solid @accent-color;
-        height: @tab-height - @tab-border-height;
-        line-height: @tab-height - @tab-border-height * 2 - @tab-border-height;
-        margin-top: @tab-border-height;
-
-        &:first-child:last-child {
-          box-shadow: none;
-        }
-        &:first-child {
-          box-shadow: 1px 0 @tool-panel-border-color, inset -1px 0 lighten(@base-background-color, 1%);
-        }
-        &:last-child {
-          box-shadow: -1px 0 @tool-panel-border-color, inset 1px 0 lighten(@base-background-color, 1%);
-        }
-        & + .tab {
-          box-shadow: inset 0 -1px @tool-panel-border-color;
-        }
-
-        .close-icon {
-          top: (@tab-height/2) - (@tab-border-height*2) - 0.5rem !important;
-        }
+        line-height: @tab-height - (@tab-border-height * 2);
       }
 
       // close icon
@@ -182,16 +152,18 @@
 
   // dragging placeholder
   .placeholder {
-    background-color: @accent-color;
+    background-color: transparent;
     pointer-events: none;
+    top: @tab-border-height;
 
     &::after {
       left: calc(-6px / 2);
-      top: @tab-height;
+      top: (@tab-height / 2) - (@tab-border-height);
       margin: -2px 0 0;
       width: 6px;
       height: 6px;
-      border-radius: 50%;
+      border-radius: 0;
+      transform: rotate(45deg);
       background-color: @accent-color-subtle;
       box-shadow: 0 0 0 3px @accent-color;
     }
