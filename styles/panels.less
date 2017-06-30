@@ -1,7 +1,3 @@
-atom-panel {
-  // border-bottom: 1px solid @tool-panel-border-color;
-}
-
 atom-panel.modal, atom-panel.overlay {
   padding: 0.9375em;
   color: @text-color;
@@ -56,57 +52,6 @@ atom-panel.modal, atom-panel.overlay {
   }
 }
 
-// dock dividers
-atom-dock {
-  .atom-dock-inner {
-    &.bottom, &.top {
-      min-height: 1px;
-    }
-    &.left, &.right {
-      min-width: 1px;
-    }
-    &.top .atom-dock-toggle-button-inner .icon::before {
-      top: 5px;
-    }
-    &.right .atom-dock-toggle-button-inner .icon::before {
-      right: 5px;
-    }
-    &.bottom .atom-dock-toggle-button-inner .icon::before {
-      bottom: 5px;
-    }
-    &.left .atom-dock-toggle-button-inner .icon::before {
-      left: 5px;
-    }
-  }
-
-  .atom-dock-toggle-button-inner {
-    background-color: transparent !important;
-
-    .icon::before {
-      background-color: @tool-panel-border-color;
-      border-radius: 50%;
-    }
-  }
-
-  .atom-dock-toggle-button {
-    .atom-dock-toggle-button-inner {
-      transition: transform 250ms 0ms @standard-bezier, background-color 300ms @standard-bezier;
-    }
-    .icon {
-      transition: opacity 375ms 0ms @standard-bezier;
-    }
-
-    &:not(.atom-dock-toggle-button-visible) {
-      .atom-dock-toggle-button-inner {
-        transition: transform 200ms 50ms @standard-bezier, background-color 300ms @standard-bezier;
-      }
-      .icon {
-        transition: opacity 250ms 0ms @standard-bezier;
-      }
-    }
-  }
-}
-
 .status-bar {
   height: @tab-height;
   font-size: @font-size;
@@ -114,6 +59,12 @@ atom-dock {
 
   .inline-block, .inline-block-tight {
     vertical-align: bottom;
+  }
+
+  .icon::before {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
   }
 }
 

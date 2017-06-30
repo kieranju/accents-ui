@@ -4,6 +4,11 @@ body {
   background-color: @app-background-color;
 }
 
+// empty editor pane
+.vertical .panes .pane .item-views:empty {
+  background: radial-gradient(ellipse at center, @app-background-color 25%, @tree-view-background-color 65%)
+}
+
 atom-pane {
   // border-bottom: 1px solid @tree-view-border-color;
   border-right: 2px solid @tree-view-background-color;

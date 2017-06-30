@@ -36,27 +36,9 @@
         line-height: @tab-height - @tab-border-height - (@component-padding * 2);
       }
 
-      // expanded icon
       &::before {
-        position: absolute !important;
-        top: calc(50% - 1px) !important;
-        left: 0 !important;
-        display: inline-block !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        width: 1rem !important;
-        height: 1rem !important;
-        content: 'expand_more' !important;
-        text-align: center !important;
-        font-size: 1rem !important;
-        font-family: 'Material Icons' !important;
-        transform: translateY(-50%);
+        display: none !important;
       }
-    }
-
-    // collapsed icon
-    &.collapsed > .header.list-item::before {
-      content: 'chevron_right' !important;
     }
 
     // root tree in project
@@ -83,34 +65,6 @@
       border-bottom-right-radius: @component-border-radius;
       background-color: @accent-color-subtle;
       box-shadow: @shadow-1;
-    }
-
-    // expanded icon
-    .list-nested-item > .list-item {
-      position: relative;
-
-      &::before {
-        position: absolute !important;
-        top: 50% !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        left: -1rem !important;
-        display: inline-block !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        width: 1rem !important;
-        height: 1rem !important;
-        content: 'expand_more' !important;
-        text-align: center !important;
-        font-size: 1rem !important;
-        font-family: 'Material Icons' !important;
-        transform: translateY(-50%);
-      }
-    }
-
-    // collapsed icon
-    .list-nested-item.collapsed > .list-item::before {
-      content: 'chevron_right' !important;
     }
 
     // consistent padding and margins
